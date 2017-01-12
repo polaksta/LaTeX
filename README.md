@@ -1,4 +1,4 @@
-# bemer-AGH
+# beamer-AGH
 A LaTeX beamer theme based on the official AGH-UST PowerPoint template.
 In order to use it, put in the preamble of your LaTeX document:
         \usetheme{AGH}
