@@ -1,0 +1,8 @@
+Linux
+	Execute the following commands:
+	$ TEXMF=`kpsewhich -var-value TEXMFHOME`
+	$ mkdir -p $TEXMF/tex/latex/beamer/AGH
+	$ cp *.sty *.png $TEXMF/tex/latex/beamer/AGH
+-----------------------------------------------------------------------------
+Windows
+	Copy *.sty and *.png to texmf tree - see: http://tex.stackexchange.com/questions/12701/where-is-texmf-on-a-windows-install
