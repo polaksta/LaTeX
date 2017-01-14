@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/01/13]
+\ProvidesPackage{beamerthemeAGH}[2017/01/14]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 % Jan. 2017 version 1.0
 %
@@ -8,6 +8,7 @@
 % This program can be redistributed and/or modified under the terms
 % of the GNU LaTeX License, version 2.
 \RequirePackage{tikz}
+\usetikzlibrary{positioning}
 \mode<presentation>
 \useinnertheme[shadow=true]{rounded}
 \useoutertheme{infolines}
@@ -20,12 +21,11 @@
 }
 
 %Background images
-\pgfdeclareimage[width=0.9\paperwidth,height=0.9\paperheight]{AGH-slide}{AGH-slide}
 \setbeamertemplate{background}{
 	\ifnum\thepage=1
-    		\tikz[overlay, remember picture] \node[xshift=-0.099\paperwidth,yshift=-0.014\paperheight,at=(current page.center)] {\pgfimage[width=0.9\paperwidth,height=0.9\paperheight]{AGH-title}};
+		\tikz[overlay, remember picture] \node[below right=\headheight and -1em of current page.north west]{\includegraphics[height=\textheight,keepaspectratio=true]{AGH-title}};
         \else
-		\tikz[overlay, remember picture] \node[xshift=-0.061\paperwidth,yshift=-0.11\paperheight,at=(current page.center)] {\pgfuseimage{AGH-slide}};
+		\tikz[overlay, remember picture] \node[below right=3.5\headheight and -0.5em of current page.north west]{\includegraphics[height=\textheight,keepaspectratio=true]{AGH-slide}};
         \fi
 }
 %Slide content margins
@@ -34,33 +34,31 @@
 %Title page
 \defbeamertemplate*{title page}{AGH}[1][]
 {
-	\vspace*{0.15\paperheight}
-	\vbox{}
-  	\vfill
-	\hspace*{0.01\paperwidth}
-	\begingroup
-	\centering
-	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,wd=0.6\textwidth,center,#1]{title}
-		\usebeamerfont{title}\inserttitle\par%
-		\ifx\insertsubtitle\@empty%
-		\else%
-			\vskip0.25em%
-			{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-		\fi%     
-	\end{beamercolorbox}%
-	\vskip1em\par
-	\begin{beamercolorbox}[sep=8pt,center,#1]{author}
-		\usebeamerfont{author}\insertauthor
-	\end{beamercolorbox}
-	\begin{beamercolorbox}[sep=8pt,center,#1]{institute}
-		\usebeamerfont{institute}\insertinstitute
-	\end{beamercolorbox}
-	\begin{beamercolorbox}[sep=8pt,center,#1]{date}
-		\usebeamerfont{date}\insertdate
-	\end{beamercolorbox}\vskip0.5em
-	{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
-	\endgroup
-	\vfill
+  \vspace*{0.15\paperheight}
+  \vbox{}
+    \vfill
+  \hspace*{0.01\paperwidth}
+  \begingroup
+  \centering
+  \begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,wd=0.6\textwidth,center,#1]{title}
+    \usebeamerfont{title}\inserttitle\par%
+    \ifx\insertsubtitle\@empty%
+    \else%
+      \vskip0.25em%
+      {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+    \fi%     
+  \end{beamercolorbox}%
+  \vskip1em\par
+  \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+    \usebeamerfont{institute}\insertinstitute
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+    \usebeamerfont{date}\insertdate
+  \end{beamercolorbox}\vskip0.5em
+  {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
 }
-%Use the above page
-\setbeamertemplate{title page}[AGH][center]
