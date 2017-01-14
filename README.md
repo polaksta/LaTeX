@@ -1,7 +1,7 @@
 # beamer-AGH
 
 A LaTeX beamer theme based on the official AGH-UST PowerPoint template.
-In order to use it, put in the preamble of your LaTeX document: `\usetheme{AGH}`
+In order to use it, put `\usetheme{AGH}` in the preamble of your LaTeX document.
 
 The AGH-UST graphic symbols and presentation backgrounds are
     proprietary and should not be used outside AGH-UST without
