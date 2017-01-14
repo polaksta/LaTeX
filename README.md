@@ -6,4 +6,4 @@ In order to use it, put in the preamble of your LaTeX document:
 The AGH-UST graphic symbols and presentation backgrounds are
     proprietary and should not be used outside AGH-UST without
     permission.
-    ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.png "Title slide")
+    ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH1.png "Title slide")
