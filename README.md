@@ -8,5 +8,6 @@ In order to use it, put `\usetheme{AGH}` in the preamble of your LaTeX document.
 * <http://www.icsr.agh.edu.pl/~polak/beamer.pdf>
 * <http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf>
 * <http://www.icsr.agh.edu.pl/~polak/wms/latex/dokument4.pdf>
+
 The AGH-UST graphic symbols and presentation backgrounds are proprietary and should not be used outside AGH-UST without permission.
     
