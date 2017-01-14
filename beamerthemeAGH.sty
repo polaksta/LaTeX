@@ -1,18 +1,20 @@
 \ProvidesPackage{beamerthemeAGH}[2017/01/14]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
-% Jan. 2017 version 1.0
+% Jan. 2017 
 %
-% based on the LaTeX-Beamer package "CambridgeUS":
+% based on the LaTeX-Beamer theme "CambridgeUS":
 % Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
 %
 % This program can be redistributed and/or modified under the terms
 % of the GNU LaTeX License, version 2.
 \RequirePackage{tikz}
 \usetikzlibrary{positioning}
+
 \mode<presentation>
 \useinnertheme[shadow=true]{rounded}
 \useoutertheme{infolines}
 \usecolortheme{AGH}
+
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
@@ -34,31 +36,32 @@
 %Title page
 \defbeamertemplate*{title page}{AGH}[1][]
 {
-  \vspace*{0.15\paperheight}
-  \vbox{}
-    \vfill
-  \hspace*{0.01\paperwidth}
-  \begingroup
-  \centering
-  \begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,wd=0.6\textwidth,center,#1]{title}
-    \usebeamerfont{title}\inserttitle\par%
-    \ifx\insertsubtitle\@empty%
-    \else%
-      \vskip0.25em%
-      {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-    \fi%     
-  \end{beamercolorbox}%
-  \vskip1em\par
-  \begin{beamercolorbox}[sep=8pt,center,#1]{author}
-    \usebeamerfont{author}\insertauthor
-  \end{beamercolorbox}
-  \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
-    \usebeamerfont{institute}\insertinstitute
-  \end{beamercolorbox}
-  \begin{beamercolorbox}[sep=8pt,center,#1]{date}
-    \usebeamerfont{date}\insertdate
-  \end{beamercolorbox}\vskip0.5em
-  {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
-  \endgroup
-  \vfill
+	\vspace*{0.15\paperheight}
+	\vbox{}
+	\vfill
+	\hspace*{0.01\paperwidth}
+	\begingroup
+	\centering
+	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,wd=0.6\textwidth,center,#1]{title}
+		\usebeamerfont{title}\inserttitle\par%
+		\ifx\insertsubtitle\@empty%
+		\else%
+			\vskip0.25em%
+			{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+		\fi%     
+	\end{beamercolorbox}%
+	\vskip1em\par
+	\begin{beamercolorbox}[sep=8pt,center,#1]{author}
+		\usebeamerfont{author}\insertauthor
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+		\usebeamerfont{institute}\insertinstitute
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[sep=8pt,center,#1]{date}
+	\usebeamerfont{date}\insertdate
+	\end{beamercolorbox}\vskip0.5em
+	{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+	\endgroup
+	\vfill
 }
+\mode<all>
