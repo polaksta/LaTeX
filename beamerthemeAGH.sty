@@ -25,7 +25,8 @@
 %Background images
 \setbeamertemplate{background}{
 	\ifnum\thepage=1
-		\tikz[overlay, remember picture] \node[below right=\headheight and -1em of current page.north west]{\includegraphics[height=\textheight,keepaspectratio=true]{AGH-title}};
+		%\tikz[overlay, remember picture] \node[below right=\headheight and -1em of current page.north west]{\includegraphics[height=\textheight,keepaspectratio=true]{AGH-title}};
+		\tikz[overlay, remember picture] \node[scale=0.5,below right=\headheight and -1em of current page.north west]{\input{logo-AGH}};
         \else
 		\tikz[overlay, remember picture] \node[below right=3.5\headheight and -0.5em of current page.north west]{\includegraphics[height=\textheight,keepaspectratio=true]{AGH-slide}};
         \fi
