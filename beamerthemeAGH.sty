@@ -7,6 +7,7 @@
 %
 % This program can be redistributed and/or modified under the terms
 % of the GNU LaTeX License, version 2.
+
 \RequirePackage{tikz}[2015/08/07]
 \usetikzlibrary{positioning}
 \newdimen\coloredlinesskip %Distance between lines
@@ -28,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzstyle{every picture}+=[remember picture]
 \tikzset { %Tikz code generated from SVG by 'svg2tikz' tool
-	logo/.pic= {
+	logo/.pic= { %AGH logo
 		\begin{scope}[cm={{1.25,0.0,0.0,-1.25,(0.0,190.12419)}}]
   			\begin{scope}[shift={(-221.07081,-349.03133)}]
       				\path[fill=AGH@black,nonzero rule] (275.7680,371.8140) -- (271.5220,371.8140) --
@@ -98,7 +99,7 @@
   			\end{scope}
 		\end{scope}
 	},
-	lines/.pic={
+	lines/.pic={ %Colored lines
 		%black line
 		\coordinate[xshift=\leftedgeskip] (black_x1) at (current page.north west);
 		\coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
@@ -114,23 +115,28 @@
 	}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%
 %Background images
+%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{background}{
 	\ifnum\thepage=1 % I assume that the title page is the first page of presentation ;-)
 		%%%%%%%%%%%%%%%%%%%%%%%
 		% Content of title page
 		%%%%%%%%%%%%%%%%%%%%%%%
 		\leftedgeskip=4em
-		%%%%%%%%%%%%%
+		%%%%%%%%%%%%%%%
 	   	% Colored lines			
+		%%%%%%%%%%%%%%%
 		\tikz[overlay]\pic {lines};
 		%%%%%%%%%%%%%
 		% Logo
 		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
-			\path pic [below right = -2ex and -1em of black_x1,scale=0.5] {logo}  node[right = of black_x1] (logo) {}; 
-			%\path pic [right = of black_x1,scale=0.6,xshift=6em,yshift=5ex] {logo}  node[right = of black_x1] (logo) {}; 
-		%%%%%%%%%%%%%
+			\path 
+				pic  [below right = -2ex and -1em of black_x1,scale=0.5] {logo}  
+				node [right = of black_x1] (logo) {}; 
+		%%%%%%%%%%%%%%%%
 		% Name in Polish
+		%%%%%%%%%%%%%%%%
 		\tikz[overlay]
 			\node (polish) [align=left,below right = 6ex and 2em of logo,font={\tiny\bfseries}]{
 				Akademia G\'{o}rniczo-Hutnicza\\im. Stanis\l{}awa Staszica w Krakowie
@@ -146,25 +152,32 @@
 		% Content of non-title page
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\leftedgeskip=1em
-		\%%%%%%%%%%%%%
+		%%%%%%%%%%%%%%%
 	   	% Colored lines			
+		%%%%%%%%%%%%%%%
 		\tikz[overlay]\pic {lines};
-		%%%%%%%%%%%%%
+		%%%%%%
 		% Logo
+		%%%%%%
 		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
 			\path pic [scale=0.3,xshift=-3.0\leftedgeskip,yshift=28ex] {logo}; 
 		%%%%%%%%%%%%%
 		% WWW address
+		%%%%%%%%%%%%%
 		\tikz[overlay]\node[above = of black_x2,rotate=90,color=gray,font={\tiny}]{www.agh.edu.pl};
 			
         \fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
 %Slide content margins
+%%%%%%%%%%%%%%%%%%%%%%
 \setbeamersize{text margin left=6em} 
 \setbeamersize{text margin right=2em}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Title page look and contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \defbeamertemplate*{title page}{AGH}[1][]
 {
 	\vspace*{0.15\paperheight}
