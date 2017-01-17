@@ -8,10 +8,12 @@ Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme {AGH}`
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Title slide")
 
-*The AGH-UST graphic symbols and presentation backgrounds are proprietary and should not be used outside AGH-UST without permission.*
+*The AGH-UST graphic symbol is proprietary and should not be used outside AGH-UST without permission.*
+
+*Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowane poza AGH.*
     
   
-## Example presentations (in Polish)
+## Example presentations (in Polish) / Przykładowe prezentacje
 * <http://www.icsr.agh.edu.pl/~polak/beamer.pdf>
 * <http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf>
 * <http://www.icsr.agh.edu.pl/~polak/wms/latex/dokument4.pdf>
