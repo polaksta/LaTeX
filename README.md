@@ -10,7 +10,7 @@ Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme {AGH}`
 
 *The AGH-UST graphic symbol is proprietary and should not be used outside AGH-UST without permission.*
 
-*Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany poza AGH.*
+*Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany przez osoby i instytucje niezwiązane z AGH.*
     
   
 ## Example presentations (in Polish) / Przykładowe prezentacje
