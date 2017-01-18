@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/01/16]
+\ProvidesPackage{beamerthemeAGH}[2017/01/18]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -112,6 +112,8 @@
         				(284.2120,398.4150) and (283.1630,404.6170) .. (283.1630,412.8900) --
         				(283.1630,467.6890) -- (279.0270,467.6890) -- (279.0270,411.8550) .. controls
         				(279.0270,402.5770) and (282.1290,397.8960) .. (287.2990,395.3120);
+				\node (AGH) at (295,450) {};
+					
   			\end{scope}
 		\end{scope}
 	},
@@ -121,7 +123,7 @@
 		\coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
 		\draw[AGH@black,thick] (black_x1) -- (black_x2);
 		%green line
-		\coordinate [below left =  0.2\textheight and \coloredlinesskip of black_x1] (green_x1);
+		\coordinate [below left =  0.25\textheight and \coloredlinesskip of black_x1] (green_x1);
 		\coordinate [above left =  0.3\textheight and \coloredlinesskip of black_x2] (green_x2);
 		\draw[AGH@green,thick] (green_x1) -- (green_x2);
 		%red line
@@ -147,14 +149,12 @@
 		%%%%%%%%%%%%%
 		% Logo
 		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
-			\path 
-				pic  [below right = -2ex and -1em of black_x1,scale=0.5] {logo}  
-				node [right = of black_x1] (logo) {}; 
+			\path pic  [below right = -2ex and -1em of black_x1,scale=0.5] (logo-) {logo}; 
 		%%%%%%%%%%%%%%%%
 		% Name in Polish
 		%%%%%%%%%%%%%%%%
 		\tikz[overlay]
-			\node (polish) [align=left,below right = 6ex and 2em of logo,font={\tiny\bfseries}]{
+			\node (polish) [align=left,right = 2em of logo-AGH,font={\tiny\bfseries}]{
 				Akademia G\'{o}rniczo-Hutnicza\\im. Stanis\l{}awa Staszica w Krakowie
 			};
 		%%%%%%%%%%%%%
@@ -176,7 +176,7 @@
 		% Logo
 		%%%%%%
 		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
-			\path pic [scale=0.3,xshift=-3.0\leftedgeskip,yshift=28ex] {logo}; 
+			\path pic  [below right = 4ex and 0em of green_x1,scale=0.3] {logo}; 
 		%%%%%%%%%%%%%
 		% WWW address
 		%%%%%%%%%%%%%
