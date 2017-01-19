@@ -5,7 +5,7 @@
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Title slide")
 
-| First Header  | Second Header |
+| English version | Wersja polska |
 |-----------------|---------------|
 |If you prefer dark background, use the 'dark' option, i.e. `\usetheme [dark]{AGH}`.|Jeżeli preferujesz ciemne tło, użyj opcji 'dark', tj. `\usetheme [dark]{AGH}`.|
 
