@@ -5,9 +5,9 @@
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Title slide")
 
-If you prefer dark background, use the 'dark' option, i.e. `\usetheme [dark]{AGH}`.
-
-Jeżeli preferujesz ciemne tło, użyj opcji 'dark', tj. `\usetheme [dark]{AGH}`.
+| First Header  | Second Header |
+|-----------------|---------------|
+|If you prefer dark background, use the 'dark' option, i.e. `\usetheme [dark]{AGH}`.|Jeżeli preferujesz ciemne tło, użyj opcji 'dark', tj. `\usetheme [dark]{AGH}`.|
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-dark.big.png "Title slide - dark version")
 
