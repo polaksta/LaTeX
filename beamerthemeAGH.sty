@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/01/18]
+\ProvidesPackage{beamerthemeAGH}[2017/01/19]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -26,20 +26,26 @@
 
 \RequirePackage{tikz}[2015/08/07]
 \usetikzlibrary{positioning}
+
+\newif\ifAGH@dark
+\AGH@darkfalse %Default, do not use dark version
+\DeclareOptionBeamer{dark}{\AGH@darktrue} %Use dark version if option 'dark' was given
+\ProcessOptionsBeamer
+
 \newdimen\coloredlinesskip %Distance between lines
 \newdimen\leftedgeskip     %Distance between left edge of slide and lines
 \coloredlinesskip=2mm
 \leftedgeskip=4em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mode<presentation>
-\useinnertheme[shadow=true]{rounded}
+\useinnertheme[shadow=\ifAGH@dark false\else true\fi]{rounded}
 \useoutertheme{infolines}
 \usecolortheme{AGH}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.0, Jan 2017}
+	\typeout{Version: 1.1, Jan 2017}
 	\typeout{..................................................................}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,6 +54,11 @@
 	logo/.pic= { %AGH logo
 		\begin{scope}[cm={{1.25,0.0,0.0,-1.25,(0.0,190.12419)}}]
   			\begin{scope}[shift={(-221.07081,-349.03133)}]
+				\ifAGH@dark
+					\colorlet{AGH@red}{AGH@white}
+					\colorlet{AGH@green}{AGH@white}
+					\colorlet{AGH@black}{AGH@white}
+				\fi
       				\path[fill=AGH@black,nonzero rule] (275.7680,371.8140) -- (271.5220,371.8140) --
         				(273.6160,378.1640) -- (275.7680,371.8140) -- cycle(278.3160,364.2940) --
  		       			(283.6090,364.2940) .. controls (283.6090,364.2940) and (277.7520,380.7630) ..
@@ -160,7 +171,7 @@
 		%%%%%%%%%%%%%
 		% Name in English
 		\tikz[overlay]	
-			\node (english) [align=left,below = 1.5ex of polish.south west,anchor=west,color=gray,font=\tiny\bfseries]{
+			\node (english) [align=left,below = 1.5ex of polish.south west,anchor=west,color=AGH@gray,font=\tiny\bfseries]{
 				AGH University of Science\\and Technology
 			};
         \else
@@ -180,7 +191,7 @@
 		%%%%%%%%%%%%%
 		% WWW address
 		%%%%%%%%%%%%%
-		\tikz[overlay]\node[above = of black_x2,rotate=90,color=gray,font={\tiny}]{www.agh.edu.pl};
+		\tikz[overlay]\node[above = of black_x2,rotate=90,color=AGH@gray,font={\tiny}]{www.agh.edu.pl};
 			
         \fi
 }
@@ -202,7 +213,7 @@
 	\hspace*{0.01\paperwidth}
 	\begingroup
 	\centering
-	\begin{beamercolorbox}[rounded=true,shadow=true,sep=8pt,wd=0.6\textwidth,center,#1]{title}
+	\begin{beamercolorbox}[rounded=true,shadow=\ifAGH@dark false\else true\fi,sep=8pt,wd=0.6\textwidth,center,#1]{title}
 		\usebeamerfont{title}\inserttitle\par%
 		\ifx\insertsubtitle\@empty%
 		\else%

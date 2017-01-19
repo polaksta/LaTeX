@@ -1,4 +1,4 @@
-\ProvidesPackage{beamercolorthemeAGH}[2017/01/18]
+\ProvidesPackage{beamercolorthemeAGH}[2017/01/19]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[Dot]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017
@@ -25,24 +25,38 @@
 % and beamerthemeAGH.sty.
 
 \mode<presentation>
-\definecolor{AGH@black}{RGB}{35,31,32}
-\definecolor{AGH@red}{RGB}{176,16,40}
-\definecolor{AGH@green}{RGB}{0,107,59} 
-\setbeamercolor{palette primary}{fg=white,bg=AGH@red}
-\setbeamercolor{palette secondary}{fg=white,bg=AGH@black}
-\setbeamercolor{palette tertiary}{fg=white,bg=AGH@green}
-\setbeamercolor{palette quaternary}{bg=white,fg=AGH@black}
-\setbeamercolor{structure}{fg=AGH@green,bg=AGH@black}
-\setbeamercolor{alerted text}{fg=AGH@black!20!AGH@red,bg=bg}
-\setbeamercolor{example text}{fg=AGH@black!20!AGH@green,bg=bg}
-\setbeamercolor{titlelike}{parent=palette secondary}
-\setbeamercolor{block title}{fg=white,bg=AGH@black!30!bg}
+\definecolor{AGH@black}{RGB}{30,30,30}
+\definecolor{AGH@red}{RGB}{167,25,48}
+\definecolor{AGH@green}{RGB}{0,105,60} 
+\ifAGH@dark%
+	\colorlet{AGH@main}{cyan!50!AGH@black} 
+	\colorlet{AGH@white}{white!80!AGH@black} 
+	\colorlet{AGH@gray}{gray!50!AGH@white} 
+\else
+	\definecolor{AGH@white}{RGB}{255,255,255} 
+	\colorlet{AGH@main}{white} 
+	\colorlet{AGH@gray}{gray} 
+\fi
+\setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
+\setbeamercolor{palette secondary}{fg=AGH@white,bg=AGH@black}
+\setbeamercolor{palette tertiary}{fg=AGH@white,bg=AGH@green}
+\setbeamercolor{structure}{fg=AGH@green,bg=AGH@main}
+\setbeamercolor{item}{fg=AGH@green!90,bg=AGH@main}
+\setbeamercolor{alerted text}{fg=AGH@black!10!AGH@red,bg=bg}
+\setbeamercolor{background canvas}{bg=AGH@main}
+\setbeamercolor{block body}{fg=normal text.fg,bg=normal text.fg!10!bg}
+\setbeamercolor{block title}{fg=AGH@main,bg=AGH@black!30!bg}
 \setbeamercolor{block title alerted}{fg=alerted text.fg,bg=alerted text.fg!30!bg}
+\setbeamercolor{block body alerted}{fg=normal text.fg,bg=alerted text.fg!10!bg}
 \setbeamercolor{block title example}{fg=example text.fg,bg=example text.fg!30!bg}
-\setbeamercolor{item}{fg=AGH@green}
-\setbeamercolor{bibliography entry author}{fg=AGH@green,bg=blue!90!AGH@black}
-\setbeamercolor{section in toc}{fg=AGH@black,bg=gray}
-\setbeamercolor{background canvas}{bg=white}
-\setbeamercolor{palette sidebar secondary}{fg=yellow,bg=blue}
-\setbeamercolor{navigation symbols}{fg=AGH@black, bg=AGH@green}
+\setbeamercolor{block body example}{fg=normal text.fg,bg=example text.fg!10!bg}
+\ifAGH@dark%
+	\setbeamercolor{titlelike}{fg=AGH@black,bg=AGH@white}
+	\setbeamercolor{navigation symbols}{fg=AGH@white, bg=AGH@green}
+	\setbeamercolor{bibliography entry author}{fg=AGH@green,bg=blue!90!AGH@black}
+\else
+	\setbeamercolor{titlelike}{parent=palette secondary}
+	\setbeamercolor{navigation symbols}{fg=AGH@black, bg=AGH@green}
+	\setbeamercolor{bibliography entry author}{use=structure.fg=fg.stucture,bg=blue!50!AGH@white}
+\fi
 \mode<all>

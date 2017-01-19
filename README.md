@@ -8,10 +8,14 @@ Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme {AGH}`
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Title slide")
 
-*The AGH-UST graphic symbol is proprietary and should not be used outside AGH-UST without permission.*
+If you prefer dark background, use the 'dark' option, i.e. `\usetheme [dark]{AGH}`.
 
+Jeżeli preferujesz ciemne tło, użyj opcji 'dark', tj. `\usetheme [dark]{AGH}`.
+
+![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-dark.big.png "Title slide - dark version")
+
+*The AGH-UST graphic symbol is proprietary and should not be used outside AGH-UST without permission.*
 *Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany przez osoby i instytucje niezwiązane z AGH.*
-    
   
 ## Example presentations (in Polish) / Przykładowe prezentacje
 * <http://www.icsr.agh.edu.pl/~polak/beamer.pdf>
