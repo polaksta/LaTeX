@@ -132,7 +132,7 @@
 		\ifnum\thepage=1 %If a title page
 			\coordinate [xshift=\leftedgeskip] (black_x1) at (current page.north west);
 		\else % If a non-title page 
-			\coordinate [xshift=\leftedgeskip,yshift=-9\headheight] (black_x1) at (current page.north west);
+			\coordinate [xshift=\leftedgeskip,yshift=-9.5\headheight] (black_x1) at (current page.north west);
 		\fi
 		\coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
 		\draw[AGH@black,thick] (black_x1) -- (black_x2);
@@ -190,7 +190,7 @@
 		% Logo
 		%%%%%%
 		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
-			\path pic at (current page.north west) [xshift=-\leftedgeskip,yshift=4\headheight,scale=0.3] {logo}; 
+			\path pic at (current page.north west) [xshift=-\leftedgeskip,yshift=4.5\headheight,scale=0.3] {logo}; 
 		%%%%%%%%%%%%%
 		% WWW address
 		%%%%%%%%%%%%%
