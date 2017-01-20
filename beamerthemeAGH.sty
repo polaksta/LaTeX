@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/01/19]
+\ProvidesPackage{beamerthemeAGH}[2017/01/20]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -35,7 +35,6 @@
 \newdimen\coloredlinesskip %Distance between lines
 \newdimen\leftedgeskip     %Distance between left edge of slide and lines
 \coloredlinesskip=2mm
-\leftedgeskip=4em
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mode<presentation>
 \useinnertheme[shadow=\ifAGH@dark false\else true\fi]{rounded}
@@ -45,7 +44,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.1, Jan 2017}
+	\typeout{Version: 1.1.1, Jan 2017}
 	\typeout{..................................................................}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,16 +129,20 @@
 	},
 	lines/.pic={ %Colored lines
 		%black line
-		\coordinate[xshift=\leftedgeskip] (black_x1) at (current page.north west);
+		\ifnum\thepage=1 %If a title page
+			\coordinate [xshift=\leftedgeskip] (black_x1) at (current page.north west);
+		\else % If a non-title page 
+			\coordinate [xshift=\leftedgeskip,yshift=-9.5\headheight] (black_x1) at (current page.north west);
+		\fi
 		\coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
 		\draw[AGH@black,thick] (black_x1) -- (black_x2);
 		%green line
-		\coordinate [below left =  0.25\textheight and \coloredlinesskip of black_x1] (green_x1);
-		\coordinate [above left =  0.3\textheight and \coloredlinesskip of black_x2] (green_x2);
+		\coordinate [below left =  0.05\textheight and \coloredlinesskip of black_x1] (green_x1);
+		\coordinate [above left =  0.2\textheight and \coloredlinesskip of black_x2] (green_x2);
 		\draw[AGH@green,thick] (green_x1) -- (green_x2);
 		%red line
-		\coordinate [below right = 0.4\textheight and \coloredlinesskip of black_x1] (red_x1);
-		\coordinate [above right = 0.3\textheight and \coloredlinesskip of black_x2] (red_x2);
+		\coordinate [below right = 0.2\textheight and \coloredlinesskip of black_x1] (red_x1);
+		\coordinate [above right = 0.2\textheight and \coloredlinesskip of black_x2] (red_x2);
 		\draw[AGH@red,thick] (red_x1) -- (red_x2);
 	}
 }
@@ -178,7 +181,7 @@
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		% Content of non-title page
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\leftedgeskip=1em
+		\leftedgeskip=1.5em
 		%%%%%%%%%%%%%%%
 	   	% Colored lines			
 		%%%%%%%%%%%%%%%
@@ -187,7 +190,7 @@
 		% Logo
 		%%%%%%
 		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
-			\path pic  [below right = 2ex and 0em of green_x1,scale=0.3] {logo}; 
+			\path pic at (current page.north west) [xshift=-1em,yshift=4\headheight,scale=0.3] {logo}; 
 		%%%%%%%%%%%%%
 		% WWW address
 		%%%%%%%%%%%%%
