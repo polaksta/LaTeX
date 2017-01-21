@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/01/20]
+\ProvidesPackage{beamerthemeAGH}[2017/01/21]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -25,6 +25,7 @@
 % and beamercolorthemeAGH.sty.
 
 \RequirePackage{tikz}[2015/08/07]
+\RequirePackage{ifthen}
 \usetikzlibrary{positioning}
 
 \newif\ifAGH@dark
@@ -44,8 +45,11 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.1.1, Jan 2017}
+	\typeout{Version: 1.1.2, Jan 2017}
 	\typeout{..................................................................}
+	% if optional argument of '\date{}' command is empty, then define it as '\insertpage'.
+	% In result, the part name will be diplayed in the footline.
+	\ifthenelse{\equal{\beamer@shortdate}{}}{\def\beamer@shortdate{\insertpart}}{}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzstyle{every picture}+=[remember picture]
