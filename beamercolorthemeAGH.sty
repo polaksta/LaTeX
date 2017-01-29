@@ -29,13 +29,13 @@
 \definecolor{AGH@red}{RGB}{167,25,48}
 \definecolor{AGH@green}{RGB}{0,105,60} 
 \ifAGH@dark%
-	\colorlet{AGH@main}{cyan!50!AGH@black} 
 	\colorlet{AGH@white}{white!80!AGH@black} 
 	\colorlet{AGH@gray}{gray!50!AGH@white} 
+	\colorlet{AGH@main}{cyan!50!AGH@black} 
 \else
 	\definecolor{AGH@white}{RGB}{255,255,255} 
+	\colorlet{AGH@gray}{gray}
 	\colorlet{AGH@main}{AGH@white} 
-	\colorlet{AGH@gray}{gray} 
 \fi
 \setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
 \setbeamercolor{palette secondary}{fg=AGH@white,bg=AGH@black}
