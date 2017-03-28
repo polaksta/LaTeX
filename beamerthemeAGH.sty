@@ -32,6 +32,9 @@
 \newif\ifAGH@dark
 \AGH@darkfalse %Default, do not use dark version
 \DeclareOptionBeamer{dark}{\AGH@darktrue} %Use dark version if option 'dark' was given
+\DeclareOptionBeamer{parttitle}{\def\AGH@parttitle{#1}} %Option 'parttitle' specifies where part title should be displayed, values:
+                                                        % 'leftfooter' - in left footer, instead of author's name
+							% 'rightfooter' - in right footer, instead of date
 \ProcessOptionsBeamer
 
 \newdimen\coloredlinesskip %Distance between lines
@@ -46,11 +49,13 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.1.2, Jan 2017}
+	\typeout{Version: 1.2.0, Mar 2017}
 	\typeout{..................................................................}
-	% if optional argument of '\date{}' command is empty, then define it as '\insertpart'.
-	% In result, the part name will be diplayed in the footline.
-	\ifthenelse{\equal{\beamer@shortdate}{}}{\def\beamer@shortdate{\insertpart}}{}
+	\ifdefined\AGH@parttitle
+		%Display part title
+		\ifthenelse{\equal{\AGH@parttitle}{leftfooter}}{\def\beamer@shortauthor{\insertpart}}{} %In left footer (instead of author's name) 
+		\ifthenelse{\equal{\AGH@parttitle}{rightfooter}}{\def\beamer@shortdate{\insertpart}}{} %In right footer (instead of date)
+	\fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzstyle{every picture}+=[remember picture]
