@@ -2,7 +2,14 @@
 | English version | Wersja polska |
 |-----------------|---------------|
 |A LaTeX beamer theme based on one of the official [AGH-UST PowerPoint templates](http://www.agh.edu.pl/en/university/agh-ust-visual-identity/presentation-templates/). In order to use it, put `\usetheme{AGH}` in the preamble of your LaTeX document, and compile your document **twice** or **three times**:smile: (if necessary).|Motyw dla prezentacji LaTeX beamer, oparty na jednym z oficjalnych [szablonów AGH](http://www.agh.edu.pl/uczelnia/system-identyfikacji-wizualnej/szablon-prezentacji/) dla PowerPoint-a. Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme {AGH}`, a następnie skompiluj ten dokument **dwa razy** lub **trzy razy**:smile: (jeśli to konieczne).|
-|Based on my own experience, I can say that the division into parts is very indicated in the case of big presentations, such as e.g., lectures. By default, the title of a part is not visible on the slide, but with the 'parttitle' option, you can enable displaying the title and specify whether it should be displayed in the left (`\usetheme[parttitle=leftfooter]{AGH}`) or right footer `(\usetheme[parttitle=rightfooter]{AGH}`) |Na podstawie własnego doświadczenia mogę stwierdzić, że podział na części jest bardzo wskazany w przypadku dużych prezentacji, takich jak na przykład wykłady. Domyślnie, tytuł części nie jest widoczny na slajdzie, ale za pomocą opcji 'parttitle' można włączyć wyświetlanie tego tytułu oraz określić czy ma on być wyświetlany w lewej (`\usetheme[parttitle=leftfooter]{AGH}`) czy w prawej stopce (`\usetheme[parttitle=rightfooter]{AGH}`) |
+|Based on my own experience, I can say that the division of big presentations (e.g. lectures) into parts is very indicated.  If you defined parts using `\part` command, you can use the 'parttitle' option to make the part title visible on the slide:
+* `\usetheme[parttitle=leftfooter]{AGH}` - display part title in the left footer (instead of author's name)
+* `\usetheme[parttitle=rightfooter]{AGH}` - display part title in the right footer (instead of date) 
+| 
+Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części jest bardzo wskazany. Jeżeli, za pomocą komendy `\part`, podzieliłeś swoją prezentację na części, to za pomocą opcji 'parttitle' możesz spowodować, aby tytuł części był widoczny na slajdzie:
+* `\usetheme[parttitle=leftfooter]{AGH}` - wyświetl tytuł części  lewej stopce (zamiast nazwy autora)
+* `\usetheme[parttitle=rightfooter]{AGH}` - wyświetl tytuł części  lewej stopce (zamiast daty) 
+|
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Title slide")
 
