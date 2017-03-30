@@ -20,3 +20,5 @@
 * [Prezentacja 1 - wersja z białym tłem](http://www.icsr.agh.edu.pl/~polak/beamer.pdf?github)
 * [Prezentacja 2 - wersja z białym tłem](http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf?github)
 * [Prezentacja 3 - wersja z ciemnym tłem](http://www.icsr.agh.edu.pl/~polak/wms/latex/dokument4.pdf?github)
+
+Jeżeli powyższe przykłady przekonały Cię, że warto tworzyć prezentacje w oparciu o LaTeX Beamer, a ... nie wiesz jak się do tego zabrać, to polecam Ci [mój kanał na youtube](https://www.youtube.com/playlist?list=PLlOvf-mh5wJEzL2onjzBdenUpssbonmO5) :smile:
