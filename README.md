@@ -17,6 +17,6 @@
 *Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany przez osoby i instytucje niezwiązane z AGH.*
   
 ## Example presentations (in Polish) / Przykładowe prezentacje
-* [Prezentacja w wersji z białym tłem](http://www.icsr.agh.edu.pl/~polak/beamer.pdf?github)
-* [Prezentacja w wersji z białym tłem](http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf?github)
-* [Prezentacja w wersji z ciemnym tłem](http://www.icsr.agh.edu.pl/~polak/wms/latex/dokument4.pdf?github)
+* [Prezentacja 1 - wersja z białym tłem](http://www.icsr.agh.edu.pl/~polak/beamer.pdf?github)
+* [Prezentacja 2 - wersja z białym tłem](http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf?github)
+* [Prezentacja 3 - wersja z ciemnym tłem](http://www.icsr.agh.edu.pl/~polak/wms/latex/dokument4.pdf?github)
