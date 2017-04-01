@@ -25,7 +25,20 @@
 % This work consists of the files beamercolorthemeAGH.sty
 % and beamerthemeAGH.sty.
 
+\DeclareOptionBeamer{dark}{
+	% Check if level of darkness was given by a user
+	\ifthenelse{\equal{#1}{}}%
+	{
+		\def\AGH@darknesslevel{55} %if the level was not given, set it to 55
+	}
+	{
+		\def\AGH@darknesslevel{#1} %else set it to the value given by the user 
+	}
+}
+\ProcessOptionsBeamer
+
 \mode<presentation>
+
 \definecolor{AGH@black}{RGB}{30,30,30}
 \definecolor{AGH@red}{RGB}{167,25,48}
 \definecolor{AGH@green}{RGB}{0,105,60} 
@@ -33,7 +46,7 @@
 \ifAGH@dark%
 	\colorlet{AGH@white}{white!90!AGH@black} 
 	\colorlet{AGH@gray}{gray!50!AGH@white} 
-	\colorlet{AGH@main}{AGH@black!55!AGH@white} 
+	\colorlet{AGH@main}{AGH@black!\AGH@darknesslevel!AGH@white} 
 \else
 	\definecolor{AGH@white}{RGB}{255,255,255} 
 	\colorlet{AGH@gray}{gray}
