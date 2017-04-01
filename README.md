@@ -9,7 +9,7 @@
 
 | English version | Wersja polska |
 |-----------------|---------------|
-|If you prefer dark background, use the *dark* option, i.e. `\usetheme [dark]{AGH}`.|Jeżeli preferujesz ciemne tło, użyj opcji *dark*, tj. `\usetheme [dark]{AGH}`.|
+|If the presentation will be in a darkened room, it may be useful to use a dark background - in this case use the *dark* option, i.e. `\usetheme [dark]{AGH}`.|Jeżeli prezentacja będzie się odbywać w zaciemnionej sali, to przydatne może być użycie ciemnego tła - w takim przypadku użyj opcji *dark*, tj. `\usetheme [dark]{AGH}`.|
 
 ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-dark.big.png "Title slide - dark version")
 
