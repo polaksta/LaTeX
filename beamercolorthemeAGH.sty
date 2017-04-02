@@ -34,6 +34,13 @@
 	{
 		\def\AGH@darknesslevel{#1} %else set it to the value given by the user 
 	}
+	\ifthenelse{\AGH@darknesslevel < 50} %set the gray color level 
+	{
+		\pgfmathsetmacro{\AGH@graylevel}{100 - \AGH@darknesslevel}
+	}
+	{
+		\pgfmathsetmacro{\AGH@graylevel}{\AGH@darknesslevel}
+	}
 }
 \ProcessOptionsBeamer
 
@@ -44,13 +51,13 @@
 \definecolor{AGH@green}{RGB}{0,105,60} 
 
 \ifAGH@dark%
-	\colorlet{AGH@white}{white!90!AGH@black} 
-	\colorlet{AGH@gray}{gray!50!AGH@white} 
+	\colorlet{AGH@white}{white!90} 
 	\colorlet{AGH@main}{AGH@black!\AGH@darknesslevel} 
+	\colorlet{AGH@gray}{gray!\AGH@graylevel} 
 \else
 	\definecolor{AGH@white}{RGB}{255,255,255} 
-	\colorlet{AGH@gray}{gray}
 	\colorlet{AGH@main}{AGH@white} 
+	\colorlet{AGH@gray}{gray} 
 \fi
 \setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
 \setbeamercolor{palette secondary}{fg=AGH@white,bg=AGH@black}
