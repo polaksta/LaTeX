@@ -1,4 +1,4 @@
-\ProvidesPackage{beamercolorthemeAGH}[2017/04/01]
+\ProvidesPackage{beamercolorthemeAGH}[2017/04/02]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[Dot]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017
@@ -29,7 +29,7 @@
 	% Check if level of darkness was given by a user
 	\ifthenelse{\equal{#1}{}}%
 	{
-		\def\AGH@darknesslevel{55} %if the level was not given, set it to 55
+		\def\AGH@darknesslevel{50} %if the level was not given, set it to 50
 	}
 	{
 		\def\AGH@darknesslevel{#1} %else set it to the value given by the user 
@@ -46,7 +46,7 @@
 \ifAGH@dark%
 	\colorlet{AGH@white}{white!90!AGH@black} 
 	\colorlet{AGH@gray}{gray!50!AGH@white} 
-	\colorlet{AGH@main}{AGH@black!\AGH@darknesslevel!AGH@white} 
+	\colorlet{AGH@main}{AGH@black!\AGH@darknesslevel} 
 \else
 	\definecolor{AGH@white}{RGB}{255,255,255} 
 	\colorlet{AGH@gray}{gray}
