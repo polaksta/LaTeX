@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/04/01]
+\ProvidesPackage{beamerthemeAGH}[2017/04/02]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -52,11 +52,11 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.3.1, Apr 2017}
+	\typeout{Version: 1.3.2, Apr 2017}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
-		\ifthenelse{\equal{\AGH@parttitle}{leftfooter}}{\def\beamer@shortauthor{\insertpart}}{} %In left footer (instead of author's name) 
+		\ifthenelse{\equal{\AGH@parttitle}{leftfooter}}{\def\beamer@shortauthor{\insertpart}\def\beamer@shortinstitute{}}{} %In left footer (instead of author's name and institute name) 
 		\ifthenelse{\equal{\AGH@parttitle}{rightfooter}}{\def\beamer@shortdate{\insertpart}}{} %In right footer (instead of date)
 	\fi
 }
