@@ -1,4 +1,4 @@
-\ProvidesPackage{beamercolorthemeAGH}[2017/04/02]
+\ProvidesPackage{beamercolorthemeAGH}[2017/04/03]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[Dot]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017
@@ -41,6 +41,7 @@
 	{
 		\pgfmathsetmacro{\AGH@graylevel}{\AGH@darknesslevel}
 	}
+	\pgfmathsetmacro{\AGH@blockbodydarknesslevel}{\AGH@darknesslevel + 10}
 }
 \ProcessOptionsBeamer
 
@@ -74,11 +75,11 @@
 	\setbeamercolor{date}{fg=AGH@white,bg=AGH@main}
 	\setbeamercolor{normal text}{fg=AGH@white,bg=AGH@main}
 	\setbeamercolor{block title}{fg=AGH@black,bg=normal text.fg!60}
-	\setbeamercolor{block body}{fg=AGH@white,bg=AGH@black}
+	\setbeamercolor{block body}{fg=AGH@white,bg=AGH@black!\AGH@blockbodydarknesslevel}
 	\setbeamercolor{block title alerted}{fg=alerted text.fg,bg=alerted text.fg!10}
-	\setbeamercolor{block body alerted}{bg=AGH@red}
+	\setbeamercolor{block body alerted}{bg=AGH@red!\AGH@blockbodydarknesslevel}
 	\setbeamercolor{block title example}{fg=example text.fg,bg=example text.fg!10}
-	\setbeamercolor{block body example}{bg=AGH@green}
+	\setbeamercolor{block body example}{bg=AGH@green!\AGH@blockbodydarknesslevel}
 \else
 	\setbeamercolor{titlelike}{parent=palette secondary}
 	\setbeamercolor{navigation symbols}{fg=AGH@black, bg=AGH@green}
