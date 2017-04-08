@@ -1,6 +1,6 @@
 # beamer-AGH
 
-[![Download](https://img.shields.io/badge/Download-Latest_Release-brightgreen.svg?style=flat)](https://github.com/polaksta/beamer-AGH/archive/master.zip)
+[![Download](https://img.shields.io/badge/Download-Latest_Release-brightgreen.svg?style=flat)](https://github.com/polaksta/beamer-AGH/releases/latest)
 
 | English version | Wersja polska |
 |-----------------|---------------|
