@@ -1,4 +1,7 @@
 # beamer-AGH
+
+[![Download](https://img.shields.io/badge/Download-Latest_Release-brightgreen.svg?style=flat)](https://github.com/polaksta/beamer-AGH/archive/master.zip)
+
 | English version | Wersja polska |
 |-----------------|---------------|
 |A LaTeX Beamer theme based on one of the official [AGH-UST PowerPoint templates](http://www.agh.edu.pl/en/university/agh-ust-visual-identity/presentation-templates/). In order to use it, put `\usetheme{AGH}` in the preamble of your LaTeX document, and compile your document **twice** or **three times**:smile: (if necessary).|Motyw dla prezentacji LaTeX Beamer, oparty na jednym z oficjalnych [szablonów AGH](http://www.agh.edu.pl/uczelnia/system-identyfikacji-wizualnej/szablon-prezentacji/) dla PowerPoint-a. Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme {AGH}`, a następnie skompiluj ten dokument **dwa razy** lub **trzy razy**:smile: (jeśli to konieczne).|
