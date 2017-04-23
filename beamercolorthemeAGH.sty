@@ -1,4 +1,4 @@
-\ProvidesPackage{beamercolorthemeAGH}[2017/04/03]
+\ProvidesPackage{beamercolorthemeAGH}[2017/04/23]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[Dot]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017
@@ -66,8 +66,8 @@
 \setbeamercolor{structure}{fg=AGH@green,bg=AGH@main}
 \setbeamercolor{item}{fg=AGH@green!90,bg=AGH@main}
 \setbeamercolor{background canvas}{bg=AGH@main}
+\setbeamercolor{titlelike}{fg=AGH@black,bg=AGH@white}
 \ifAGH@dark%
-	\setbeamercolor{titlelike}{fg=AGH@black,bg=AGH@white}
 	\setbeamercolor{navigation symbols}{fg=AGH@white, bg=AGH@green}
 	\setbeamercolor{bibliography entry author}{fg=AGH@green,bg=blue!90!AGH@black}
 	\setbeamercolor{institute}{fg=AGH@white,bg=AGH@main}
@@ -81,7 +81,7 @@
 	\setbeamercolor{block title example}{fg=example text.fg,bg=example text.fg!10}
 	\setbeamercolor{block body example}{bg=AGH@green!\AGH@blockbodydarknesslevel}
 \else
-	\setbeamercolor{titlelike}{parent=palette secondary}
+	\setbeamercolor{frametitle}{parent=palette secondary}
 	\setbeamercolor{navigation symbols}{fg=AGH@black, bg=AGH@green}
 	\setbeamercolor{bibliography entry author}{use=structure.fg=fg.stucture,bg=blue!50!AGH@white}
 	\setbeamercolor{block title}{fg=AGH@main,bg=AGH@black!80!bg}
