@@ -73,8 +73,47 @@ Poland\\
 \part{Examples}
 %%%%%%%%%%%%%%%%
 \begin{frame}{Outline}
-  \tableofcontents
+	\tableofcontents[pausesections]
 \end{frame}
+%%%%%%%%%%%%%%%%
+\section{Basic elements}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Itemize}
+	\begin{columns}
+	\column{0.5\textwidth}
+	\begin{itemize}
+		\item Pos 1
+		\item Pos 2
+		\item Pos 3
+	\end{itemize}
+	\column{0.5\textwidth}
+	\begin{itemize}[<+->]
+		\item Pos 1
+		\item Pos 2
+		\item Pos 3
+	\end{itemize}
+\onslide
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Enumerate}
+	\begin{columns}
+	\column{0.5\textwidth}
+	\begin{enumerate}
+		\item Pos 1
+		\item Pos 2
+		\item Pos 3
+	\end{enumerate}
+	\column{0.5\textwidth}
+	\begin{enumerate}[<+->]
+		\item Pos 1
+		\item Pos 2
+		\item Pos 3
+	\end{enumerate}
+\onslide
+	\end{columns}
+\end{frame}
+
 %%%%%%%%%%%%%%%%
 \section{Mathematics}
 %%%%%%%%%%%%%%%%
@@ -96,7 +135,7 @@ Poland\\
     \column{0.5\textwidth} %The first column
       \structure{Theorems}
       \begin{theorem}[Pythagorean]
-        $a^{2}+b^{2}=c^{2}$
+        $a^{2}+ \pause b^{2}= \pause c^{2}$ \onslide<3->
       \end{theorem}
       \ldots
     \column{0.5\textwidth} %The second column
@@ -122,14 +161,19 @@ void main()
 \end{lstlisting}
 \end{frame}
 \appendix
-\begin{frame}{Bibliography}
+\begin{frame}[allowframebreaks]{Bibliography}
   \begin{thebibliography}{9}
     \setbeamertemplate{bibliography item}[online]
       \bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
     \setbeamertemplate{bibliography item}[book]
       \bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
     \setbeamertemplate{bibliography item}[article]
-      \bibitem{bk1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+      \bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+    \setbeamertemplate{bibliography item}[triangle]
+      \bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+    \setbeamertemplate{bibliography item}[text]
+      \bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+      \bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
   \end{thebibliography}
 \end{frame}
 \end{document}
