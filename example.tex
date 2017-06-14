@@ -1,6 +1,6 @@
 \documentclass[aspectratio=1610,hyperref={pdfpagemode=FullScreen},english]{beamer} %If you want to create Polish presentation, replace 'english' with 'polish'
 \usepackage[utf8]{inputenc}
-%\usepackage{polski} %For Polish language only
+\usepackage{polski} %For Polish language only
 \usepackage{babel}
 \usepackage{listings} %We want to put listings
 
@@ -87,6 +87,7 @@ Poland\\
 		\item Pos 3
 	\end{itemize}
 	\column{0.5\textwidth}
+	\pause
 	\begin{itemize}[<+->]
 		\item Pos 1
 		\item Pos 2
@@ -105,6 +106,7 @@ Poland\\
 		\item Pos 3
 	\end{enumerate}
 	\column{0.5\textwidth}
+	\pause
 	\begin{enumerate}[<+->]
 		\item Pos 1
 		\item Pos 2
@@ -135,16 +137,24 @@ Poland\\
     \column{0.5\textwidth} %The first column
       \structure{Theorems}
       \begin{theorem}[Pythagorean]
-        $a^{2}+ \pause b^{2}= \pause c^{2}$ \onslide<3->
+        $a^{2}+  b^{2}=  c^{2}$ 
       \end{theorem}
-      \ldots
     \column{0.5\textwidth} %The second column
       \structure{Proofs}
       \begin{proof}
         \ldots
       \end{proof}
-      \ldots
+
   \end{columns}
+\begin{definition}
+	\ldots
+\end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Dynamic mathematical formula}
+\[
+\binom{n}{k} = \pause \frac{n!}{k!(n-k)!} 
+\]
 \end{frame}
 %%%%%%%%%%%%%%%%
 \section{Computer Science}
