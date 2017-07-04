@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/04/02]
+\ProvidesPackage{beamerthemeAGH}[2017/07/04]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -28,16 +28,24 @@
 \RequirePackage{tikz}[2015/08/07]
 \RequirePackage{ifthen}
 \usetikzlibrary{positioning}
-
+%%%
 \newif\ifAGH@dark
 \AGH@darkfalse %Default, do not use dark version
 \DeclareOptionBeamer{dark}{
 	\AGH@darktrue %Use dark version if option 'dark' was given
 	\PassOptionsToPackage{dark=#1}{beamercolorthemeAGH} %Pass information about the level of darkness to the 'beamercolorthemeAGH.sty' file
 }
+%%%
 \DeclareOptionBeamer{parttitle}{\def\AGH@parttitle{#1}} %Option 'parttitle' specifies where part title should be displayed, values:
                                                         % 'leftfooter' - in left footer, instead of author's name
 							% 'rightfooter' - in right footer, instead of date
+%%%
+\newif\ifAGH@sidebar
+\AGH@sidebartrue %Default, show AGH sidebar on non-title slides 
+\DeclareOptionBeamer{nosidebar}{
+	\AGH@sidebarfalse % Do not display sidebar on non-title slides if option'nosidebar' was given
+}
+%%%
 \ProcessOptionsBeamer
 
 \newdimen\coloredlinesskip %Distance between lines
@@ -52,7 +60,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.3.3, Apr 2017}
+	\typeout{Version: 1.4.0, Jul 2017}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
@@ -198,26 +206,27 @@
 			\node (english) [align=left,below = 1.5ex of polish.south west,anchor=west,color=AGH@gray,font=\tiny\bfseries]{
 				AGH University of Science\\and Technology
 			};
-        \else
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Content of non-title page
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\leftedgeskip=4mm
-		%%%%%%%%%%%%%%%
-	   	% Colored lines			
-		%%%%%%%%%%%%%%%
-		\tikz[overlay]\pic {lines};
-		%%%%%%
-		% Logo
-		%%%%%%
-		\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
-			\path pic at (current page.north west) [xshift=-\leftedgeskip,yshift=4.5\headheight,scale=0.3] {logo}; 
-		%%%%%%%%%%%%%
-		% WWW address
-		%%%%%%%%%%%%%
-		\tikz[overlay]\node[above = of black_x2,rotate=90,color=AGH@gray,font={\tiny}]{www.agh.edu.pl};
-			
-        \fi
+	\else
+		\ifAGH@sidebar%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		% Content of non-title page when sidebar should be visible
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\leftedgeskip=4mm
+			%%%%%%%%%%%%%%%
+	   		% Colored lines			
+			%%%%%%%%%%%%%%%
+			\tikz[overlay]\pic {lines};
+			%%%%%%
+			% Logo
+			%%%%%%
+			\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt] 
+				\path pic at (current page.north west) [xshift=-\leftedgeskip,yshift=4.5\headheight,scale=0.3] {logo}; 
+			%%%%%%%%%%%%%
+			% WWW address
+			%%%%%%%%%%%%%
+			\tikz[overlay]\node[above = of black_x2,rotate=90,color=AGH@gray,font={\tiny}]{www.agh.edu.pl};
+        	\fi
+	\fi
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
