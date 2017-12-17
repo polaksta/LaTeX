@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/07/04]
+\ProvidesPackage{beamerthemeAGH}[2017/12/17]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -60,7 +60,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.4.0, Jul 2017}
+	\typeout{Version: 1.4.1, Dec 2017}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
@@ -232,7 +232,11 @@
 %%%%%%%%%%%%%%%%%%%%%%
 %Slide content margins
 %%%%%%%%%%%%%%%%%%%%%%
-\setbeamersize{text margin left=6em} 
+\ifAGH@sidebar%
+  \setbeamersize{text margin left=6em} 
+\else
+  \setbeamersize{text margin left=2em} 
+\fi
 \setbeamersize{text margin right=2em}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
