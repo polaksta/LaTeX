@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/12/17]
+\ProvidesPackage{beamerthemeAGH}[2017/12/18]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -28,12 +28,25 @@
 \RequirePackage{tikz}[2015/08/07]
 \RequirePackage{ifthen}
 \usetikzlibrary{positioning}
+% Declarations
+\newdimen\coloredlinesskip %Distance between lines
+\newdimen\leftedgeskip     %Distance between left edge of slide and lines
+\newdimen\textleftmargin   %Left margin of a the text area
+\newdimen\textrightmargin   %Left margin of a the text area
+\coloredlinesskip=2mm
+\textleftmargin=2em 
+\textrightmargin=2em 
 %%%
 \newif\ifAGH@dark
 \AGH@darkfalse %Default, do not use dark version
 \DeclareOptionBeamer{dark}{
 	\AGH@darktrue %Use dark version if option 'dark' was given
 	\PassOptionsToPackage{dark=#1}{beamercolorthemeAGH} %Pass information about the level of darkness to the 'beamercolorthemeAGH.sty' file
+}
+%%%
+\DeclareOptionBeamer{margins}{ %Option 'margins' specifies the size of the text left and right margin
+	\textleftmargin=#1 
+	\textrightmargin=#1 
 }
 %%%
 \DeclareOptionBeamer{parttitle}{\def\AGH@parttitle{#1}} %Option 'parttitle' specifies where part title should be displayed, values:
@@ -47,10 +60,6 @@
 }
 %%%
 \ProcessOptionsBeamer
-
-\newdimen\coloredlinesskip %Distance between lines
-\newdimen\leftedgeskip     %Distance between left edge of slide and lines
-\coloredlinesskip=2mm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mode<presentation>
 \useinnertheme[shadow=\ifAGH@dark false\else true\fi]{rounded}
@@ -60,7 +69,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.4.1, Dec 2017}
+	\typeout{Version: 1.5.0, Dec 2017}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
@@ -233,11 +242,11 @@
 %Slide content margins
 %%%%%%%%%%%%%%%%%%%%%%
 \ifAGH@sidebar%
-  \setbeamersize{text margin left=6em} 
+  \setbeamersize{text margin left=\dimexpr\textleftmargin+1em\relax} 
 \else
-  \setbeamersize{text margin left=2em} 
+  \setbeamersize{text margin left=\textleftmargin} 
 \fi
-\setbeamersize{text margin right=2em}
+\setbeamersize{text margin right=\textrightmargin}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Title page look and contents
