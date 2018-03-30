@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2017/12/18]
+\ProvidesPackage{beamerthemeAGH}[2018/03/30]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -39,6 +39,8 @@
 %%%
 \newif\ifAGH@dark
 \AGH@darkfalse %Default, do not use dark version
+\newif\ifAGH@titlepage
+\AGH@titlepagetrue %Default, show title page
 \DeclareOptionBeamer{dark}{
 	\AGH@darktrue %Use dark version if option 'dark' was given
 	\PassOptionsToPackage{dark=#1}{beamercolorthemeAGH} %Pass information about the level of darkness to the 'beamercolorthemeAGH.sty' file
@@ -69,7 +71,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.5.0, Dec 2017}
+	\typeout{Version: 1.5.1, Mar 2018}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
@@ -187,7 +189,16 @@
 %Background images
 %%%%%%%%%%%%%%%%%%
 \setbeamertemplate{background}{
-	\ifnum\thepage=1 % I assume that the title page is the first page of presentation ;-)
+        % Define the look of the title slide only if the number of the current slide is 1, and in addition, 
+        % in the preamble of the document, the name of the author and the title of the presentation are specified. 
+        \ifthenelse{
+		\thepage=1 % I assume that the title page is the first page of presentation ;-)
+		\AND
+		\not\equal{\beamer@shortauthor}{} % The '\author' command was used in the preamble 
+		\AND
+		\not\equal{\beamer@shorttitle}{}  % The '\title' command was used in the preamble 
+	}
+        {
 	%%%%%%%%%%%%%%%%%%%%%%%
 	% Content of title page
 	%%%%%%%%%%%%%%%%%%%%%%%
@@ -215,7 +226,8 @@
 			\node (english) [align=left,below = 1.5ex of polish.south west,anchor=west,color=AGH@gray,font=\tiny\bfseries]{
 				AGH University of Science\\and Technology
 			};
-	\else
+         }	
+         {
 		\ifAGH@sidebar%
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		% Content of non-title page when sidebar should be visible
@@ -235,7 +247,7 @@
 			%%%%%%%%%%%%%
 			\tikz[overlay]\node[above = of black_x2,rotate=90,color=AGH@gray,font={\tiny}]{www.agh.edu.pl};
         	\fi
-	\fi
+        }	
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%
