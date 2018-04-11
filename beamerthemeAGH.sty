@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2018/03/30]
+\ProvidesPackage{beamerthemeAGH}[2018/04/11]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -71,7 +71,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.5.1, Mar 2018}
+	\typeout{Version: 1.5.2, Apr 2018}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
@@ -194,9 +194,9 @@
         \ifthenelse{
 		\thepage=1 % I assume that the title page is the first page of presentation ;-)
 		\AND
-		\not\equal{\beamer@shortauthor}{} % The '\author' command was used in the preamble 
+		\not\equal{\protect\beamer@shortauthor}{} % The '\author' command was used in the preamble 
 		\AND
-		\not\equal{\beamer@shorttitle}{}  % The '\title' command was used in the preamble 
+		\not\equal{\protect\beamer@shorttitle}{}  % The '\title' command was used in the preamble 
 	}
         {
 	%%%%%%%%%%%%%%%%%%%%%%%
