@@ -1,18 +1,18 @@
 \documentclass[aspectratio=1610,english]{beamer} %If you want to create Polish presentation, replace 'english' with 'polish' and uncomment 3-th line, i.e., '\usepackage{polski}'
 \usepackage[utf8]{inputenc}
-%\usepackage{polski} %Uncomment for Polish language
+%\usepackage{polski} %Uncomment for presentations in Polish
 \usepackage{babel}
 \usepackage{listings} %We want to put listings
 
-\mode<beamer>{ 	%in 'beamer' mode
+\mode<beamer>{ 	%in the 'beamer' mode
 	\hypersetup{pdfpagemode=FullScreen}		%Enable Full screen mode
 	\usetheme[parttitle=rightfooter]{AGH}		%Show part title in right footer
 	%\usetheme[nosidebar]{AGH}			%Do not show sidebar on non-title slides
-	%\usetheme[nosidebar,margins=1em]{AGH}		%Do not show sidebar on non-title slidesa and set both margins (left / right) to 1em
+	%\usetheme[nosidebar,margins=1em]{AGH}		%Do not show sidebar on non-title slides and set both margins (left / right) to 1em
 	%\usetheme[dark]{AGH}                 		%Use dark background
 	%\usetheme[dark,parttitle=leftfooter]{AGH}  	%Use dark background and show part title in left footer
 }
-\mode<handout>{	%in 'handout' mode
+\mode<handout>{	%in the 'handout' mode
 	\hypersetup{pdfpagemode=None}		
 	\usepackage{pgfpages}
   	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	%show 4 slides on 1 page
