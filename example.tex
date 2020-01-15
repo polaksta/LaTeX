@@ -5,12 +5,12 @@
 \usepackage{listings} % We want to put listings
 
 \mode<beamer>{ 	% In the 'beamer' mode
-	\hypersetup{pdfpagemode=FullScreen}		% Enable Full screen mode
-	\usetheme[parttitle=rightfooter]{AGH}		% Show part title in right footer
-	%\usetheme[nosidebar]{AGH}			% Do not show sidebar on non-title slides
-	%\usetheme[nosidebar,margins=1em]{AGH}		% Do not show sidebar on non-title slides and set both margins (left / right) to 1em
-	%\usetheme[dark]{AGH}                 		% Use dark background
-	%\usetheme[dark,parttitle=leftfooter]{AGH}  	% Use dark background and show part title in left footer
+	\hypersetup{pdfpagemode=FullScreen}        % Enable Full screen mode
+	\usetheme[parttitle=rightfooter]{AGH}      % Show part title in right footer
+	%\usetheme[nosidebar]{AGH}                 % Do not show sidebar on non-title slides
+	%\usetheme[nosidebar,margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
+	%\usetheme[dark]{AGH}                      % Use dark background
+	%\usetheme[dark,parttitle=leftfooter]{AGH} % Use dark background and show part title in left footer
 }
 \mode<handout>{	% In the 'handout' mode
 	\hypersetup{pdfpagemode=None}		
@@ -18,7 +18,7 @@
   	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	% Show 4 slides on 1 page
   	\usetheme{boxes}
   	\addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad} 	% Content of header
- 	\addfootbox{structure}{\quad\insertauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} 	% Content of footer
+ 	\addfootbox{structure}{\quad\insertauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} % Content of footer
 }
 
 \AtBeginPart{ % At begin part: display its name
