@@ -1,27 +1,27 @@
-\documentclass[aspectratio=1610,english]{beamer} %If you want to create Polish presentation, replace 'english' with 'polish' and uncomment 3-th line, i.e., '\usepackage{polski}'
+\documentclass[aspectratio=1610, english]{beamer} %If you want to create Polish presentation, then replace 'english' with 'polish'
+\usepackage{polski}
 \usepackage[utf8]{inputenc}
-%\usepackage{polski} %Uncomment for presentations in Polish
 \usepackage{babel}
-\usepackage{listings} %We want to put listings
+\usepackage{listings} % We want to put listings
 
-\mode<beamer>{ 	%in the 'beamer' mode
-	\hypersetup{pdfpagemode=FullScreen}		%Enable Full screen mode
-	\usetheme[parttitle=rightfooter]{AGH}		%Show part title in right footer
-	%\usetheme[nosidebar]{AGH}			%Do not show sidebar on non-title slides
-	%\usetheme[nosidebar,margins=1em]{AGH}		%Do not show sidebar on non-title slides and set both margins (left / right) to 1em
-	%\usetheme[dark]{AGH}                 		%Use dark background
-	%\usetheme[dark,parttitle=leftfooter]{AGH}  	%Use dark background and show part title in left footer
+\mode<beamer>{ 	% In the 'beamer' mode
+	\hypersetup{pdfpagemode=FullScreen}		% Enable Full screen mode
+	\usetheme[parttitle=rightfooter]{AGH}		% Show part title in right footer
+	%\usetheme[nosidebar]{AGH}			% Do not show sidebar on non-title slides
+	%\usetheme[nosidebar,margins=1em]{AGH}		% Do not show sidebar on non-title slides and set both margins (left / right) to 1em
+	%\usetheme[dark]{AGH}                 		% Use dark background
+	%\usetheme[dark,parttitle=leftfooter]{AGH}  	% Use dark background and show part title in left footer
 }
-\mode<handout>{	%in the 'handout' mode
+\mode<handout>{	%In the 'handout' mode
 	\hypersetup{pdfpagemode=None}		
 	\usepackage{pgfpages}
-  	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	%show 4 slides on 1 page
+  	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	% Show 4 slides on 1 page
   	\usetheme{boxes}
-  	\addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad} 	%content of header
- 	\addfootbox{structure}{\quad\insertauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} 	%content of footer
+  	\addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad} 	% Content of header
+ 	\addfootbox{structure}{\quad\insertauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} 	% Content of footer
 }
 
-\AtBeginPart{ %At begin part: display its name
+\AtBeginPart{ % At begin part: display its name
 	\frame{\partpage}
 } 
 
@@ -29,7 +29,9 @@
 \author{Stanisław Polak\inst{1,2}}
 \date{}
 \institute[AGH]{
-	\inst{1}Institute of Computer Science\\ul. Kawiory 21\\30-055 Kraków\\
+	\inst{1}Institute of Computer Science\\
+	Kawiory 21 Street\\
+	30-055 Kraków\\
 	Poland\\
 	\url{http://www.icsr.agh.edu.pl/~polak/}
 \and
@@ -85,98 +87,101 @@
 }
 %%%%%%%%%%%%%%%%%
 \begin{document}
-  	\maketitle
-	\part{Examples}
-	%%%%%%%%%%%%%%%%
-	\begin{frame}{Outline}
-		\tableofcontents[pausesections]
-	\end{frame}
-	%%%%%%%%%%%%%%%%
-	\section{Basic elements}
-	%%%%%%%%%%%%%%%%
-	\begin{frame}{Itemize}
-		\begin{columns}
-			\column{0.5\textwidth}
-				\begin{itemize}
-					\item Pos 1
-					\item Pos 2
-					\item Pos 3
-				\end{itemize}
-			\column{0.5\textwidth}
-				\pause
-				\begin{itemize}[<+->]
-					\item Pos 1
-					\item Pos 2
-					\item Pos 3
-				\end{itemize}
-				\onslide
-		\end{columns}
-	\end{frame}
-	%%%%%%%%%%%%%%%%
-	\begin{frame}{Enumerate}
-		\begin{columns}
-			\column{0.5\textwidth}
-				\begin{enumerate}
-					\item Pos 1
-					\item Pos 2
-					\item Pos 3
-				\end{enumerate}
-			\column{0.5\textwidth}
-				\pause
-				\begin{enumerate}[<+->]
-					\item Pos 1
-					\item Pos 2
-					\item Pos 3
-				\end{enumerate}
-				\onslide
-		\end{columns}
-	\end{frame}
-	%%%%%%%%%%%%%%%%
-	\section{Mathematics}
-	%%%%%%%%%%%%%%%%
-	\begin{frame}{Basic blocks}
-  		% Examples from "The beamer class User Guide"
-  		\begin{block}{Definition}
-    			A \alert{set} consists of elements.
-  		\end{block}
-  		\begin{exampleblock}{Example}
-    			The set $\{1,2,3,5\}$ has four elements.
-  		\end{exampleblock}
-  		\begin{alertblock}{Wrong Theorem}
-    			$1=2$.
-  		\end{alertblock}
-	\end{frame}
-	%%%%%%%%%%%%%%%%
-	\begin{frame}{Math environments}
-  		\begin{columns}
-    			\column{0.45\textwidth} %The first column
-      				\structure{Theorems}
-      				\begin{theorem}[Pythagorean]
-        				$a^{2}+  b^{2}=  c^{2}$ 
-      				\end{theorem}
-    			\column{0.45\textwidth} %The second column
-      				\structure{Proofs}
-      				\begin{proof}
-        				\ldots
-     				 \end{proof}
-  		\end{columns}
-		\begin{definition}
+\maketitle
+\part{Examples}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Outline}
+	\tableofcontents[pausesections]
+\end{frame}
+%%%%%%%%%%%%%%%%
+\section{Basic elements}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Itemize}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			% Text display depending on the language version
+			\item \iflanguage{polish}{Element 1}{Item 1}
+			\item \iflanguage{polish}{Element 2}{Item 2}
+			\item \iflanguage{polish}{Element 3}{Item 3}
+		\end{itemize}
+		\column{0.5\textwidth}
+		\pause
+		\structure{\iflanguage{polish}{Odkrywanie po kolei}{Uncovering one by one}}
+		\begin{itemize}[<+->]
+			\item \iflanguage{polish}{Element 1}{Item 1}
+			\item \iflanguage{polish}{Element 2}{Item 2}
+			\item \iflanguage{polish}{Element 3}{Item 3}
+		\end{itemize}
+		\onslide
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Enumerate}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{enumerate}
+			\item Item 1
+			\item Item 2
+			\item Item 3
+		\end{enumerate}
+		\column{0.5\textwidth}
+		\pause
+		\structure{\iflanguage{polish}{Odkrywanie elementów po kolei z jednoczesnym wyróżnianiem}{Uncovering elements in turn with simultaneous highlighting}}
+		\begin{enumerate}[<+-|alert@+>]
+			\item Item 1
+			\item Item 2
+			\item Item 3
+		\end{enumerate}
+		\onslide
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\section{Mathematics}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Basic blocks}
+	% Examples from "The beamer class User Guide"
+	\begin{block}{Definition}
+		A \alert{set} consists of elements.
+	\end{block}
+	\begin{exampleblock}{Example}
+		The set $\{1,2,3,5\}$ has four elements.
+	\end{exampleblock}
+	\begin{alertblock}{Wrong Theorem}
+		$1=2$.
+	\end{alertblock}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Math environments}
+	\begin{columns}
+		\column{0.45\textwidth} %The first column
+		\structure{Theorems}
+		\begin{theorem}[Pythagorean]
+			$a^{2}+  b^{2}=  c^{2}$
+		\end{theorem}
+		\column{0.45\textwidth} %The second column
+		\structure{Proofs}
+		\begin{proof}
 			\ldots
-		\end{definition}
-	\end{frame}
-	%%%%%%%%%%%%%%%%
-	\begin{frame}{Dynamic mathematical formula}
-		\[
-			\binom{n}{k} = \pause \frac{n!}{k!(n-k)!} 
-		\]
-	\end{frame}
-	%%%%%%%%%%%%%%%%
-	\section{Computer Science}
-	%%%%%%%%%%%%%%%%
-	\subsection*{Inserting source codes}
-	%%%%%%%%%%%%%%%%
-  	\begin{frame}[fragile]{Source code}{Appearing step by step}
-		\begin{lstlisting}[language=C++]
+		\end{proof}
+	\end{columns}
+	\begin{definition}
+		\ldots
+	\end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}{Dynamic mathematical formula}
+	\[
+		\binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
+	\]
+\end{frame}
+%%%%%%%%%%%%%%%%
+\section{Computer Science}
+%%%%%%%%%%%%%%%%
+\subsection*{Inserting source codes}
+%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Source code}{Appearing step by step}
+	\begin{lstlisting}[language=C++]
 /* The first  program in C++ */  %*\pause*)
 #include <iostream>  %*\pause*)
 using namespace std; %*\pause*)
@@ -185,25 +190,25 @@ void main()
   cout %*\pause*) << "Hello World!"%*\pause*) << endl; %*\onslide<4->*)
 } %*\onslide*)
 \end{lstlisting}
-	\end{frame}
-	%%%%%%%%%%%%%%%%%%%%%%%
-	\appendix
-	%%%%%%%%%%%%%%%%%%%%%%%
-	\begin{frame}[allowframebreaks]{Bibliography}
-  		\begin{thebibliography}{9}
-    			\setbeamertemplate{bibliography item}[online]
-      				\bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
-      				\bibitem{beamer}{Till Tantau, Joseph Wright, Vedran Miletić \newblock The beamer class \newblock \url{http://mirror.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
-    			\setbeamertemplate{bibliography item}[book]
-      				\bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
-    			\setbeamertemplate{bibliography item}[article]
-      				\bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-    			\setbeamertemplate{bibliography item}[triangle]
-      				\bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-    			\setbeamertemplate{bibliography item}[text]
-      				\bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-      				\bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-  		\end{thebibliography}
-	\end{frame}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks]{Bibliography}
+	\begin{thebibliography}{9}
+		\setbeamertemplate{bibliography item}[online]
+		\bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
+		\bibitem{beamer}{Till Tantau, Joseph Wright, Vedran Miletić \newblock The beamer class \newblock \url{http://mirror.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
+		\setbeamertemplate{bibliography item}[book]
+		\bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
+		\setbeamertemplate{bibliography item}[article]
+		\bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+		\setbeamertemplate{bibliography item}[triangle]
+		\bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+		\setbeamertemplate{bibliography item}[text]
+		\bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+		\bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+	\end{thebibliography}
+\end{frame}
 \end{document}
 
