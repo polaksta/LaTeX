@@ -32,7 +32,7 @@
 \newdimen\coloredlinesskip %Distance between lines
 \newdimen\leftedgeskip     %Distance between left edge of slide and lines
 \newdimen\textleftmargin   %Left margin of a the text area
-\newdimen\textrightmargin   %Left margin of a the text area
+\newdimen\textrightmargin  %Right margin of a the text area
 \coloredlinesskip=2mm
 \textleftmargin=4em 
 \textrightmargin=4em 
@@ -53,7 +53,7 @@
 %%%
 \DeclareOptionBeamer{parttitle}{\def\AGH@parttitle{#1}} %Option 'parttitle' specifies where part title should be displayed, values:
                                                         % 'leftfooter' - in left footer, instead of author's name
-							% 'rightfooter' - in right footer, instead of date
+							                            % 'rightfooter' - in right footer, instead of date
 %%%
 \newif\ifAGH@sidebar
 \AGH@sidebartrue %Default, show AGH sidebar on non-title slides 
@@ -82,8 +82,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tikzstyle{every picture}+=[remember picture]
 \tikzset { %Tikz code generated from SVG by 'svg2tikz' tool
-        %%%%%%%%%
-        %AGH logo
+    %%%%%%%%%
+    %AGH logo
 	%%%%%%%%%
 	logo/.pic= { 
 		\begin{scope}[cm={{1.25,0.0,0.0,-1.25,(0.0,190.12419)}}]
@@ -184,7 +184,7 @@
 		\draw[AGH@red,thick] (red_x1) -- (red_x2);
 	}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%
 %Background images
 %%%%%%%%%%%%%%%%%%
@@ -249,7 +249,7 @@
         	\fi
         }	
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%
 %Slide content margins
 %%%%%%%%%%%%%%%%%%%%%%
@@ -260,7 +260,7 @@
   \setbeamersize{text margin left=\textleftmargin}
  \setbeamersize{text margin right=\textrightmargin}
 \fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Title page look and contents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
