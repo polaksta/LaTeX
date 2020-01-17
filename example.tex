@@ -5,12 +5,12 @@
 \usepackage{listings} % We want to put listings
 
 \mode<beamer>{ 	% In the 'beamer' mode
-	\hypersetup{pdfpagemode=FullScreen}        % Enable Full screen mode
-	\usetheme[parttitle=rightfooter]{AGH}      % Show part title in right footer
-	%\usetheme[nosidebar]{AGH}                 % Do not show sidebar on non-title slides
-	%\usetheme[nosidebar,margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
-	%\usetheme[dark]{AGH}                      % Use dark background
-	%\usetheme[dark,parttitle=leftfooter]{AGH} % Use dark background and show part title in left footer
+	\hypersetup{pdfpagemode=FullScreen}         % Enable Full screen mode
+	\usetheme[parttitle=rightfooter]{AGH}       % Show part title in right footer
+	%\usetheme[nosidebar]{AGH}                  % Do not show sidebar on non-title slides
+	%\usetheme[nosidebar, margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
+	%\usetheme[dark]{AGH}                       % Use dark background
+	%\usetheme[dark, parttitle=leftfooter]{AGH} % Use dark background and show part title in left footer
 }
 \mode<handout>{	% In the 'handout' mode
 	\hypersetup{pdfpagemode=None}		
@@ -92,6 +92,19 @@
 %%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
+%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Information}
+	\begin{flushleft}
+		 The default value for \\ $\Longleftarrow$ the  left  margin\\ is \the\textleftmargin{}.
+	\end{flushleft}
+
+	\begin{flushright}
+		The default value for\\ the right margin $\Longrightarrow$\\ is \the\textleftmargin{}. 
+	\end{flushright}
+
+	You can change them with the 'margins' parameter --- \verb+\usetheme[margins=...]{AGH}+
+\end{frame}
+%%%%%%%%%%%%%%%%
 \part{Examples}
 %%%%%%%%%%%%%%%%
 \begin{frame}{Outline}
