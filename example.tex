@@ -8,7 +8,7 @@
 	\hypersetup{pdfpagemode=FullScreen}         % Enable Full screen mode
 	\usetheme[parttitle=rightfooter]{AGH}       % Show part title in right footer
 	%\usetheme[nosidebar]{AGH}                  % Do not show sidebar on non-title slides
-	%\usetheme[nosidebar, margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
+	%\usetheme[nosidebar, margins=2em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
 	%\usetheme[dark]{AGH}                       % Use dark background
 	%\usetheme[dark, parttitle=leftfooter]{AGH} % Use dark background and show part title in left footer
 }
@@ -93,14 +93,11 @@
 \maketitle
 %%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Information}
-	\begin{flushleft}
-		The current value of \\ $\Longleftarrow$ the  left  margin\\ size is \the\textleftmargin{}.
-	\end{flushleft}
-
-	\begin{flushright}
-		The current value of\\ the right margin $\Longrightarrow$\\ size is \the\textleftmargin{}. 
-	\end{flushright}
-
+	\begin{center}
+		$\Longleftarrow$The current value of \hfill The current value of $\Longrightarrow$\\
+		$\Longleftarrow$ the  left  margin size\hfill the right margin size $\Longrightarrow$\\
+		$\Longleftarrow$ is \the\textleftmargin{} \hfill is \the\textrightmargin{} $\Longrightarrow$
+	\end{center}
 	You can change them with the 'margins' parameter --- \verb+\usetheme[margins=...]{AGH}+
 \end{frame}
 %%%%%%%%%%%%%%%%
