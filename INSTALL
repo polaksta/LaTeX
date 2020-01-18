@@ -1,4 +1,4 @@
-Linux
+Linux / macOS
 	Execute the following commands:
 	$ TEXMF=`kpsewhich -var-value TEXMFHOME`
 	$ mkdir -p $TEXMF/tex/latex/beamer/AGH
