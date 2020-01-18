@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 \usepackage{listings} % We want to put listings
+\usepackage{minted}   % We want to put listings
 
 \mode<beamer>{ 	% In the 'beamer' mode
 	\hypersetup{pdfpagemode=FullScreen}         % Enable Full screen mode
@@ -200,7 +201,7 @@
 %%%%%%%%%%%%%%%%
 \subsection*{Inserting source codes}
 %%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Source code}{Appearing step by step}
+\begin{frame}[fragile]{Usage of the listings environment}
 	\begin{lstlisting}[language=C++]
 /* The first  program in C++ */  %*\pause*)
 #include <iostream>  %*\pause*)
@@ -210,6 +211,18 @@ void main()
   cout %*\pause*) << "Hello World!"%*\pause*) << endl; %*\onslide<4->*)
 } %*\onslide*)
 \end{lstlisting}
+\end{frame}
+%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Usage of the minted environment}
+	\begin{minted}[frame=single,beameroverlays,linenos,escapeinside=||]{C++}
+/* The first  program in C++ */  |\pause|
+#include <iostream>  |\pause|
+using namespace std; |\pause|
+void main() 
+{       |\pause|
+  cout |\pause| << "Hello World!"|\pause| << endl; |\onslide<4->|
+} |\onslide|
+\end{minted}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%
 \appendix
