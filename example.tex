@@ -15,7 +15,11 @@
 \mode<handout>{	% In the 'handout' mode
 	\hypersetup{pdfpagemode=None}		
 	\usepackage{pgfpages}
-  	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	% Show 4 slides on 1 page
+	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	% Show 4 slides on 1 page
+	\pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}
+	\pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}
+	\pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}
+	\pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}
   	\usetheme{boxes}
   	\addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad}     % Content of header
  	\addfootbox{structure}{\quad\insertauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} % Content of footer
@@ -91,15 +95,18 @@
 %%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
-%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Information}
-	\begin{center}
-		$\Longleftarrow$ The current value of \hfill The current value of $\Longrightarrow$\\
-		$\Longleftarrow$ the  left  margin size \hfill the right margin size $\Longrightarrow$\\
-		$\Longleftarrow$ is \the\textleftmargin{} \hfill is \the\textrightmargin{} $\Longrightarrow$
-	\end{center}
-	You can change them with the 'margins' parameter --- \verb+\usetheme[margins=...]{AGH}+
-\end{frame}
+
+\ifdefined\textleftmargin
+	%%%%%%%%%%%%%%%%
+	\begin{frame}[fragile]{Information}
+		\begin{center}
+			$\Longleftarrow$ The current value of \hfill The current value of $\Longrightarrow$\\
+			$\Longleftarrow$ the  left  margin size \hfill the right margin size $\Longrightarrow$\\
+			$\Longleftarrow$ is \the\textleftmargin \hfill is \the\textrightmargin $\Longrightarrow$
+		\end{center}
+		You can change them with the 'margins' parameter --- \verb+\usetheme[margins=...]{AGH}+
+	\end{frame}
+\fi
 %%%%%%%%%%%%%%%%
 \part{Examples}
 %%%%%%%%%%%%%%%%
