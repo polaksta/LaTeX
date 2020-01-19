@@ -93,6 +93,8 @@
            {ń}{{\'n}}1
            {Ń}{{\'N}}1
 }
+%%%%%%%%%%% Configuration of the minted package %%%%%%%%%%%%%%%%%%%%%%%%%%
+\setminted[C++]{frame=single,linenos}
 %%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
@@ -214,7 +216,7 @@ void main()
 \end{frame}
 %%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Usage of the minted environment}
-	\begin{minted}[frame=single,beameroverlays,linenos,escapeinside=||]{C++}
+	\begin{minted}[beameroverlays,escapeinside=||]{C++}
 /* The first  program in C++ */  |\pause|
 #include <iostream>  |\pause|
 using namespace std; |\pause|
@@ -222,7 +224,7 @@ void main()
 {       |\pause|
   cout |\pause| << "Hello World!"|\pause| << endl; |\onslide<4->|
 } |\onslide|
-\end{minted}
+	\end{minted}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%
 \appendix
@@ -244,4 +246,3 @@ void main()
 	\end{thebibliography}
 \end{frame}
 \end{document}
-
