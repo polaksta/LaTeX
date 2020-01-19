@@ -1,7 +1,11 @@
-\documentclass[aspectratio=1610, english]{beamer} %If you want to create Polish presentation, then replace 'english' with 'polish'
-\usepackage{polski}
-\usepackage[utf8]{inputenc}
+\documentclass[aspectratio=1610, english]{beamer} %If you want to create Polish presentation, then replace 'english' with 'polish'	\usepackage{babel}
 \usepackage{babel}
+\makeatletter
+\@ifclasswith{beamer}{polish}{
+	\usepackage{polski}
+}
+\makeatother
+\usepackage[utf8]{inputenc}
 \usepackage{listings} % We want to put listings
 \usepackage{minted}   % We want to put listings
 
