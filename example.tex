@@ -33,21 +33,31 @@
 \AtBeginPart{ % At begin part: display its name
 	\frame{\partpage}
 } 
-
-\title{AGH Beamer Theme}
 \author[Stanisław Polak]{Stanisław Polak\inst{1,2}\newline
    {\scriptsize \href{mailto:polak@agh.edu.pl}{polak@agh.edu.pl}}
 }
-
 \date{}
-\institute[AGH]{
-	\inst{1}Institute of Computer Science\newline
-	Kawiory 21 Street\newline
-	30-055 Kraków\newline
-	Poland\newline
-	\url{http://www.icsr.agh.edu.pl/~polak/}
-\and
-	\inst{2}Second affiliation
+\iflanguage{polish}{
+	\title{Temat AGH dla Beamer{\dywiz}a}
+	\institute[AGH]{
+		\inst{1}Katedra Informatyki\newline
+		ul. Kawiory 21\newline
+		30-055 Kraków\newline
+		\url{http://www.icsr.agh.edu.pl/~polak/}
+	\and
+		\inst{2}Druga afiliacja
+ }
+}{
+	\title{AGH Beamer Theme}
+	\institute[AGH]{
+		\inst{1}Institute of Computer Science\newline
+		Kawiory 21 Street\newline
+		30-055 Kraków\newline
+		Poland\newline
+		\url{http://www.icsr.agh.edu.pl/~polak/}
+	\and
+		\inst{2}Second affiliation
+}
 }
 %%%%%%%%%%% Configuration of the listings package %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Using_the_listings_package
@@ -99,35 +109,46 @@
 }
 %%%%%%%%%%% Configuration of the minted package %%%%%%%%%%%%%%%%%%%%%%%%%%
 \setminted[C++]{frame=single,linenos}
+
 %%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 
 \ifdefined\textleftmargin
 	%%%%%%%%%%%%%%%%
-	\begin{frame}[fragile]{Information}
+	\begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
 		\begin{center}
-			$\Longleftarrow$ The current value of \hfill The current value of $\Longrightarrow$\\
-			$\Longleftarrow$ the  left  margin size \hfill the right margin size $\Longrightarrow$\\
-			$\Longleftarrow$ is \the\textleftmargin \hfill is \the\textrightmargin $\Longrightarrow$
+			\iflanguage{polish}{
+				$\Longleftarrow$ Aktualna wartość \hfill Aktualna wartość $\Longrightarrow$\\
+				$\Longleftarrow$ rozmiaru lewego marginesu \hfill rozmiaru prawego marginesu $\Longrightarrow$\\
+				$\Longleftarrow$ to \the\textleftmargin \hfill to \the\textrightmargin $\Longrightarrow$
+			}{
+				$\Longleftarrow$ The current value of \hfill The current value of $\Longrightarrow$\\
+				$\Longleftarrow$ the  left  margin size \hfill the right margin size $\Longrightarrow$\\
+				$\Longleftarrow$ is \the\textleftmargin \hfill is \the\textrightmargin $\Longrightarrow$
+			}
 		\end{center}
-		You can change them with the 'margins' parameter --- \verb+\usetheme[margins=...]{AGH}+
+		\iflanguage{polish}{
+			Możesz je zmieniać za pomocą parametru 'margins' \pauza
+		}{
+			You can change them with the 'margins' parameter ---
+		}
+		\verb+\usetheme[margins=...]{AGH}+
 	\end{frame}
 \fi
 %%%%%%%%%%%%%%%%
-\part{Examples}
+\part{\iflanguage{polish}{Przykłady}{Examples}}
 %%%%%%%%%%%%%%%%
-\begin{frame}{Outline}
+\begin{frame}{\iflanguage{polish}{Plan prezentacji}{Outline}}
 	\tableofcontents[pausesections]
 \end{frame}
 %%%%%%%%%%%%%%%%
-\section{Basic elements}
+\section{\iflanguage{polish}{Elementy podstawowe}{Basic elements}}
 %%%%%%%%%%%%%%%%
-\begin{frame}{Itemize}
+\begin{frame}{\iflanguage{polish}{Wyszczególnienie}{Itemize}}
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
-			% Text display depending on the language version
 			\item \iflanguage{polish}{Element 1}{Item 1}
 			\item \iflanguage{polish}{Element 2}{Item 2}
 			\item \iflanguage{polish}{Element 3}{Item 3}
@@ -144,70 +165,85 @@
 	\end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%
-\begin{frame}{Enumerate}
+\begin{frame}{\iflanguage{polish}{Wyliczenie}{Enumerate}}
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{enumerate}
-			\item Item 1
-			\item Item 2
-			\item Item 3
+			\item \iflanguage{polish}{Element 1}{Item 1}
+			\item \iflanguage{polish}{Element 2}{Item 2}
+			\item \iflanguage{polish}{Element 3}{Item 3}
 		\end{enumerate}
 		\column{0.5\textwidth}
 		\pause
 		\structure{\iflanguage{polish}{Odkrywanie elementów po kolei z jednoczesnym wyróżnianiem}{Uncovering elements in turn with simultaneous highlighting}}
 		\begin{enumerate}[<+-|alert@+>]
-			\item Item 1
-			\item Item 2
-			\item Item 3
+			\item \iflanguage{polish}{Element 1}{Item 1}
+			\item \iflanguage{polish}{Element 2}{Item 2}
+			\item \iflanguage{polish}{Element 3}{Item 3}
 		\end{enumerate}
 		\onslide
 	\end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%
-\section{Mathematics}
+\section{\iflanguage{polish}{Matematyka}{Mathematics}}
 %%%%%%%%%%%%%%%%
-\begin{frame}{Basic blocks}
+\begin{frame}{\iflanguage{polish}{Podstawowe bloki}{Basic blocks}}
 	% Examples from "The beamer class User Guide"
-	\begin{block}{Definition}
-		A \alert{set} consists of elements.
-	\end{block}
-	\begin{exampleblock}{Example}
-		The set $\{1,2,3,5\}$ has four elements.
-	\end{exampleblock}
-	\begin{alertblock}{Wrong Theorem}
-		$1=2$.
-	\end{alertblock}
+	\iflanguage{polish}{
+		\begin{block}{Definicja}
+			\alert{Zbiór} składa się z elementów.
+		\end{block}
+		\begin{exampleblock}{Przykład}
+			Zbiór $\{1,2,3,5\}$ zawiera cztery elementy.
+		\end{exampleblock}
+		\begin{alertblock}{Błędne Twierdzenie}
+			$1=2$.
+		\end{alertblock}
+	}{
+		\begin{block}{Definition}
+			A \alert{set} consists of elements.
+		\end{block}
+		\begin{exampleblock}{Example}
+			The set $\{1,2,3,5\}$ has four elements.
+		\end{exampleblock}
+		\begin{alertblock}{Wrong Theorem}
+			$1=2$.
+		\end{alertblock}
+	}
 \end{frame}
 %%%%%%%%%%%%%%%%
-\begin{frame}{Math environments}
+\begin{frame}{\iflanguage{polish}{Otoczenia matematyczne}{Math environments}}
 	\begin{columns}
 		\column{0.45\textwidth} %The first column
-		\structure{Theorems}
-		\begin{theorem}[Pythagorean]
+		\structure{\iflanguage{polish}{Twierdzenia}{Theorems}}
+		\begin{theorem}[\iflanguage{polish}{Pitagorasa}{Pythagorean}]
 			$a^{2}+  b^{2}=  c^{2}$
 		\end{theorem}
 		\column{0.45\textwidth} %The second column
-		\structure{Proofs}
+		\structure{\iflanguage{polish}{Dowody}{Proofs}}
 		\begin{proof}
 			\ldots
 		\end{proof}
 	\end{columns}
+	\vfill
+	\ldots
+	\vfill
 	\begin{definition}
 		\ldots
 	\end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%
-\begin{frame}{Dynamic mathematical formula}
+\begin{frame}{\iflanguage{polish}{Dynamiczny wzór matematyczny}{Dynamic mathematical formula}}
 	\[
 		\binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
 	\]
 \end{frame}
 %%%%%%%%%%%%%%%%
-\section{Computer Science}
+\section{\iflanguage{polish}{Informatyka}{Computer Science}}
 %%%%%%%%%%%%%%%%
-\subsection*{Inserting source codes}
+\subsection*{\iflanguage{polish}{Wstawianie kodów źródłowych}{Inserting source codes}}
 %%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Usage of the listings environment}
+\begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'listings'}{Using the 'listings' environment}}
 	\begin{lstlisting}[language=C++]
 /* The first  program in C++ */  %*\pause*)
 #include <iostream>  %*\pause*)
@@ -219,7 +255,7 @@ void main()
 \end{lstlisting}
 \end{frame}
 %%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Usage of the minted environment}
+\begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'minted'}{Using the 'minted' environment}}
 	\begin{minted}[beameroverlays,escapeinside=||]{C++}
 /* The first  program in C++ */  |\pause|
 #include <iostream>  |\pause|
@@ -233,7 +269,7 @@ void main()
 %%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 %%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[allowframebreaks]{Bibliography}
+\begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
 	\begin{thebibliography}{9}
 		\setbeamertemplate{bibliography item}[online]
 		\bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
@@ -241,12 +277,21 @@ void main()
 		\setbeamertemplate{bibliography item}[book]
 		\bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
 		\setbeamertemplate{bibliography item}[article]
-		\bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-		\setbeamertemplate{bibliography item}[triangle]
-		\bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-		\setbeamertemplate{bibliography item}[text]
-		\bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-		\bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+		\iflanguage{polish}{
+			\bibitem{article1}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+			\setbeamertemplate{bibliography item}[triangle]
+			\bibitem{article2}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+			\setbeamertemplate{bibliography item}[text]
+			\bibitem{article3}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+			\bibitem[Polak98]{article4}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+		}{
+			\bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+			\setbeamertemplate{bibliography item}[triangle]
+			\bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+			\setbeamertemplate{bibliography item}[text]
+			\bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+			\bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+		}
 	\end{thebibliography}
 \end{frame}
 \end{document}
