@@ -1,4 +1,4 @@
-\ProvidesPackage{beamerthemeAGH}[2024/01/08]
+\ProvidesPackage{beamerthemeAGH}[2024/01/09]
 % Beamer theme by Stanisław Polak <polak[aT]icsr[DoT]agh[DoT]edu[DoT]pl
 %                 http://www.icsr.agh.edu.pl/~polak/
 % Jan. 2017 
@@ -71,7 +71,7 @@
 \AtBeginDocument{%
 	\typeout{..................................................................}
 	\typeout{You are using the AGH beamer theme created by Stanislaw Polak}
-	\typeout{Version: 1.5.5, Jan 2024}
+	\typeout{Version: 1.5.6, Jan 2024}
 	\typeout{..................................................................}
 	\ifdefined\AGH@parttitle
 		%Display part title
@@ -166,11 +166,19 @@
 		%%%%%%%%%%%%%%
 		lines/.pic={
 			%black line
-			\ifnum\thepage=1 %If a title page
+			\ifthenelse{
+				\thepage=1 % I assume that the title page is the first page of presentation ;-)
+			\AND
+				\not\equal{\beamer@shortauthor}{} % The '\author' command was used in the preamble 
+			\AND
+				\not\equal{\beamer@shorttitle}{}  % The '\title' command was used in the preamble 
+			}
+			{	
 				\coordinate [xshift=\leftedgeskip] (black_x1) at (current page.north west);
-			\else % If a non-title page 
+			}
+			{
 				\coordinate [xshift=\leftedgeskip,yshift=-9.5\headheight] (black_x1) at (current page.north west);
-			\fi
+			}
 			\coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
 			\draw[AGH@black,thick] (black_x1) -- (black_x2);
 			%green line
@@ -193,9 +201,9 @@
 	\ifthenelse{
 			\thepage=1 % I assume that the title page is the first page of presentation ;-)
 		\AND
-			\not\equal{\protect\beamer@shortauthor}{} % The '\author' command was used in the preamble 
+			\not\equal{\beamer@shortauthor}{} % The '\author' command was used in the preamble 
 		\AND
-			\not\equal{\protect\beamer@shorttitle}{}  % The '\title' command was used in the preamble 
+			\not\equal{\beamer@shorttitle}{}  % The '\title' command was used in the preamble 
 	}
 	{
 		%%%%%%%%%%%%%%%%%%%%%%%
