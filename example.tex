@@ -18,7 +18,12 @@
 
 \mode<beamer>{ 	% In the 'beamer' mode
 	\definecolor{links}{HTML}{2A1B81}
-	\hypersetup{pdfpagemode=FullScreen,colorlinks,linkcolor=,urlcolor=links}         % Enable Full screen mode
+	\hypersetup{
+		pdfpagemode=FullScreen,                 % Enable Full screen mode
+		colorlinks,
+		linkcolor=,
+		urlcolor=links
+	}
 	\usetheme[parttitle=rightfooter]{AGH}       % Show part title in right footer
 	%\usetheme[nosidebar]{AGH}                  % Do not show sidebar on non-title slides
 	%\usetheme[nosidebar, margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
@@ -229,7 +234,7 @@
 		\end{theorem}
 		\column{0.45\textwidth} %The second column
 		\structure{\iflanguage{polish}{Dowody}{Proofs}}
-		\begin{proof}The latest version of the template is available at \url{https://github.com/polaksta/beamer-AGH/archive/refs/heads/master.zip}
+		\begin{proof}
 			\ldots
 		\end{proof}
 	\end{columns}
@@ -279,7 +284,7 @@ void main()
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
-	\iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/beamer-AGH/archive/refs/heads/master.zip}}{The current version of the template is available at \url{https://github.com/polaksta/beamer-AGH/archive/refs/heads/master.zip}}
+	\iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/beamer-AGH}}{The current version of the template is available at \url{https://github.com/polaksta/beamer-AGH}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%		
 \begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
