@@ -52,17 +52,20 @@
 \definecolor{AGH@green}{RGB}{0,105,60}
 % IDUB logo
 \definecolor{ced1c24}{RGB}{237,28,36}
-\definecolor{c77787b}{RGB}{119,120,123}
 \definecolor{c672a8d}{RGB}{103,42,141}
 
 \ifAGH@dark%
 	\colorlet{AGH@white}{white!90}
 	\colorlet{AGH@main}{AGH@black!\AGH@darknesslevel}
 	\colorlet{AGH@gray}{gray!\AGH@graylevel}
+	% IDUB logo
+	\definecolor{c77787b}{RGB}{255,255,255}
 \else
 	\definecolor{AGH@white}{RGB}{255,255,255}
 	\colorlet{AGH@main}{AGH@white}
 	\colorlet{AGH@gray}{gray}
+	% IDUB logo
+	\definecolor{c77787b}{RGB}{119,120,123}
 \fi
 \setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
 \setbeamercolor{palette secondary}{fg=AGH@white,bg=AGH@black}
