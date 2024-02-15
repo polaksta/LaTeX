@@ -59,7 +59,7 @@ Jeżeli chcesz udostępnić plik wszystkim użytkownikom urządzenia z systemem 
 Aby mieć pewność, że instalacja się powiodła, wykonaj polecenie
 ```
 
-$ kpsewhich agh-wi.cls
+$ kpsewhich beamercolorthemeAGH.sty beamerthemeAGH.sty
 
 ```
 Jeśli wynikiem jest ścieżka do pliku, to znaczy, że poprawnie zainstalowałeś/aś klasę.
