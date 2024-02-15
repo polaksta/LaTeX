@@ -23,6 +23,7 @@ Domyślny rozmiar lewego i prawego marginesu obszaru tekstu wynosi 4em. Jeżeli 
 | Domyślna | Z ciemnym tłem |
 |--------------------|----------------------------------|
 | ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Slajd tytułowy") | ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-dark.big.png "Slajd tytułowy — wersja ciemna") |
+
 *Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany przez osoby i instytucje niezwiązane z AGH.*
 ## Przykładowe prezentacje
 * [Prezentacja 1](http://www.icsr.agh.edu.pl/~polak/beamer.pdf)
