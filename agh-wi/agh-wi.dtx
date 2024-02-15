@@ -1,0 +1,1226 @@
+% \iffalse meta-comment
+%<*internal>
+\iffalse
+%</internal>
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% README.md %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<*readme>
+agh-wi --- klasa LaTeX do prac dyplomowych na Wydziale Informatyki Akademii Górniczo-Hutniczej w Krakowie
+
+## Opis
+Klasa `agh-wi` została stworzona, aby ułatwić studentom Wydziału Informatyki Akademii Górniczo-Hutniczej w Krakowie skład pracy dyplomowej w systemie LaTeX. Rozszerza ona klasę *scrbook*, która wchodzi w skład zestawu klas *KOMA-Script*, oferującego europejskie zasady typografii.
+
+Użytkownik może określić trzy parametry:
+1. Język pracy dyplomowej.
+2. Nazwa kierunku studiów.
+3. Czy praca jest przeznaczona do wyświetlania na ekranie, czy drukowania?
+
+Wartościami domyślnymi, tych parametrów, są, odpowiednio, *język polski*, *Informatyka* oraz *praca będzie oglądana na ekranie*.
+
+Szczegóły użycia klasy można znaleźć w pliku `agh-wi.pdf`.
+
+## Opcje
+- **english** — praca dyplomowa jest po angielsku.
+     - Teksty wstawiane automatycznie przez LaTeX (spis treści, spis rysunków itp.) są w języku angielskim.
+     - Zasady dzielenia wyrazów dotyczą języka angielskiego.
+- **data-science** — praca dyplomowa na kierunku „Informatyka — Data Science”.
+- **print** — praca dyplomowa będzie drukowana i w związku z tym na każdej stronie powinien być dodany, dodatkowy (2cm), margines na oprawę.
+
+### Przykłady
+1. `\documentclass{agh-wi}` — Treść pracy jest w języku polskim, a na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka*. Praca jest przeznaczona do wyświetlania (za pomocą przeglądarki PDF).
+2. `\documentclass[english]{agh-wi}` — Treść pracy jest w języku angielskim, a na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka*. Praca jest przeznaczona do wyświetlania.
+3. `\documentclass[print]{agh-wi}` — Treść pracy jest w języku polskim, na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka*. Praca będzie drukowana, a następnie oprawiana.
+
+Możesz także używać opcji opisanych w [Podręczniku KOMA-Script](http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide-en.pdf)
+
+## Instalacja
+Uruchom komendę
+
+```
+$ pdflatex agh-wi.dtx
+```
+do wygenerowania plików `.ins`, `.cls`, `.pdf`, `example.tex` oraz `bibliography.bib`. 
+
+Aby poprawnie wygenerować historię zmian oraz indeks dla dokumentacji klasy, należy uruchomić
+
+```
+$ makeindex -s gind.ist agh-wi
+$ makeindex -s gglo.ist -o agh-wi.gls agh-wi.glo
+$ pdflatex agh-wi.dtx
+$ pdflatex agh-wi.dtx
+```
+
+(Twoje środowisko TeX może to wykonać za ciebie).
+
+Na koniec, aby użyć wygenerowanego pliku `.cls`, przenieś go do odpowiedniej lokalizacji dla swojej dystrybucji TeX-a. Być może najłatwiejszym sposobem, aby to osiągnąć, jest wykonanie komendy
+
+```
+$ mv agh-wi.cls $(kpsewhich -var-value=TEXMFHOME)/tex/latex
+```
+
+Jeżeli chcesz udostępnić plik wszystkim użytkownikom urządzenia z systemem Unix, prawdopodobnie lepiej będzie, jak skopiujesz go do katalogu `/usr/local/texlive/texmf-local/tex/latex`, a następnie uruchomisz
+
+```
+# texhash
+```
+
+Aby mieć pewność, że instalacja się powiodła, wykonaj polecenie
+
+```
+$ kpsewhich agh-wi.cls
+```
+Jeśli wynikiem jest ścieżka do pliku, to znaczy, że poprawnie zainstalowałeś/aś klasę.
+
+## Przykładowa praca dyplomowa
+Ze względu na trudności związane z dostarczaniem przykładów użycia komend oraz środowisk w dokumentacji klasy, są one pokazane w oddzielnym pliku — `example.tex` — zawiera on jednocześnie przykładową pracę dyplomową. Możesz go więc potraktować jako szablon do utworzenia własnej pracy.
+
+Aby otrzymać wynikowy dokument PDF, należy skompilować dokument źródłowy za pomocą sekwencji komend:
+```
+pdflatex -shell-escape example
+biber example
+makeindex example.nlo  -s nomencl.ist -o example.nls
+pdflatex -shell-escape example
+pdflatex -shell-escape example
+```
+%</readme>
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LICENSE.md %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<*license>
+## agh-wi-wi.dtx
+Copyright 2024 Stanisław Polak
+
+This work may be distributed and/or modified under the conditions of the LaTeX
+Project Public License, either version 1.3 of this license or (at your option)
+any later version.
+
+The latest version of this license is in http://www.latex-project.org/lppl.txt
+and version 1.3 or later is part of all distributions of LaTeX version
+2005/12/01 or later.
+
+This work has the LPPL maintenance status `maintained'.
+
+The Current Maintainer of this work is Stanisław Polak.
+This work consists of the file
+* `agh-wi.dtx`
+and the derived files
+* `agh-wi.ins`,
+* `agh-wi.cls`,
+* `agh-wi.pdf`,
+* `bibliography.bib` and
+* `example.tex`.
+%</license>
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% example.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<*example>
+% W tym przykładzie użyto, między innymi, pakietów:
+%   - "minted", co oznacza, że musisz uruchomić kompilator z opcją '-shell-escape'
+%   - "biblatex", co oznacza, że po kompilacji (dokumentu) musisz, jeszcze,  wygenerować plik '.bbl'
+%   - "nomencl", co oznacza, że za pomocą komendy 'makeindex' musisz wygenerować wykaz symboli
+% 
+% Tak więc, w celu wygenerowania wynikowego dokumentu PDF, musisz wykonać następujące komendy:
+%       pdflatex -shell-escape example
+%       biber example
+%       makeindex example.nlo  -s nomencl.ist -o example.nls
+%       pdflatex -shell-escape example
+%       pdflatex -shell-escape example
+%
+% 
+% Dodatkowo musisz mieć zainstalowany program 'pygmentize', który jest częścią pakietu "Pygments" (https://pygments.org/)
+% Ww. programy powinny zainstalować się automatycznie podczas instalacji pakietów LaTeX 
+%
+% Jeżeli masz zainstalowany program 'latexmk', to możesz wygenerować dokument PDF następująco:
+%       latexmk example
+%       makeindex example.nlo  -s nomencl.ist -o example.nls
+%       latexmk example
+%
+% Do edycji (oraz komplilacji) dokumentów LaTeX polecam program 'TeXstudio' (https://www.texstudio.org/)  
+%
+% Autor: Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
+\documentclass{agh-wi} % Praca po polsku, 
+                       % Kierunek 'Informatyka'.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%							   
+% Inne, przykładowe, użycia klasy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%							   
+% \documentclass[english]{agh-wi}                % Praca po angielsku,
+                                                 % Kierunek 'Informatyka',
+												 % Przeznaczona do oglądania przy użyciu przegladarki PDF.
+% \documentclass[english, data-science]{agh-wi}  % Praca po angielsku,
+                                                 % Kierunek 'Informatyka - Data Science',	
+												 % Przeznaczona do oglądania przy użyciu przegladarki PDF.
+% \documentclass[print]{agh-wi}                  % Praca po polsku,
+                                                 % Kierunek 'Informatyka',	
+												 % Przeznaczona do drukowania - każda strona posiada,
+												 %    dodatkowy (2cm), margines na oprawę.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Parametry dla strony tytułowej
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\titlePL{Tytuł zgodny z tematyką/dziedziną pracy dyplomowej}  % Tytuł po polsku
+\titleEN{Title consistent with the topic/field of the thesis} % Tytuł po angielsku
+\author{Imiona i nazwisko dyplomanta}
+\supervisor{Stopień lub tytuł naukowy imiona i nazwisko promotora}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pakiety
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{polski}                           % Obsługa języka polskiego
+\usepackage{amsmath}                          % Dodatkowe środowiska matematyczne
+\usepackage{amssymb}                          % Dodatkowe symbole matematyczne
+\usepackage[polish, intoc]{nomencl}           % Definiowanie symboli
+\usepackage{graphicx}                         % Wstawianie grafik zewnętrznych
+\usepackage{xcolor}                           % Kolorowy tekst 
+\usepackage{tabularx}                         % Rozszerzona wersja środowiska 'tabular'
+\usepackage{longtable}                        % Skład "długich" tabel
+\usepackage[ruled,linesnumbered]{algorithm2e} % Algorytmy w formie pseudokodu
+\usepackage{listings}                         % Wstawianie kodów źródłowych programów
+\usepackage[newfloat]{minted}                 % Wstawianie kodów źródłowych programów
+\usepackage{caption}                          % Modyfikacji pozycji podpisu
+\captionsetup[listing]{position=top}          %       dla listingów 'minted'
+\usepackage{hyperref}                         % Obsługa odsyłaczy HTML
+\usepackage[                                  % Obsługa spisu literatury
+	style=numeric,   % Odnośniki są liczbami
+	sorting=none,    % Kolejność pozycji spisu literary <=> kolejności cytowania
+	language=autobib,% Zastosuj styl wpisu bibliograficznego 
+	autolang=other,  %          właściwy językowi publikacji.
+	urldate=iso,     % Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
+	seconds=true,    % Wyświetlaj liczbę sekund w przypadku prezentowania czasów.
+	backref=false, 	 % Nie dodawaj numerów stron, na których występuje cytowanie.
+	isbn=true,	     % Podawaj ISBN.
+	url=false, 	     % Nie podawaj URL-i, o ile nie jest to konieczne.
+	%
+	% Ustawienia związane z polskimi normami dla bibliografii.
+	maxbibnames=3,
+	backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomocą Bibera
+]{biblatex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ładowanie danych bibliograficznych
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{bibliography.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Opcje konfiguracyjne pakietów
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pakiet 'framed' 
+\definecolor{shadecolor}{gray}{0.9}
+% Pakiet 'hyperref' 
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta, 
+	urlcolor=cyan
+} 
+% Pakiet 'nomencl'
+\makenomenclature % Otwórz plik 'example.nlo'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definicje komend
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\alert}[1]{\colorbox{red!50}{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twierdzenia i podobne struktury
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Twierdzenie}
+\newtheorem{definition}{Definicja}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+\maketitle % Dodaj stronę tytułową
+%%%%%%%%%%%%%%%%%%%%%%%
+% Jeżeli chcesz komuś podziękować, to możesz użyć poniższego kodu
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{flushright}
+	\em
+	\begin{minipage}{0.75\textwidth}
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+	\end{minipage}
+\end{flushright}
+%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstractPL}
+	Streszczenie po polsku \ldots
+\end{abstractPL}
+\begin{abstractEN}
+	Abstract in english \ldots
+\end{abstractEN}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents   % Wygeneruj spis treści
+\begin{shaded}
+	Zawartość spisu treści \pauza tytuły rozdziałów oraz ich ilość zależą od tematyki pracy \pauza należy ustalić z opiekunem pracy.
+\end{shaded}
+\listoffigures     % Wygeneruj listę rysunków
+\listoftables      % Wygeneruj listę tabel
+\listofalgorithms  % Wygeneruj listę algorytmów
+                   % Wygeneruj listę kodów źrółowych
+\lstlistoflistings % Jeżeli do tworzenia listingów używasz pakietu 'listings'
+% \listoflistings  % Jeżeli do tworzenia listingów używasz pakietu 'minted'
+\printnomenclature % Wyświetl listę symboli
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Wstęp}
+\begin{shaded}
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+\end{shaded}
+Wprowadzenie w tematykę pracy.
+\section{Cel i zakres pracy}
+Streszczenie specyfikacji wymagań Promotora.
+\chapter{Część literaturowa}
+\begin{shaded}
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+\end{shaded}
+
+Aktualny stan wiedzy, na dany temat, na podstawie dostępnej literatury naukowej oraz specjalistycznej.
+\chapter{Część badawcza}
+\begin{shaded}
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+\end{shaded}
+
+\begin{itemize}
+	\item Problemy / pytania badawcze.
+	\item Opis idei / metod rozwiązania postawionego problemu.
+	\item Opis przebiegu badań.
+	\item Interpretacja uzyskanych wyników.
+\end{itemize}
+\chapter{Zakończenie}
+\begin{shaded}
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+\end{shaded}
+\begin{enumerate}
+	\item Podsumowanie.
+	\item Możliwości dalszego rozwoju.
+	\item Potencjalne obszary zastosowania pracy.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix % Dodatek
+\chapter{Typowe elementy składowe pracy dyplomowej z Informatyki}
+\section{Tabele}
+W tabeli \ref{tab:result} przedstawiono wyniki pomiarów.
+\begin{shaded}
+	Podpis ma być przed tabelą.
+\end{shaded}
+\begin{table}[!h]
+	\caption{Pomiary zużycia energii elektrycznej\label{tab:result}.}
+	\centering
+	\begin{tabular}{|l||r@{,}l|}
+		\hline
+		\textbf{L.p.} & \multicolumn{2}{|c|}{\textbf{Wartość}}          \\
+		\hline
+		\hline
+		\cline{2-3}
+		%\textbf{L.p.} & \multicolumn{1}{r@{\,\vline\,}}{Całkowita} & Ułamkowa \\
+		\hline
+		1             & 12345                                  & 6789   \\
+		\cline{2-3}
+		              & 45                                     & 89     \\
+		\hline
+		2             & 45                                     & 678901 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+Jeżeli tabela zawiera dużą liczbę wierszy i może nie zmieścić się na stronie \pauza patrz tabela \ref{tab:longtable} \pauza należy skorzystać z pakietu \emph{longtable} \cite{longtable}.
+\begin{longtable}{|p{14ex}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|}
+	\caption{Tabela, która zawiera dużą ilość wierszy\label{tab:longtable}.}
+	\endfirsthead
+	\hline
+	           & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline
+	\endhead
+	\endfoot
+	\hline\hline
+	           & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 1  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 2  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 3  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 4  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 5  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 6  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 7  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 8  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 9  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 10 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 11 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 12 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 13 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+\end{longtable}
+
+Tabele, w których występuje długi tekst, a co za tym idzie może się on nie zmieścić \pauza musi zostać zawinięty, należy składać za pomocą środowiska 'tabularx' \cite{tabularx} zamiast 'tabular' \pauza  patrz tabela \ref{tab:tabularx}.
+\begin{table}[!h]
+	\caption{Tabela zawierająca długi tekst\label{tab:tabularx}.}
+	\centering
+	\begin{tabularx}{300pt}{|c|X|c|X|}
+		\hline
+		\multicolumn{2}{|c|}{Wpis wielokolumnowy!} &
+		TRZY                                       &
+		CZTERY                                       \\
+		\hline
+		jeden                                      &
+		\raggedright\arraybackslash Szerokość tej kolumny zależy od
+		szerokości tabeli.                         &
+		trzy                                       &
+		\raggedright\arraybackslash Kolumna czwarta będzie zachowywać się w taki sam sposób jak
+		druga kolumna o tej samej szerokości.        \\
+		\hline
+	\end{tabularx}
+\end{table}
+
+\paragraph{Uwaga}
+\alert{Każda tabela powinna być opisana w treści pracy.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rysunki}
+\paragraph{Uwagi}
+\begin{itemize}
+	\item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
+	      których twórcy zezwolili na ich rozpowszechnianie oraz kopiowanie, czyli
+	      np. rysunki objęte licencją Creative Commons.
+	\item \alert{Każdy rysunek powinien być opisany w treści pracy.}
+\end{itemize}
+\subsection{Wewnętrzne}
+
+Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pauza dostarcza on komend pozwalających na tworzenie grafik. Przykładowe grafiki pokazano na rysunku \ref{fig:tikz1} oraz \ref{fig:tikz2}.
+
+\begin{figure}[!h]
+	\begin{center}
+		\tikz \draw[thick,rounded corners=8pt]
+		(0,0) -- (0,2) -- (1,3.25) -- (2,2) -- (2,0) -- (0,2) -- (2,2) -- (0,0) -- (2,0);
+	\end{center}
+	\caption{Prosty rysunek \emph{TikZ}\label{fig:tikz1}.}
+\end{figure}
+
+\begin{figure}[!h]
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+			\draw (-1.5,0) -- (1.5,0);
+			\draw (0,-1.5) -- (0,1.5);
+			\draw (0,0) circle [radius=1cm];
+		\end{tikzpicture}
+	\end{center}
+	\caption{Bardziej złożony rysunek \emph{TikZ}\label{fig:tikz2}.}
+\end{figure}
+
+\subsection{Zewnętrzne}
+Oczywiście możliwe jest również dołączanie rysunków zewnętrznych \pauza
+pakiet \emph{graphicx} \cite{graphicx} pozwala na wstawianie grafik zapisanych w  plikach: '.png', '.jpg' oraz '.pdf'. Rysunek \ref{fig:logo} \pauza patrz strona \pageref{fig:logo} \pauza wstawiono przy użyciu tego pakietu.
+\begin{figure}[!h]
+	\begin{center}
+		\IfFileExists{logo_podstawowe.png}{
+			\includegraphics[width=0.7\linewidth]{logo_podstawowe}
+		}
+		{Nie znaleziono pliku 'logo\_podstawowe.png' \pauza pobierz go ze strony \url{https://www.informatyka.agh.edu.pl/media/uploads/Logo WI/PNG/logo_podstawowe.png}}
+	\end{center}
+	\caption{Logo wydziału Informatyki.}
+	\label{fig:logo}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorytmy}
+Pakiet \emph{algorithm2e} \cite{algorithm2e} pozwala zapisywać algorytmy w formie pseudokodu \pauza patrz
+algorytm \ref{alg:algo_disjdecomp} na stronie \pageref{alg:algo_disjdecomp}.
+\begin{shaded}
+	Podpis ma być przed algorytmem.
+\end{shaded}
+\begin{algorithm}[!htb]
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+	\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\Input{A bitmap $Im$ of size $w\times l$}
+	\Output{A partition of the bitmap}
+	\BlankLine
+	\emph{special treatment of the first line}\;
+	\For{$i\leftarrow 2$ \KwTo $l$}{
+		\emph{special treatment of the first element of line $i$}\;
+		\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
+			\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
+			\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
+			\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
+			\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
+				\lIf{\Left $<$ \This}{\Union{\Left,\This}}
+				\lElse{\Union{\This,\Left}}
+			}
+			\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
+				\lIf{\Up $<$ \This}{\Union{\Up,\This}}
+				\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
+				\lElse{\Union{\This,\Up}}\tcp*[h]{\This linked to \Up}\label{lelse}
+			}
+		}
+		\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
+	}
+	\caption{disjoint decomposition.}\label{alg:algo_disjdecomp}
+\end{algorithm}\DecMargin{1em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Kody źródłowe}
+Najpopularniejszymi pakietami, które umożliwiają składanie kodów źródłowych programów, są:
+\begin{description}
+	\item[listings \cite{listings}] \pauza kod źródłowy jest formatowany bezpośrednio przez \LaTeX{}\dywiz{}a \pauza nie jest używany żaden, zewnętrzny, formater kodu. 
+		\begin{lstlisting}[language=C++, float=ht, label=lst:code1, caption={Przykładowy kod źródłowy sformatowany za pomocą pakietu 'listings'.}]
+/* Pierwszy program w C++ */
+		
+#include <iostream>
+		
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}
+	\end{lstlisting}
+	\item[minted \cite{minted}] \pauza formatuje kod źródłowy przy użyciu biblioteki języka Python  o nazwie \emph{Pygments} \cite{pygments}.
+		\begin{listing}[!ht]
+			\caption{Przykładowy listing sformatowany za pomocą pakietu 'minted'.\label{lst:code2}}
+			\begin{minted}{c++}
+/* Pierwszy program w C++ */
+
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World!";
+    return 0;
+}		
+	\end{minted}
+		\end{listing}
+\end{description}
+
+Kod źródłowy w C++ sformatowany przy użyciu pakietu \emph{listings}, pokazano na listingu \ref{lst:code1}; sformatowany przy użyciu pakietu \emph{minted}, pokazano na listingu \ref{lst:code2}.
+\begin{shaded}
+	\begin{itemize}
+	\item Podpis ma być przed kodem źródłowym.
+	\item \alert{Proszę używać tylko jednego z tych pakietów.} W przeciwnym razie otrzymasz taki efekt, jak w przykładowej pracy \pauza obydwa listingi mają ten sam numer.
+	\end{itemize}
+\end{shaded}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Wzory}
+\begin{shaded}
+	Należy używać tylko dwóch rodzajów wzorów:
+	\begin{enumerate}
+		\item ,,W linii''.
+		\item Eksponowane, numerowane.
+	\end{enumerate}
+\end{shaded}
+\LaTeX{} bardzo dobrze sprawdza się w przypadku prac dyplomowych zawierających wzory matematyczne\footnote{ W przypadku złożonych wzorów warto zastosować pakiet \emph{amsmath} \cite{amsmath}.}.
+\subsection{Przykłady}
+Wzór $E = mc^{2}$\nomenclature{$c$}{Prędkość światła w próżni} jest częścią zdania.
+
+\begin{equation}
+	\left|\sum_{i=1}^n a_ib_i\right|
+	\le
+	\left(\sum_{i=1}^n a_i^2\right)^{1/2}
+	\left(\sum_{i=1}^n b_i^2\right)^{1/2}
+\end{equation}
+
+% Do wstawienia poniższych wzorów użyto środowisk (otoczeń) zdefiniowanych w pakiecie 'amsmath'
+Wartości zmiennej opisano wzorem \ref{eq:r1}.
+\begin{equation}
+	\label{eq:r1}
+	x=\begin{cases}
+		y           & \text{dla } y > 0    \\
+		\frac{z}{y} & \text{dla } y \leq 0
+	\end{cases}
+\end{equation}
+
+Wzór \ref{eq:r2} to wzór wielowierszowy.
+\begin{align}
+	\label{eq:r2}
+	2x^2 + 3(x-1)(x-2) & =2x^2 + 3(x^2-3x+2)             \\
+	                   & = 2x^2 + 3x^2 - 9x + 6\nonumber \\
+	                   & = 5x^2 - 9x + 6\nonumber
+\end{align}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Twierdzenia i podobne struktury}
+
+Twierdzenie nr \ref{tw} opublikował, w roku 1691, francuski matematyk Michel Rolle.
+\begin{theorem}[Rolle'a]
+	\label{tw}
+	Jeśli dana funkcja f: $\mathbb R \to \mathbb R$ jest:
+	\begin{enumerate}
+		\item ciągła w przedziale $[a,b]$
+		\item jest różniczkowalna w przedziale $(a,b)$
+		\item na końcach przedziału $[a,b]$ przyjmuje równe wartości: $f(a) = f(b)$,
+	\end{enumerate}
+	to w przedziale $(a,b)$ istnieje co najmniej jeden punkt c taki, że $f'(c) = 0$.
+\end{theorem}
+
+
+Teraz coś z informatyki \ldots
+\begin{definition}
+	Bit to najmniejsza jednostka informacji w komputerze.
+\end{definition}
+\begin{definition}
+	Bajtem nazywamy ciąg ośmiu bitów.
+\end{definition}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter % Wyłącz numerowanie rozdziałów
+\chapter{Uwagi Autora}
+\begin{itemize}
+	\item Aktualna wersja klasy jest dostępna pod adresem \url{https://github.com/polaksta/thesis-WI}.
+	\item Skoro Twoja praca dyplomowa powstała w \LaTeX{}u, to zachęcam Cię również do przygotowania prezentacji (na obronę pracy magisterskiej) w tym języku. Najpopularniejszą klasą do tworzenia tego typu dokumentów jest \emph{beamer} \cite{beamer}.
+	\item Pod adresem \url{https://github.com/polaksta/beamer-AGH} możesz znaleźć szablon 'beamer' mojego autorstwa.
+	\item Treść wszystkich rozdziałów tej, przykładowej, pracy dyplomowej znajduje się w jednym pliku \pauza \textbf{nie jest to polecane rozwiązanie}. W przypadku pisania własnej pracy warto umieścić zawartość każdego z rozdziałów w osobnych plikach, a następnie dołączać je do dokumentu głównego \pauza patrz opis na stronie \url{https://www.dickimaw-books.com/latex/thesis/html/include.html}.
+	\item Jeżeli pewne elementy mają być wyróżniane w \alert{jednakowy} \alert{sposób}, to proponuję nie używać bezpośredniego stylowania, tzn.
+	      \mint{tex}{\colorbox{red!50}{jednakowy} \colorbox{red!50}{sposób}} ale zdefiniować własną komendę stylującą, np. \verb+\alert+,
+	      \mint{tex}{\newcommand{\alert}[1]{\colorbox{red!50}{#1}}}
+	      a następnie użyć jej w dokumencie.
+	      \mint{tex}{\alert{jednakowy} \alert{sposób}}
+
+	      Dzięki temu, jeżeli będziesz chciał / chciała zmienić sposób stylowania tych elementów, np. niebieskie tło zamiast czerwonego, to wystarczy zmodyfikować, tylko, definicję komendy, zamiast zastępować, w tekście pracy dyplomowej, wybrane (niekoniecznie wszystkie!) wystąpienia tekstu \texttt{red}, tekstem \texttt{blue}.
+\end{itemize}
+Stanisław Polak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wyświetl spis literatury
+% UWAGA: Powinien zawierać tylko te publikacje, do których odwołujesz się w pracy 
+\printbibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%</example>
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bibliography.bib %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<*bibliography>
+@online{algorithm2e,
+	title = {algorithm2e.sty — package for algorithms},
+	url = {http://mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf},
+}
+
+@online{listings,
+	title = {The Listings Package},
+	url = {http://mirrors.ctan.org/macros/latex/contrib/listings/listings.pdf},
+}
+
+@online{minted,
+	title = {The minted package: Highlighted source code in \LaTeX},
+	url = {http://mirrors.ctan.org/macros/latex/contrib/minted/minted.pdf},
+}
+
+@online{amsmath,
+	title = {User’s Guide for the amsmath Package},
+	url = {http://mirrors.ctan.org/macros/latex/required/amsmath/amsldoc.pdf},
+}
+
+@online{graphicx,
+	title = {Packages in the ‘graphics’ bundle},
+	url = {http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf},
+}
+
+@online{tikz,
+	title = {The TikZ and PGF Packages},
+	url = {http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf},
+}
+
+@online{beamer,
+	title = {The beamer class},
+	url = {http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf},
+}
+
+@online{tabularx,
+	title = {The tabularx package},
+	url = {http://mirrors.ctan.org/macros/latex/required/tools/tabularx.pdf},
+}
+
+@online{longtable,
+	title = {The longtable package},
+	url = {http://mirrors.ctan.org/macros/latex/required/tools/longtable.pdf},
+}
+
+@online{pygments,
+	title = {Strona WWW biblioteki 'Pygments'},
+	url = {https://pygments.org/},
+}
+
+
+
+%</bibliography>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%<*internal>
+\fi
+\def\nameofplainTeX{plain}
+\ifx\fmtname\nameofplainTeX\else
+  \expandafter\begingroup
+\fi
+%</internal>
+%<*install>
+\input docstrip.tex
+\keepsilent
+\askforoverwritefalse
+    \preamble
+----------------------------------------------------------------
+agh-wi --- Diploma thesis template for students of the Faculty of Computer Science of the AGH University of Krakow
+email: polak[aT]agh[DoT]edu[DoT]pl
+GitHub: https://github.com/polaksta
+Released under the LaTeX Project Public License v1.3c or later
+See http://www.latex-project.org/lppl.txt
+----------------------------------------------------------------
+
+\endpreamble
+    \postamble
+
+Copyright (C) 2024 by Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
+
+This work may be distributed and/or modified under the conditions of the LaTeX
+Project Public License (LPPL), either version 1.3c of this license or (at your
+option) any later version. The latest version of this license is in the file:
+
+http://www.latex-project.org/lppl.txt
+
+This work is "maintained" (as per LPPL maintenance status) by
+Stanisław Polak.
+This work consists of the file
+agh-wi.dtx
+and the derived files
+agh-wi.ins,
+agh-wi.cls,
+agh-wi.pdf,
+bibliography.bib, and
+example.tex.
+
+\endpostamble
+\usedir{tex/latex/agh}
+\generate{
+  \file{example.tex}{\from{\jobname.dtx}{example}}
+}
+\usedir{tex/latex/agh}
+\generate{
+  \file{\jobname.cls}{\from{\jobname.dtx}{class}}
+}
+\usedir{tex/latex/agh}
+\generate{
+  \file{bibliography.bib}{\from{\jobname.dtx}{bibliography}}
+}
+%</install>
+%<install>\endbatchfile
+%<*internal>
+\usedir{source/latex/agh}
+\generate{
+  \file{\jobname.ins}{\from{\jobname.dtx}{install}}
+}
+\nopreamble\nopostamble
+\usedir{doc/latex/agh}
+\generate{
+  \file{README.md}{\from{\jobname.dtx}{readme}}
+}
+\generate{
+  \file{LICENSE.md}{\from{\jobname.dtx}{license}}
+}
+\ifx\fmtname\nameofplainTeX
+  \expandafter\endbatchfile
+\else
+  \expandafter\endgroup
+\fi
+%</internal>
+%<*class>
+\def\fileversion{v1.0}
+\def\filedate{2024/02/14}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{agh-wi}[\filedate\space\fileversion\space Diploma thesis at WI AGH Krakow]
+%</class>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[T1]{fontenc} % you should always use this, even with English
+                         % see http://tex.stackexchange.com/a/677/51283
+\usepackage{lmodern}
+\usepackage[numbered]{hypdoc}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+\newcommand{\mode}{aa}
+\newcommand{\ifAGH}{aa}
+\newcommand{\colorlet}{aa}
+\newcommand{\AGH}{aa}
+
+  \DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%\title{^^A
+%  \textsf{agh-wi} --- Diploma thesis at \emph{WI AGH}\thanks{^^A
+%    This file describes version \fileversion, last revised \filedate\space ^^A
+%  }^^A
+%}
+%\author{^^A
+%  Stanisław Polak\thanks{email: polak[aT]agh[DoT]edu[DoT]pl}^^A
+%}
+%\date{Released \filedate}
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\DoNotIndex{\LoadClass}
+%\DoNotIndex{\newcommand}
+%\DoNotIndex{\newenvironment}
+%\DoNotIndex{\null}
+%\DoNotIndex{\typeout}
+%\DoNotIndex{\newif}
+%\DoNotIndex{\def}
+%\DoNotIndex{\ifenglish}
+%\DoNotIndex{\ifprint}
+%\DoNotIndex{\logoscale}
+%\DoNotIndex{\fieldOfStudy}
+%\DoNotIndex{\changes}
+%\DoNotIndex{\DeclareOption}
+%\DoNotIndex{\englishtrue}
+%\DoNotIndex{\printtrue}
+%\DoNotIndex{\PassOptionsToClass}
+%\DoNotIndex{\CurrentOption}
+%\DoNotIndex{\ProcessOptions}
+%\DoNotIndex{\RequirePackage}
+%\DoNotIndex{\KOMAoptions}
+%\DoNotIndex{\baselineskip}
+%\DoNotIndex{\begin}
+%\DoNotIndex{\bfseries}
+%\DoNotIndex{\centering}
+%\DoNotIndex{\definecolor}
+%\DoNotIndex{\else}
+%\DoNotIndex{\end}
+%\DoNotIndex{\endtitlepage}
+%\DoNotIndex{\fi}
+%\DoNotIndex{\gdef}
+%\DoNotIndex{\Large}
+%\DoNotIndex{\large}
+%\DoNotIndex{\par}
+%\DoNotIndex{\path}
+%\DoNotIndex{\relax}
+%\DoNotIndex{\renewcommand}
+%\DoNotIndex{\scshape}
+%\DoNotIndex{\sffamily}
+%\DoNotIndex{\small}
+%\DoNotIndex{\textwidth}
+%\DoNotIndex{\titlepage}
+%\DoNotIndex{\the}
+%\DoNotIndex{\tikz}
+%\DoNotIndex{\tikzset}
+%\DoNotIndex{\vfil}
+%\DoNotIndex{\vfill}
+%\DoNotIndex{\vspace}
+%\DoNotIndex{\space}
+%\DoNotIndex{\year}
+%\DoNotIndex{\addtocontents}
+%\DoNotIndex{\algorithmcfname}
+%\DoNotIndex{\appendixmore}
+%\DoNotIndex{\appendixname}
+%\DoNotIndex{\appendixprefixformat}
+%\DoNotIndex{\AtBeginDocument}
+%\DoNotIndex{\color}
+%\DoNotIndex{\csname}
+%\DoNotIndex{\DeclareTOCStyleEntry}
+%\DoNotIndex{\endcsname}
+%\DoNotIndex{\footnotesize}
+%\DoNotIndex{\k}
+%\DoNotIndex{\l}
+%\DoNotIndex{\L}
+%\DoNotIndex{\listalgorithmcfname}
+%\DoNotIndex{\lstlistingname}
+%\DoNotIndex{\lstlistlistingname}
+%\DoNotIndex{\lstset}
+%\DoNotIndex{\setminted}
+%\DoNotIndex{\SetupFloatingEnvironment}
+%\DoNotIndex{\string}
+%\DoNotIndex{\tiny}
+%\DoNotIndex{\tocchapapp}
+%\DoNotIndex{\ttfamily}
+%\DoNotIndex{\\}
+%\DoNotIndex{\%}
+%\DoNotIndex{\'}
+%\DoNotIndex{\.}
+%\DoNotIndex{\@M}
+%\DoNotIndex{\@author}
+%\DoNotIndex{\@beginparpenalty}
+%\DoNotIndex{\@endparpenalty}
+%\DoNotIndex{\@endparpenalty}
+%\DoNotIndex{\@lowpenalty}
+%\DoNotIndex{\@supervisor}
+%\DoNotIndex{\@titleEN}
+%\DoNotIndex{\@titlePL}
+%\DoNotIndex{\@ifpackageloaded}
+
+%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\maketitle
+%
+%\changes{v1.0}{2024/02/08}{initial release}
+%
+%\begin{abstract}
+%  \LaTeX{} class for diploma theses at the Faculty of Computer Science of the AGH University of Krakow, Poland.
+%\end{abstract}
+%
+%\section{Documentation}
+% The class defines the following commands and environments:
+%
+%\DescribeMacro{\supervisor}
+% Name and surname of the diploma thesis supervisor.
+% 
+%\DescribeMacro{\titlePL}
+% Polish title of the diploma thesis.
+%
+%\DescribeMacro{\titleEN}
+% English title of the diploma thesis.
+%
+%\DescribeMacro{\maketitle}
+% Generating the title page of the diploma thesis.
+%
+%\DescribeEnv{abstractPL}
+% Polish-language abstract of the diploma thesis.
+% 
+%\DescribeEnv{abstractEN}
+% English-language abstract of the diploma thesis.
+%
+%\StopEventually{^^A
+%  \PrintChanges
+%  \PrintIndex
+%}
+%
+%\section{Default values}
+%
+\typeout{..................................................................}
+\typeout{You are using the WI class created by Stanisław Polak}
+\typeout{Version: \fileversion, \filedate}
+\typeout{..................................................................}
+%    \begin{macrocode}
+%<*class>
+%    \end{macrocode}
+% By default:
+%
+% The typesetting is performed for the Polish language.
+%    \begin{macrocode}
+\newif\ifenglish
+%    \end{macrocode}
+%
+% Version for viewing, using a PDF viewer, is created.
+%    \begin{macrocode}
+	\newif\ifprint
+%    \end{macrocode}
+%	
+% The field of study --- visible on the title page --- is 'Computer Science'.
+%    \begin{macrocode}
+\def\fieldOfStudy{Informatyka}
+%    \end{macrocode}
+% The abovementioned values can be changed using options.
+% \section{Options}
+%
+% The typesetting is performed for the English language.
+%    \begin{macrocode}
+\DeclareOption{english}{\englishtrue}
+%    \end{macrocode}
+% Create a version intended for printing.
+%    \begin{macrocode}
+\DeclareOption{print}{\printtrue}
+%    \end{macrocode}
+% The field of study is 'Computer Science --- Data Science'.
+%    \begin{macrocode}
+\DeclareOption{data-science}{\def\fieldOfStudy{Informatyka --- Data Science}}
+%    \end{macrocode}
+% If the option is not matched, pass it to the 'scrbook' class.
+%    \begin{macrocode}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
+%    \end{macrocode}
+% \section{Option Processing}
+%    \begin{macrocode}
+\ProcessOptions\relax
+%    \end{macrocode}
+% \section{Loading scrbook}
+% The class inherits from the 'scrbook' class.
+%    \begin{macrocode}
+\LoadClass[ appendixprefix=true]{scrbook}
+%    \end{macrocode}
+%
+% \section{Required packages}
+% The image of the AGH logo on the title page is drawn using the commands of the \emph{tikz} package.
+%    \begin{macrocode}
+\RequirePackage{tikz}
+%    \end{macrocode}
+%
+%  The \emph{scrlayer-scrpage} package allows the user to define and manage page styles by controlling page headers and footers.
+%    \begin{macrocode}
+\RequirePackage{scrlayer-scrpage}
+\ifprint
+	\KOMAoptions{fontsize=11pt, DIV=14, BCOR=2cm, automark, headsepline, footsepline, plainfootsepline,toc=listof, toc=bib}
+\else
+	\KOMAoptions{fontsize=11pt, DIV=14, automark, headsepline, footsepline, plainfootsepline, toc=listof, toc=bib}
+\fi
+%    \end{macrocode}
+%
+% The \emph{babel} package allows you to typeset document text in a specific language.
+%    \begin{macrocode}
+\ifenglish
+	\RequirePackage[main=english,polish]{babel}
+\else
+	\RequirePackage[main=polish,english]{babel}
+\fi
+%    \end{macrocode}
+% 
+% The first paragraph should be indented.
+%    \begin{macrocode}
+\RequirePackage{indentfirst}
+%    \end{macrocode}
+%\section{Configuration of selected packages}
+% Configuration of typical packages used when creating a diploma thesis in computer science.
+%    \begin{macrocode}
+	\AtBeginDocument{
+		%
+		% The 'algorithm2e' package
+		%
+		\@ifpackageloaded{algorithm2e}{		
+			\ifenglish\else
+				\renewcommand{\listalgorithmcfname}{Lista algorytmów}%
+				\renewcommand{\algorithmcfname}{Algorytm}%
+			\fi
+		}{}
+		%
+		% The 'minted' package
+		% 
+		\@ifpackageloaded{minted}{
+			\ifenglish\else
+				\SetupFloatingEnvironment{listing}{name=Kod źródłowy}
+				\SetupFloatingEnvironment{listing}{listname=Lista kodów źródłowych}
+			\fi
+			\setminted{
+				linenos,     % Display line numbers
+				frame=single % A single frame around the listing
+			}
+		}{}
+		%
+		% The 'listings' package
+		%
+		\@ifpackageloaded{listings}{
+			\lstset{ 
+				%basicstyle=\tiny,              % Font size for program code
+				showstringspaces=false,         % Whether to underscore spaces inside strings
+				numbers=left,                   % Where to place line numbers
+				%numberstyle=\footnotesize,     % Font size for line numbers
+				stepnumber=1,                   % Step between two line numbers. If 1, each line will be numbered
+				numbersep=5pt,                  % How far the line numbers are offset from the code
+				showspaces=false,               % Whether to show spaces within strings using underscores
+				showtabs=false,                 % Whether to show tabs within strings using underscores
+				frame=single,                   % Add a single border around the code
+				tabsize=2,                      % Set the default tab size to two spaces
+				captionpos=t,                   % Set position for signature - signature on top
+				breaklines=true,                % Enable automatic line breaks
+				breakatwhitespace=false,        % Should automatic breaking only occur on white characters?
+				keywordstyle=\ttfamily\color{blue}, % Color and font for keywords
+				identifierstyle=\ttfamily\color{violet}\bfseries, % Color and font identifiers
+				commentstyle=\color{brown},     % Color and font for comments
+				stringstyle=\ttfamily,          % Color and font for strings
+				escapeinside={\%*}{*)},         % If you want to add LaTeX within your code
+				inputencoding=utf8,             % The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below
+				literate={ą}{{\k{a}}}1
+					{Ą}{{\k{A}}}1
+					{ę}{{\k{e}}}1
+					{Ę}{{\k{E}}}1
+					{ó}{{\'o}}1
+					{Ó}{{\'O}}1
+					{ś}{{\'s}}1
+					{Ś}{{\'S}}1
+					{ł}{{\l{}}}1
+					{Ł}{{\L{}}}1
+					{ż}{{\.z}}1
+					{Ż}{{\.Z}}1
+					{ź}{{\'z}}1
+					{Ź}{{\'Z}}1
+					{ć}{{\'c}}1
+					{Ć}{{\'C}}1
+					{ń}{{\'n}}1
+					{Ń}{{\'N}}1
+			}
+			\ifenglish
+				\renewcommand{\lstlistlistingname}{List of Listings}
+			\else
+				\renewcommand{\lstlistingname}{Kod źródłowy}%
+				\renewcommand{\lstlistlistingname}{Lista kodów źródłowych}
+			\fi
+		}{}
+	}
+	%    \end{macrocode}
+
+\definecolor{AGH@black}{RGB}{30,30,30}
+\definecolor{AGH@red}{RGB}{167,25,48}
+\definecolor{AGH@green}{RGB}{0,105,60}
+
+% \section{AGH logo}
+% Tikz code generated from SVG by 'svg2tikz' tool.
+%    \begin{macrocode}
+\def\logoscale {1.000000}
+\tikzset {
+	% AGH logo
+	logoAGH/.pic= {
+			\begin{tikzpicture}[y=1cm, x=1cm, yscale=\logoscale,xscale=\logoscale, every node/.append style={scale=\logoscale}, inner sep=0pt, outer sep=0pt]
+				\begin{scope}[cm={ 1.25,-0.0,-0.0,-1.25,(0.0, 6.288)}]
+					\begin{scope}[shift={(-0.425\textwidth,10)}]
+						\path[fill=AGH@black,nonzero rule] (7.2964, -4.8072) -- (7.184, -4.8072) -- (7.2394, -4.9752) -- (7.2964, -4.8072) -- cycle(7.3638, -4.6082) -- (7.5038, -4.6082).. controls (7.5038, -4.6082) and (7.3489, -5.044) .. (7.3488, -5.0441).. controls (7.3314, -5.0931) and (7.2939, -5.1006) .. (7.2818, -5.1006) -- (7.1465, -5.1006).. controls (7.1673, -5.0837) and (7.1745, -5.0726) .. (7.1745, -5.0556).. controls (7.1745, -5.0453) and (7.1722, -5.0374) .. (7.1609, -5.004) -- (7.0269, -4.6082) -- (7.1184, -4.6082) -- (7.1589, -4.731) -- (7.3222, -4.731) -- (7.3638, -4.6082) -- cycle;
+						\path[fill=AGH@black,nonzero rule] (7.9315, -4.678) -- (7.9315, -4.8351).. controls (7.9315, -4.8651) and (7.9251, -4.8805) .. (7.9038, -4.8995) -- (8.0049, -4.8995).. controls (8.0362, -4.8995) and (8.0629, -4.8742) .. (8.0629, -4.8422) -- (8.0629, -4.6193).. controls (8.0135, -4.6048) and (7.9634, -4.5968) .. (7.9177, -4.5968).. controls (7.7427, -4.5968) and (7.6317, -4.6989) .. (7.6317, -4.8499).. controls (7.6317, -4.9974) and (7.7429, -5.1123) .. (7.9201, -5.1123).. controls (7.9604, -5.1123) and (7.9987, -5.1052) .. (8.0335, -5.0927) -- (8.0335, -4.9941).. controls (8.0023, -5.0146) and (7.963, -5.0269) .. (7.9201, -5.0269).. controls (7.8351, -5.0269) and (7.7682, -4.9683) .. (7.7682, -4.8601).. controls (7.7682, -4.7454) and (7.8189, -4.6751) .. (7.9003, -4.6751).. controls (7.9105, -4.6751) and (7.9206, -4.6758) .. (7.9315, -4.678);
+						\path[fill=AGH@black,nonzero rule] (8.4136, -5.037).. controls (8.4136, -5.0722) and (8.3858, -5.1006) .. (8.3517, -5.1006) -- (8.2537, -5.1006).. controls (8.275, -5.0817) and (8.2814, -5.0662) .. (8.2814, -5.0362) -- (8.2814, -4.6082) -- (8.4136, -4.6082) -- (8.4136, -4.8153) -- (8.5639, -4.8153) -- (8.5639, -4.6082) -- (8.6957, -4.6082) -- (8.6957, -5.0992) -- (8.5639, -5.0992) -- (8.5639, -4.8988) -- (8.4136, -4.8988) -- (8.4136, -5.037) -- cycle;
+						\path[fill=AGH@red,nonzero rule] (8.217, -5.4289).. controls (8.3264, -5.5041) and (8.4221, -5.6204) .. (8.4221, -5.8666) -- (8.4221, -7.3439) -- (8.5315, -7.3439) -- (8.5315, -5.8666).. controls (8.5315, -5.5931) and (8.3948, -5.4836) .. (8.217, -5.4289);
+						\path[fill=AGH@red,nonzero rule] (8.3059, -5.4289).. controls (8.4085, -5.4768) and (8.5863, -5.5657) .. (8.5863, -5.8666) -- (8.5863, -7.3439) -- (8.6957, -7.3439) -- (8.6957, -5.8666).. controls (8.6957, -5.4973) and (8.4085, -5.4426) .. (8.3059, -5.4289);
+						\path[fill=AGH@red,nonzero rule] (8.1486, -5.4289).. controls (8.2302, -5.511) and (8.258, -5.6751) .. (8.258, -5.894) -- (8.258, -7.3439) -- (8.3674, -7.3439) -- (8.3674, -5.8666).. controls (8.3674, -5.6211) and (8.2853, -5.4973) .. (8.1486, -5.4289);
+						\path[fill=AGH@black,nonzero rule] (7.6151, -7.8363).. controls (7.7246, -7.7611) and (7.8203, -7.6448) .. (7.8203, -7.3986) -- (7.8203, -5.7025) -- (7.9297, -5.7025) -- (7.9297, -7.3986).. controls (7.9297, -7.6722) and (7.7929, -7.7816) .. (7.6151, -7.8363);
+						\path[fill=AGH@black,nonzero rule] (7.7041, -7.8363).. controls (7.8067, -7.7885) and (7.9845, -7.6996) .. (7.9845, -7.3986) -- (7.9845, -5.7025) -- (8.0939, -5.7025) -- (8.0939, -7.3986).. controls (8.0939, -7.7679) and (7.8067, -7.8227) .. (7.7041, -7.8363);
+						\path[fill=AGH@black,nonzero rule] (7.5467, -7.8363).. controls (7.6284, -7.7543) and (7.6561, -7.5901) .. (7.6561, -7.3713) -- (7.6561, -5.7025) -- (7.7656, -5.7025) -- (7.7656, -7.3986).. controls (7.7656, -7.6441) and (7.6835, -7.7679) .. (7.5467, -7.8363);
+						\path[fill=AGH@green,nonzero rule] (7.5331, -5.4289).. controls (7.4236, -5.5041) and (7.3279, -5.6204) .. (7.3279, -5.8666) -- (7.3279, -7.3439) -- (7.2184, -7.3439) -- (7.2184, -5.8666).. controls (7.2184, -5.5931) and (7.3552, -5.4836) .. (7.5331, -5.4289);
+						\path[fill=AGH@green,nonzero rule] (7.4441, -5.4289).. controls (7.3415, -5.4768) and (7.1637, -5.5657) .. (7.1637, -5.8666) -- (7.1637, -7.3439) -- (7.0542, -7.3439) -- (7.0542, -5.8666).. controls (7.0542, -5.4973) and (7.3415, -5.4426) .. (7.4441, -5.4289);
+						\path[fill=AGH@green,nonzero rule] (7.6015, -5.4289).. controls (7.5198, -5.511) and (7.492, -5.6751) .. (7.492, -5.894) -- (7.492, -7.3439) -- (7.3826, -7.3439) -- (7.3826, -5.8666).. controls (7.3826, -5.6211) and (7.4647, -5.4973) .. (7.6015, -5.4289);
+					\end{scope}
+				\end{scope}
+			\end{tikzpicture}
+		}
+}
+%    \end{macrocode}
+% \section{Commands}
+%\begin{macro}{\supervisor}
+%\changes{v1.0}{2024/02/08}{Initial version}
+%    \begin{macrocode}
+\newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
+%    \end{macrocode}
+%\end{macro} 
+%
+%\begin{macro}{\titlePL}
+%\changes{v1.0}{2024/02/08}{Initial version}
+%    \begin{macrocode}
+\newcommand{\titlePL}[1]{\gdef\@titlePL{#1}}
+%    \end{macrocode}
+%\end{macro} 
+%
+%\begin{macro}{\titleEN}
+%\changes{v1.0}{2024/02/08}{Initial version}
+%    \begin{macrocode}
+\newcommand{\titleEN}[1]{\gdef\@titleEN{#1}}
+%    \end{macrocode}
+%\end{macro} 
+%
+%\begin{macro}{\maketitle}
+%\changes{v1.0}{2024/02/08}{Initial version}
+%    \begin{macrocode}
+\renewcommand\maketitle{
+	\KOMAoptions{twoside = false}
+	\begin{titlepage}
+	\centering
+			\tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000]
+			\path pic {logoAGH};\par
+			\vspace*{3\baselineskip}%
+			{	\bfseries\large
+				Akademia Górniczo-Hutnicza
+				im. Stanisława Staszica
+				w Krakowie
+			}\par
+			\vspace*{\baselineskip}%
+			{
+				\large Wydział Informatyki
+			}\par
+			\vspace*{3\baselineskip}%
+			{
+				\scshape\Large Praca dyplomowa
+			}\par
+			\vspace*{3\baselineskip}%
+			\ifenglish
+			{\sffamily\Large\bfseries \@titleEN}\par%
+			\vspace*{\baselineskip}%
+			{\sffamily\small\bfseries \@titlePL}\par%
+			\else
+			{\sffamily\Large\bfseries \@titlePL}\par%
+			\vspace*{\baselineskip}%
+			{\sffamily\small\bfseries \@titleEN}\par%
+			\fi
+			\vfill
+			\par
+			\begin{tabular}{ll}
+				Autor:         & {\bfseries\@author}      \\[0.8mm]
+				Kierunek:      & {\bfseries\fieldOfStudy} \\[0.8mm]
+				Opiekun pracy: & {\bfseries\@supervisor}  \\[0.8mm]
+			\end{tabular}
+			\par
+		\vspace*{3\baselineskip}%
+		\centering Kraków, \the\year
+	\end{titlepage}%
+	\KOMAoptions{twoside = true}
+}
+%    \end{macrocode}
+%\end{macro}
+% \section{Environments}
+%\begin{environment}{abstractPL}
+%\changes{v1.0}{2024/02/08}{Initial version}
+%    \begin{macrocode}   
+\newenvironment{abstractPL}{%
+	\titlepage
+	\null\vfil
+	\@beginparpenalty\@lowpenalty
+	\begin{center}%
+		\bfseries Streszczenie
+		\@endparpenalty\@M
+	\end{center}}%
+{\par\vfil\null\endtitlepage}
+%    \end{macrocode}
+%\end{environment}
+%\begin{environment}{abstractEN}
+%\changes{v1.0}{2024/02/08}{Initial version}
+%    \begin{macrocode}
+\newenvironment{abstractEN}{%
+	\titlepage
+	\null\vfil
+	\@beginparpenalty\@lowpenalty
+	\begin{center}%
+		\bfseries Abstract
+		\@endparpenalty\@M
+	\end{center}}%
+{\par\vfil\null\endtitlepage}
+%    \end{macrocode}
+%\end{environment} 
+% \section{Modifications}
+%  Prepend an "appendix" to the number of chapter entries of the appendix in the table of contents
+%    \begin{macrocode}
+\newcommand*{\tocchapapp}{}
+\newcommand*{\appendixmore}{
+	\addtocontents{\csname ext@toc\endcsname}{
+		\string\DeclareTOCStyleEntry[numwidth+=5em,
+			entrynumberformat=\string\appendixprefixformat]{chapter}{chapter}
+	}
+}
+\newcommand*{\appendixprefixformat}[1]{\appendixname\space#1}
+%    \end{macrocode}
+%    \begin{macrocode}
+%</class>
+%    \end{macrocode}
+%\Finale
