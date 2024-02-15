@@ -4,7 +4,8 @@
 %</internal>
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% README.md %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %<*readme>
-agh-wi --- klasa LaTeX do prac dyplomowych na Wydziale Informatyki Akademii Górniczo-Hutniczej w Krakowie
+# Klasa `agh-wi`
+Klasa LaTeX do prac dyplomowych na Wydziale Informatyki Akademii Górniczo-Hutniczej w Krakowie.
 
 ## Opis
 Klasa `agh-wi` została stworzona, aby ułatwić studentom Wydziału Informatyki Akademii Górniczo-Hutniczej w Krakowie skład pracy dyplomowej w systemie LaTeX. Rozszerza ona klasę *scrbook*, która wchodzi w skład zestawu klas *KOMA-Script*, oferującego europejskie zasady typografii.
@@ -598,9 +599,9 @@ Teraz coś z informatyki \ldots
 \backmatter % Wyłącz numerowanie rozdziałów
 \chapter{Uwagi Autora}
 \begin{itemize}
-	\item Aktualna wersja klasy jest dostępna pod adresem \url{https://github.com/polaksta/thesis-WI}.
+	\item Aktualna wersja klasy jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/agh-wi}.
 	\item Skoro Twoja praca dyplomowa powstała w \LaTeX{}u, to zachęcam Cię również do przygotowania prezentacji (na obronę pracy magisterskiej) w tym języku. Najpopularniejszą klasą do tworzenia tego typu dokumentów jest \emph{beamer} \cite{beamer}.
-	\item Pod adresem \url{https://github.com/polaksta/beamer-AGH} możesz znaleźć szablon 'beamer' mojego autorstwa.
+	\item Pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH} możesz znaleźć szablon 'beamer' mojego autorstwa.
 	\item Treść wszystkich rozdziałów tej, przykładowej, pracy dyplomowej znajduje się w jednym pliku \pauza \textbf{nie jest to polecane rozwiązanie}. W przypadku pisania własnej pracy warto umieścić zawartość każdego z rozdziałów w osobnych plikach, a następnie dołączać je do dokumentu głównego \pauza patrz opis na stronie \url{https://www.dickimaw-books.com/latex/thesis/html/include.html}.
 	\item Jeżeli pewne elementy mają być wyróżniane w \alert{jednakowy} \alert{sposób}, to proponuję nie używać bezpośredniego stylowania, tzn.
 	      \mint{tex}{\colorbox{red!50}{jednakowy} \colorbox{red!50}{sposób}} ale zdefiniować własną komendę stylującą, np. \verb+\alert+,
@@ -769,11 +770,11 @@ example.tex.
 \CodelineIndex
 \RecordChanges
 \begin{document}
-\newcommand{\mode}{aa}
-\newcommand{\ifAGH}{aa}
-\newcommand{\colorlet}{aa}
-\newcommand{\AGH}{aa}
-
+\newcommand{\mode}{}
+\newcommand{\ifAGH}{}
+\newcommand{\colorlet}{}
+\newcommand{\AGH}{}
+\newcommand{\tikzstyle}{}
   \DocInput{\jobname.dtx}
 \end{document}
 %</driver>
