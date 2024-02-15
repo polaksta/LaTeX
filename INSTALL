@@ -1,8 +1,0 @@
-Linux / macOS
-	Execute the following commands:
-	$ TEXMF=`kpsewhich -var-value TEXMFHOME`
-	$ mkdir -p $TEXMF/tex/latex/AGH
-	$ cp *.sty $TEXMF/tex/latex/AGH
------------------------------------------------------------------------------
-Windows
-	Copy *.sty to texmf tree - see: http://tex.stackexchange.com/questions/12701/where-is-texmf-on-a-windows-install
