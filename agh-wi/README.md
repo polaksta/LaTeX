@@ -24,6 +24,7 @@ Szczegóły użycia klasy można znaleźć w pliku `agh-wi.pdf`.
 1. `\documentclass{agh-wi}` — Treść pracy jest w języku polskim, a na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka*. Praca jest przeznaczona do wyświetlania (za pomocą przeglądarki PDF).
 2. `\documentclass[english]{agh-wi}` — Treść pracy jest w języku angielskim, a na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka*. Praca jest przeznaczona do wyświetlania.
 3. `\documentclass[print]{agh-wi}` — Treść pracy jest w języku polskim, na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka*. Praca będzie drukowana, a następnie oprawiana.
+3. `\documentclass[english, data-science, print]{agh-wi}` — Treść pracy jest w języku angielskim, na stronie tytułowej jako kierunek studiów należy umieścić napis *Informatyka  — Data Science*. Praca będzie drukowana, a następnie oprawiana.
 
 Możesz także używać opcji opisanych w [Podręczniku KOMA-Script](http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide-en.pdf)
 
