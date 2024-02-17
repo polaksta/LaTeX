@@ -503,14 +503,11 @@ example.tex.
 %<*package>
 \def\fileversion{1.7}
 \def\filedate{2024/02/15}
-
-\def\filecolorversion{1.1}
-\def\filecolordate{2017/04/02}
 %    \begin{macrocode}
 %<package|color>\NeedsTeXFormat{LaTeX2e}
 %    \end{macrocode}
 %    \begin{macrocode}
-%<package>\ProvidesPackage{beamerthemeAGH}[\filedate\space\fileversion\space AGH Krakow theme for the beamer class]
+%<package>\ProvidesPackage{beamerthemeAGH}[\filedate\space\fileversion\space The 'AGH' theme for the Beamer class]
 %    \end{macrocode}
 %</package>
 %<*driver>
@@ -532,6 +529,8 @@ example.tex.
 \end{document}
 %</driver>
 % \fi
+\def\filecolorversion{1.1}
+\def\filecolordate{2017/04/02}
 %
 %\title{^^A
 %  \textsf{beamercolorthemeAGH} --- color scheme for the \emph{AGH} \LaTeX{} Beamer theme\thanks{^^A
@@ -583,17 +582,17 @@ example.tex.
 % If the presentation will be in a darkened room, it may be useful to use a dark background --- in this case you should use the 'dark' option. You can specify how dark the background should be, by assigning (to this option) an integer value from 50 to 90.
 %    \begin{macrocode}
 \DeclareOptionBeamer{dark}{
-    % Check if level of darkness was given by a user
+% Check if level of darkness was given by a user
     \ifthenelse{\equal{#1}{}}            
     {
-        % if the level was not given, set it to 50
+% if the level was not given, set it to 50
         \def\AGH@darknesslevel{50}       
     }
     {
-        % else set it to the value given by the user 
+% else set it to the value given by the user 
         \def\AGH@darknesslevel{#1}       
     }
-    % set the gray color level 
+% set the gray color level 
     \ifthenelse{\AGH@darknesslevel < 50}
     {
         \pgfmathsetmacro{\AGH@graylevel}{100 - \AGH@darknesslevel}
@@ -623,13 +622,13 @@ example.tex.
     \colorlet{AGH@white}{white!90}
     \colorlet{AGH@main}{AGH@black!\AGH@darknesslevel}
     \colorlet{AGH@gray}{gray!\AGH@graylevel}
-    % IDUB logo
+% IDUB logo
     \definecolor{c77787b}{RGB}{255,255,255}
 \else
     \definecolor{AGH@white}{RGB}{255,255,255}
     \colorlet{AGH@main}{AGH@white}
     \colorlet{AGH@gray}{gray}
-    % IDUB logo
+% IDUB logo
     \definecolor{c77787b}{RGB}{119,120,123}
 \fi
 \setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
@@ -870,7 +869,7 @@ example.tex.
 %    \begin{macrocode}
 \DeclareOptionBeamer{dark}{
     \AGH@darktrue 
-    % Pass information about the level of darkness to the 'beamercolorthemeAGH.sty' file
+% Pass information about the level of darkness to the 'beamercolorthemeAGH.sty' file
     \PassOptionsToPackage{dark=#1}{beamercolorthemeAGH}
 }
 %    \end{macrocode}
@@ -907,11 +906,11 @@ example.tex.
     \typeout{You are using the 'AGH' LaTeX Beamer theme created by Stanisław Polak}
     \typeout{Version: \fileversion, \filedate}
     \typeout{..................................................................}
-    % Display part title
+% Display part title
     \ifdefined\AGH@parttitle
-        % In the left footer (instead of author's name and institute name) 
+% In the left footer (instead of author's name and institute name) 
         \ifthenelse{\equal{\AGH@parttitle}{leftfooter}}{\def\beamer@shortauthor{\insertpart}\def\beamer@shortinstitute{}}{} 
-        % In the right footer (instead of date)
+% In the right footer (instead of date)
         \ifthenelse{\equal{\AGH@parttitle}{rightfooter}}{\def\beamer@shortdate{\insertpart}}{}
     \fi
 }
@@ -922,7 +921,7 @@ example.tex.
 \def \globalscale {0.16}
 % Tikz code generated from SVG by 'svg2tikz' tool
 \tikzset {
-    % AGH  logo
+% AGH  logo
     logo/.pic= {
         \begin{scope}[cm={{1.25,0.0,0.0,-1.25,(0.0,190.12419)}}]
             \begin{scope}[shift={(-221.07081,-349.03133)}]
@@ -999,7 +998,7 @@ example.tex.
             \end{scope}
         \end{scope}
     },
-    % Polish IDUB  logo
+% Polish IDUB  logo
     idub-pl/.pic= {
         \begin{tikzpicture}[y=1cm, x=1cm, yscale=\globalscale,xscale=\globalscale, every node/.append style={scale=\globalscale}, inner sep=0pt, outer sep=0pt]
             \begin{scope}[shift={(0.6,2)}]
@@ -1012,7 +1011,7 @@ example.tex.
             \end{scope}
         \end{tikzpicture}
     },
-    % English IDUB logo
+% English IDUB logo
     idub-en/.pic= {
         \begin{tikzpicture}[y=1cm, x=1cm, yscale=\globalscale,xscale=\globalscale, every node/.append style={scale=\globalscale}, inner sep=0pt, outer sep=0pt]
             \begin{scope}[shift={(0.6,2)}]
@@ -1025,17 +1024,17 @@ example.tex.
             \end{scope}
         \end{tikzpicture}
     },
-    % A colorful stripe in the colors of AGH
+% A colorful stripe in the colors of AGH
     lines/.pic={
-        % Black line
+% Black line
         \ifthenelse{
-            % I assume that the title page is the first page of presentation ;-)
+% I assume that the title page is the first page of presentation ;-)
             \thepage=1
             \AND
-            % The '\author' command was used in the preamble
+% The '\author' command was used in the preamble
             \not\equal{\beamer@shortauthor}{}  
             \AND
-            % The '\title' command was used in the preamble 
+% The '\title' command was used in the preamble 
             \not\equal{\beamer@shorttitle}{}  
         }
         {
@@ -1046,11 +1045,11 @@ example.tex.
         }
         \coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
         \draw[AGH@black,thick] (black_x1) -- (black_x2);
-        % Green line
+% Green line
         \coordinate [below left =  0.05\textheight and \coloredlinesskip of black_x1] (green_x1);
         \coordinate [above left =  0.2\textheight and \coloredlinesskip of black_x2] (green_x2);
         \draw[AGH@green,thick] (green_x1) -- (green_x2);
-        % Red line
+% Red line
         \coordinate [below right = 0.2\textheight and \coloredlinesskip of black_x1] (red_x1);
         \coordinate [above right = 0.2\textheight and \coloredlinesskip of black_x2] (red_x2);
             \draw[AGH@red,thick] (red_x1) -- (red_x2);
@@ -1060,27 +1059,27 @@ example.tex.
 % \section{Background images}
 %    \begin{macrocode}    
 \setbeamertemplate{background}{
-    % Define the look of the title slide only if the number of the current slide is 1, and in addition, 
-    % in the preamble of the document, the name of the author and the title of the presentation are specified. 
+% Define the look of the title slide only if the number of the current slide is 1, and in addition, 
+% in the preamble of the document, the name of the author and the title of the presentation are specified. 
     \ifthenelse{
-        % I assume that the title page is the first page of presentation ;-)
+% I assume that the title page is the first page of presentation ;-)
         \thepage=1 
         \AND
-        % The '\author' command was used in the preamble 
+% The '\author' command was used in the preamble 
         \not\equal{\beamer@shortauthor}{} 
         \AND
-        % The '\title' command was used in the preamble 
+% The '\title' command was used in the preamble 
         \not\equal{\beamer@shorttitle}{}  
     }
     {
-        % Content of title page
+% Content of title page
         \leftedgeskip=4em
-        % Colorful lines            
+% Colorful lines            
         \tikz[overlay]\pic {lines};
-        % AGH logo
+% AGH logo
         \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt]
             \path pic  [below right = -2ex and -1em of black_x1,scale=0.5] (logo-) {logo};
-        % IDUB logo
+% IDUB logo
         \@ifclasswith{beamer}{polish}{
             \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt]
                 \path pic {idub-pl};
@@ -1089,12 +1088,12 @@ example.tex.
             \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt]
                 \path pic {idub-en};
         }
-        % Name in Polish
+% Name in Polish
         \tikz[overlay]
             \node (polish) [align=left,right = 2em of logo-AGH,font={\tiny\bfseries}]{
                 Akademia G\'{o}rniczo-Hutnicza\\im. Stanis\l{}awa Staszica w Krakowie
             };
-        % Name in English
+% Name in English
         \tikz[overlay]
             \node (english) [align=left,below = 1.5ex of polish.south west,anchor=west,color=AGH@gray,font=\tiny\bfseries]{
                 AGH University of Krakow
@@ -1102,14 +1101,14 @@ example.tex.
     }
     {
         \ifAGH@sidebar%
-            % Content of non-title page when sidebar should be visible
+% Content of non-title page when sidebar should be visible
             \leftedgeskip=4mm
-            % Colorful lines            
+% Colorful lines            
             \tikz[overlay]\pic {lines};
-            % AGH logo
+% AGH logo
             \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt]
                 \path pic at (current page.north west) [xshift=-\leftedgeskip,yshift=4.5\headheight,scale=0.3] {logo};
-            % WWW address
+% WWW page address
             \tikz[overlay]\node[above = of black_x2,rotate=90,color=AGH@gray,font={\tiny}]{www.agh.edu.pl};
         \fi
     }

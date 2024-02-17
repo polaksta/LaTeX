@@ -756,7 +756,7 @@ example.tex.
 \def\fileversion{1.0}
 \def\filedate{2024/02/14}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{agh-wi}[\filedate\space\fileversion\space Diploma thesis at WI AGH Krakow]
+\ProvidesClass{agh-wi}[\filedate\space\fileversion\space Diploma thesis at WI AGH Kraków]
 %</class>
 %<*driver>
 \documentclass{ltxdoc}
@@ -932,7 +932,7 @@ example.tex.
 %
 % Version for viewing, using a PDF viewer, is created.
 %    \begin{macrocode}
-    \newif\ifprint
+\newif\ifprint
 %    \end{macrocode}
 %    
 % The field of study --- visible on the title page --- is 'Computer Science'.
@@ -1001,52 +1001,63 @@ example.tex.
 % Configuration of typical packages used when creating a diploma thesis in computer science.
 %    \begin{macrocode}
     \AtBeginDocument{
-        %
-        % The 'algorithm2e' package
-        %
+% The 'algorithm2e' package
         \@ifpackageloaded{algorithm2e}{        
             \ifenglish\else
                 \renewcommand{\listalgorithmcfname}{Lista algorytmów}%
                 \renewcommand{\algorithmcfname}{Algorytm}%
             \fi
         }{}
-        %
-        % The 'minted' package
-        % 
+% The 'minted' package
         \@ifpackageloaded{minted}{
             \ifenglish\else
                 \SetupFloatingEnvironment{listing}{name=Kod źródłowy}
                 \SetupFloatingEnvironment{listing}{listname=Lista kodów źródłowych}
             \fi
             \setminted{
-                linenos,     % Display line numbers
-                frame=single % A single frame around the listing
+% Display line numbers                
+                linenos,     
+% A single frame around the listing                
+                frame=single
             }
         }{}
-        %
-        % The 'listings' package
-        %
+%        The 'listings' package
         \@ifpackageloaded{listings}{
-            \lstset{ 
-                %basicstyle=\tiny,              % Font size for program code
-                showstringspaces=false,         % Whether to underscore spaces inside strings
-                numbers=left,                   % Where to place line numbers
-                %numberstyle=\footnotesize,     % Font size for line numbers
-                stepnumber=1,                   % Step between two line numbers. If 1, each line will be numbered
-                numbersep=5pt,                  % How far the line numbers are offset from the code
-                showspaces=false,               % Whether to show spaces within strings using underscores
-                showtabs=false,                 % Whether to show tabs within strings using underscores
-                frame=single,                   % Add a single border around the code
-                tabsize=2,                      % Set the default tab size to two spaces
-                captionpos=t,                   % Set position for signature - signature on top
-                breaklines=true,                % Enable automatic line breaks
-                breakatwhitespace=false,        % Should automatic breaking only occur on white characters?
-                keywordstyle=\ttfamily\color{blue}, % Color and font for keywords
-                identifierstyle=\ttfamily\color{violet}\bfseries, % Color and font identifiers
-                commentstyle=\color{brown},     % Color and font for comments
-                stringstyle=\ttfamily,          % Color and font for strings
-                escapeinside={\%*}{*)},         % If you want to add LaTeX within your code
-                inputencoding=utf8,             % The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below
+            \lstset{          
+% Whether to underscore spaces inside strings                
+                showstringspaces=false,    
+% Where to place line numbers                     
+                numbers=left,  
+% Step between two line numbers. If 1, each line will be numbered                                 
+                stepnumber=1,      
+% How far the line numbers are offset from the code                             
+                numbersep=5pt,  
+% Whether to show spaces within strings using underscores                                
+                showspaces=false,     
+% Whether to show tabs within strings using underscores                          
+                showtabs=false,  
+% Add a single border around the code                               
+                frame=single,  
+% Set the default tab size to two spaces                                
+                tabsize=2, 
+% Set position for caption - captions on top                                    
+                captionpos=t,
+% Enable automatic line breaks                                   
+                breaklines=true, 
+% Should automatic breaking only occur on white characters?                               
+                breakatwhitespace=false,   
+% Color and font for keywords                     
+                keywordstyle=\ttfamily\color{blue}, 
+% Color and font identifiers                
+                identifierstyle=\ttfamily\color{violet}\bfseries, 
+% Color and font for comments                
+                commentstyle=\color{brown},   
+% Color and font for strings
+                stringstyle=\ttfamily,         
+% If you want to add LaTeX within your code                
+                escapeinside={\%*}{*)},         
+                inputencoding=utf8,     
+% The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below                        
                 literate={ą}{{\k{a}}}1
                     {Ą}{{\k{A}}}1
                     {ę}{{\k{e}}}1
@@ -1074,7 +1085,7 @@ example.tex.
             \fi
         }{}
     }
-    %    \end{macrocode}
+%    \end{macrocode}
 
 \definecolor{AGH@black}{RGB}{30,30,30}
 \definecolor{AGH@red}{RGB}{167,25,48}
@@ -1085,7 +1096,7 @@ example.tex.
 %    \begin{macrocode}
 \def\logoscale {1.000000}
 \tikzset {
-    % AGH logo
+% AGH logo
     logoAGH/.pic= {
             \begin{tikzpicture}[y=1cm, x=1cm, yscale=\logoscale,xscale=\logoscale, every node/.append style={scale=\logoscale}, inner sep=0pt, outer sep=0pt]
                 \begin{scope}[cm={ 1.25,-0.0,-0.0,-1.25,(0.0, 6.288)}]
