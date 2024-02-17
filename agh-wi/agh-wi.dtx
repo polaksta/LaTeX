@@ -111,57 +111,57 @@ and the derived files
 %</license>
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% example.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %<*example>
-% W tym przykładzie użyto, między innymi, pakietów:
-%   - "minted", co oznacza, że musisz uruchomić kompilator z opcją '-shell-escape'
-%   - "biblatex", co oznacza, że po kompilacji (dokumentu) musisz, jeszcze,  wygenerować plik '.bbl'
-%   - "nomencl", co oznacza, że za pomocą komendy 'makeindex' musisz wygenerować wykaz symboli
-% 
-% Tak więc, w celu wygenerowania wynikowego dokumentu PDF, musisz wykonać następujące komendy:
-%       pdflatex -shell-escape example
-%       biber example
-%       makeindex example.nlo  -s nomencl.ist -o example.nls
-%       pdflatex -shell-escape example
-%       pdflatex -shell-escape example
-%
-% 
-% Dodatkowo musisz mieć zainstalowany program 'pygmentize', który jest częścią pakietu "Pygments" (https://pygments.org/)
-% Ww. programy powinny zainstalować się automatycznie podczas instalacji pakietów LaTeX 
-%
-% Jeżeli masz zainstalowany program 'latexmk', to możesz wygenerować dokument PDF następująco:
-%       latexmk example
-%       makeindex example.nlo  -s nomencl.ist -o example.nls
-%       latexmk example
-%
-% Do edycji (oraz komplilacji) dokumentów LaTeX polecam program 'TeXstudio' (https://www.texstudio.org/)  
-%
-% Autor: Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
+ % W tym przykładzie użyto, między innymi, pakietów:
+ %   - "minted", co oznacza, że musisz uruchomić kompilator z opcją '-shell-escape'
+ %   - "biblatex", co oznacza, że po kompilacji (dokumentu) musisz, jeszcze,  wygenerować plik '.bbl'
+ %   - "nomencl", co oznacza, że za pomocą komendy 'makeindex' musisz wygenerować wykaz symboli
+ % 
+ % Tak więc, w celu wygenerowania wynikowego dokumentu PDF, musisz wykonać następujące komendy:
+ %       pdflatex -shell-escape example
+ %       biber example
+ %       makeindex example.nlo  -s nomencl.ist -o example.nls
+ %       pdflatex -shell-escape example
+ %       pdflatex -shell-escape example
+ %
+ % 
+ % Dodatkowo musisz mieć zainstalowany program 'pygmentize', który jest częścią pakietu "Pygments" (https://pygments.org/)
+ % Ww. programy powinny zainstalować się automatycznie podczas instalacji pakietów LaTeX 
+ %
+ % Jeżeli masz zainstalowany program 'latexmk', to możesz wygenerować dokument PDF następująco:
+ %       latexmk example
+ %       makeindex example.nlo  -s nomencl.ist -o example.nls
+ %       latexmk example
+ %
+ % Do edycji (oraz komplilacji) dokumentów LaTeX polecam program 'TeXstudio' (https://www.texstudio.org/)  
+ %
+ % Autor: Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
 \documentclass{agh-wi} % Praca po polsku, 
                        % Kierunek 'Informatyka'.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                               
-% Inne, przykładowe, użycia klasy
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                               
-% \documentclass[english]{agh-wi}                % Praca po angielsku,
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                               
+ % Inne, przykładowe, użycia klasy
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                               
+ % \documentclass[english]{agh-wi}                % Praca po angielsku,
                                                  % Kierunek 'Informatyka',
                                                  % Przeznaczona do oglądania przy użyciu przegladarki PDF.
-% \documentclass[english, data-science]{agh-wi}  % Praca po angielsku,
+ % \documentclass[english, data-science]{agh-wi}  % Praca po angielsku,
                                                  % Kierunek 'Informatyka - Data Science',    
                                                  % Przeznaczona do oglądania przy użyciu przegladarki PDF.
-% \documentclass[print]{agh-wi}                  % Praca po polsku,
+ % \documentclass[print]{agh-wi}                  % Praca po polsku,
                                                  % Kierunek 'Informatyka',    
                                                  % Przeznaczona do drukowania - każda strona posiada,
                                                  %    dodatkowy (2cm), margines na oprawę.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Parametry dla strony tytułowej
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Parametry dla strony tytułowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titlePL{Tytuł zgodny z tematyką/dziedziną pracy dyplomowej}  % Tytuł po polsku
 \titleEN{Title consistent with the topic/field of the thesis} % Tytuł po angielsku
 \author{Imiona i nazwisko dyplomanta}
 \supervisor{Stopień lub tytuł naukowy imiona i nazwisko promotora}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Pakiety
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Podstawowe — na pewno będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Pakiety
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Podstawowe — na pewno będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{polski}                           % Obsługa języka polskiego
 \usepackage[                                  % Obsługa spisu literatury
     style=numeric,   % Odnośniki są liczbami
@@ -178,9 +178,9 @@ and the derived files
     maxbibnames=3,
     backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomocą Bibera
 ]{biblatex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath}                          % Dodatkowe środowiska matematyczne
 \usepackage{amssymb}                          % Dodatkowe symbole matematyczne
 \usepackage[polish, intoc]{nomencl}           % Definiowanie symboli
@@ -194,42 +194,42 @@ and the derived files
 \usepackage{caption}                          % Modyfikacji pozycji podpisu
 \captionsetup[listing]{position=top}          %       dla listingów 'minted'
 \usepackage{hyperref}                         % Obsługa odsyłaczy HTML
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Ładowanie danych bibliograficznych
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Ładowanie danych bibliograficznych
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addbibresource{bibliography.bib}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Opcje konfiguracyjne pakietów
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Pakiet 'framed' 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Opcje konfiguracyjne pakietów
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Pakiet 'framed' 
 \definecolor{shadecolor}{gray}{0.9}
-% Pakiet 'hyperref' 
+ % Pakiet 'hyperref' 
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta, 
     urlcolor=cyan
 } 
-% Pakiet 'nomencl'
+ % Pakiet 'nomencl'
 \makenomenclature % Otwórz plik 'example.nlo'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definicje komend
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Definicje komend
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\alert}[1]{\colorbox{red!50}{#1}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Twierdzenia i podobne struktury
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Twierdzenia i podobne struktury
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtheorem{theorem}{Twierdzenie}
 \newtheorem{definition}{Definicja}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter % Część wstępna
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle % Dodaj stronę tytułową
-%%%%%%%%%%%%%%%%%%%%%%%
-% Jeżeli chcesz komuś podziękować, to możesz użyć poniższego kodu
+ %%%%%%%%%%%%%%%%%%%%%%%
+ % Jeżeli chcesz komuś podziękować, to możesz użyć poniższego kodu
 \cleardoublepage
 \thispagestyle{empty}
 \vspace*{\fill}
@@ -243,15 +243,15 @@ and the derived files
         Tutaj możesz umieścić treść podziękowań.
     \end{minipage}
 \end{flushright}
-%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstractPL}
     Streszczenie po polsku \ldots
 \end{abstractPL}
 \begin{abstractEN}
     Abstract in english \ldots
 \end{abstractEN}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents   % Wygeneruj spis treści
 \begin{shaded}
     Zawartość spisu treści \pauza tytuły rozdziałów oraz ich ilość zależą od tematyki pracy \pauza należy ustalić z opiekunem pracy.
@@ -259,13 +259,13 @@ and the derived files
 \listoffigures     % Wygeneruj listę rysunków
 \listoftables      % Wygeneruj listę tabel
 \listofalgorithms  % Wygeneruj listę algorytmów
-% Wygeneruj listę kodów źrółowych
+ % Wygeneruj listę kodów źrółowych
 \lstlistoflistings % Jeżeli do tworzenia listingów używasz pakietu 'listings'
-% \listoflistings  % Jeżeli do tworzenia listingów używasz pakietu 'minted'
+ % \listoflistings  % Jeżeli do tworzenia listingów używasz pakietu 'minted'
 \printnomenclature % Wyświetl listę symboli
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter % Część główna
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Wstęp}
 \begin{shaded}
     Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
@@ -299,8 +299,8 @@ Aktualny stan wiedzy, na dany temat, na podstawie dostępnej literatury naukowej
     \item Możliwości dalszego rozwoju.
     \item Potencjalne obszary zastosowania pracy.
 \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix % Dodatek
 \chapter{Typowe elementy składowe pracy dyplomowej z Informatyki}
 \section{Tabele}
@@ -420,7 +420,7 @@ Tabele, w których występuje długi tekst, a co za tym idzie może się on nie 
 
 \paragraph{Uwaga}
 \alert{Każda tabela powinna być opisana w treści pracy.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rysunki}
 \paragraph{Uwagi}
 \begin{itemize}
@@ -466,7 +466,7 @@ pakiet \emph{graphicx} \cite{graphicx} pozwala na wstawianie grafik zapisanych w
     \caption{Logo Wydziału Informatyki.}
     \label{fig:logo}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algorytmy}
 Pakiet \emph{algorithm2e} \cite{algorithm2e} pozwala zapisywać algorytmy w formie pseudokodu \pauza patrz
 algorytm \ref{alg:algo_disjdecomp} na stronie \pageref{alg:algo_disjdecomp}.
@@ -501,8 +501,7 @@ algorytm \ref{alg:algo_disjdecomp} na stronie \pageref{alg:algo_disjdecomp}.
     }
     \caption{disjoint decomposition.}\label{alg:algo_disjdecomp}
 \end{algorithm}\DecMargin{1em}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kody źródłowe}
 Najpopularniejszymi pakietami, które umożliwiają składanie kodów źródłowych programów, są:
 \begin{description}
@@ -540,7 +539,7 @@ Kod źródłowy w C++ sformatowany przy użyciu pakietu \emph{listings}, pokazan
         \item \alert{Proszę używać tylko jednego z tych pakietów.} W przeciwnym razie otrzymasz taki efekt, jak w przykładowej pracy \pauza obydwa listingi mają ten sam numer.
     \end{itemize}
 \end{shaded}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Wzory}
 \begin{shaded}
     Należy używać tylko dwóch rodzajów wzorów:
@@ -559,8 +558,8 @@ Wzór $E = mc^{2}$\nomenclature{$c$}{Prędkość światła w próżni} jest czę
     \left(\sum_{i=1}^n a_i^2\right)^{1/2}
     \left(\sum_{i=1}^n b_i^2\right)^{1/2}
 \end{equation}
-
-% Do wstawienia poniższych wzorów użyto środowisk (otoczeń) zdefiniowanych w pakiecie 'amsmath'
+ 
+ % Do wstawienia poniższych wzorów użyto środowisk (otoczeń) zdefiniowanych w pakiecie 'amsmath'
 Wartości zmiennej opisano wzorem \ref{eq:r1}.
 \begin{equation}
     \label{eq:r1}
@@ -577,7 +576,7 @@ Wzór \ref{eq:r2} to wzór wielowierszowy.
                        & = 2x^2 + 3x^2 - 9x + 6\nonumber \\
                        & = 5x^2 - 9x + 6\nonumber
 \end{align}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Twierdzenia i podobne struktury}
 
 Twierdzenie nr \ref{tw} opublikował, w roku 1691, francuski matematyk Michel Rolle.
@@ -600,9 +599,9 @@ Teraz coś z informatyki \ldots
 \begin{definition}
     Bajtem nazywamy ciąg ośmiu bitów.
 \end{definition}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter % Część końcowa
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Uwagi Autora}
 \begin{itemize}
     \item Aktualna wersja klasy jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/agh-wi}.
@@ -619,13 +618,13 @@ Teraz coś z informatyki \ldots
 \end{itemize}
 Stanisław Polak
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Wyświetl spis literatury
-% UWAGA: Powinien zawierać tylko te publikacje, do których odwołujesz się w pracy 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Wyświetl spis literatury
+ % UWAGA: Powinien zawierać tylko te publikacje, do których odwołujesz się w pracy 
 \printbibliography
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
 %</example>
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bibliography.bib %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

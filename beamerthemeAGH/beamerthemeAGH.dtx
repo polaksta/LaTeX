@@ -108,14 +108,14 @@ and the derived files
 %</license>
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% example.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %<*example>
-% This example uses the 'minted' package, so you need to run the compiler with 
-% the '-shell-escape' option, i.e.
-%     pdflatex -shell-escape example.tex
-% Additionally, you must have the 'pygmentize' program installed, which is part of 
-% the 'Pygments' package (https://pygments.org/)
+ % This example uses the 'minted' package, so you need to run the compiler with 
+ % the '-shell-escape' option, i.e.
+ %     pdflatex -shell-escape example.tex
+ % Additionally, you must have the 'pygmentize' program installed, which is part of 
+ % the 'Pygments' package (https://pygments.org/)
 
 \documentclass[aspectratio=1610, english]{beamer} 
-% Jeśli chcesz otrzymać prezentację w języku polskim, to, powyżej, zamień „english” na „polish”
+ % Jeśli chcesz otrzymać prezentację w języku polskim, to, powyżej, zamień „english” na „polish”
 \usepackage{babel}
 \makeatletter
 \@ifclasswith{beamer}{polish}{
@@ -182,9 +182,9 @@ and the derived files
             \inst{2}Second affiliation
     }
 }
-%%%%%%%%%%% Configuration of the listings package %%%%%%%%%%%%%%%%%%%%%%%%%%
-% Source: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Using_the_listings_package
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%% Configuration of the listings package %%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Source: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Using_the_listings_package
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color
   basicstyle=\footnotesize,        % the size of the fonts that are used for the code
@@ -230,10 +230,10 @@ and the derived files
            {ń}{{\'n}}1
            {Ń}{{\'N}}1
 }
-%%%%%%%%%%% Configuration of the minted package %%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%% Configuration of the minted package %%%%%%%%%%%%%%%%%%%%%%%%%%
 \setminted[C++]{frame=single,linenos}
 
-%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 
@@ -259,15 +259,15 @@ and the derived files
         \verb+\usetheme[margins=...]{AGH}+
     \end{frame}
 \fi
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \part{\iflanguage{polish}{Przykłady}{Examples}}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Plan prezentacji}{Outline}}
     \tableofcontents[pausesections]
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Elementy podstawowe}{Basic elements}}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Wyszczególnienie}{Itemize}}
     \begin{columns}
         \column{0.5\textwidth}
@@ -287,7 +287,7 @@ and the derived files
         \onslide
     \end{columns}
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Wyliczenie}{Enumerate}}
     \begin{columns}
         \column{0.5\textwidth}
@@ -307,9 +307,9 @@ and the derived files
         \onslide
     \end{columns}
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Matematyka}{Mathematics}}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Podstawowe bloki}{Basic blocks}}
     % Examples from "The beamer class User Guide"
     \iflanguage{polish}{
@@ -334,7 +334,7 @@ and the derived files
         \end{alertblock}
     }
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Otoczenia matematyczne}{Math environments}}
     \begin{columns}
         \column{0.45\textwidth} %The first column
@@ -355,17 +355,17 @@ and the derived files
         \ldots
     \end{definition}
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Dynamiczny wzór matematyczny}{Dynamic mathematical formula}}
     \[
         \binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
     \]
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Informatyka}{Computer Science}}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \subsection*{\iflanguage{polish}{Wstawianie kodów źródłowych}{Inserting source codes}}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'listings'}{Using the 'listings' environment}}
     \begin{lstlisting}[language=C++]
 /* The first  program in C++ */  %*\pause*)
@@ -377,7 +377,7 @@ void main()
 } %*\onslide*)
 \end{lstlisting}
 \end{frame}
-%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'minted'}{Using the 'minted' environment}}
     \begin{minted}[beameroverlays,escapeinside=||]{C++}
 /* The first  program in C++ */  |\pause|
@@ -389,14 +389,14 @@ void main()
 } |\onslide|
     \end{minted}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%
 \appendix
-%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
     \iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}{The current version of the template is available at \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%        
+ %%%%%%%%%%%%%%%%%%%%%%%        
 \begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
     \begin{thebibliography}{9}
         \setbeamertemplate{bibliography item}[online]
