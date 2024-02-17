@@ -1003,91 +1003,91 @@ example.tex.
 %\section{Configuration of selected packages}
 % Configuration of typical packages used when creating a diploma thesis in computer science.
 %    \begin{macrocode}
-    \AtBeginDocument{
+\AtBeginDocument{
 % The 'algorithm2e' package
-        \@ifpackageloaded{algorithm2e}{        
-            \ifenglish\else
-                \renewcommand{\listalgorithmcfname}{Lista algorytmów}%
-                \renewcommand{\algorithmcfname}{Algorytm}%
-            \fi
-        }{}
+\@ifpackageloaded{algorithm2e}{
+    \ifenglish\else
+        \renewcommand{\listalgorithmcfname}{Lista algorytmów}%
+        \renewcommand{\algorithmcfname}{Algorytm}%
+    \fi
+}{}
 % The 'minted' package
-        \@ifpackageloaded{minted}{
-            \ifenglish\else
-                \SetupFloatingEnvironment{listing}{name=Kod źródłowy}
-                \SetupFloatingEnvironment{listing}{listname=Lista kodów źródłowych}
-            \fi
-            \setminted{
-% Display line numbers                
-                linenos,     
-% A single frame around the listing                
-                frame=single
-            }
-        }{}
-%        The 'listings' package
-        \@ifpackageloaded{listings}{
-            \lstset{          
-% Whether to underscore spaces inside strings                
-                showstringspaces=false,    
-% Where to place line numbers                     
-                numbers=left,  
-% Step between two line numbers. If 1, each line will be numbered                                 
-                stepnumber=1,      
-% How far the line numbers are offset from the code                             
-                numbersep=5pt,  
-% Whether to show spaces within strings using underscores                                
-                showspaces=false,     
-% Whether to show tabs within strings using underscores                          
-                showtabs=false,  
-% Add a single border around the code                               
-                frame=single,  
-% Set the default tab size to two spaces                                
-                tabsize=2, 
-% Set position for caption - captions on top                                    
-                captionpos=t,
-% Enable automatic line breaks                                   
-                breaklines=true, 
-% Should automatic breaking only occur on white characters?                               
-                breakatwhitespace=false,   
-% Color and font for keywords                     
-                keywordstyle=\ttfamily\color{blue}, 
-% Color and font identifiers                
-                identifierstyle=\ttfamily\color{violet}\bfseries, 
-% Color and font for comments                
-                commentstyle=\color{brown},   
-% Color and font for strings
-                stringstyle=\ttfamily,         
-% If you want to add LaTeX within your code                
-                escapeinside={\%*}{*)},         
-                inputencoding=utf8,     
-% The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below                        
-                literate={ą}{{\k{a}}}1
-                    {Ą}{{\k{A}}}1
-                    {ę}{{\k{e}}}1
-                    {Ę}{{\k{E}}}1
-                    {ó}{{\'o}}1
-                    {Ó}{{\'O}}1
-                    {ś}{{\'s}}1
-                    {Ś}{{\'S}}1
-                    {ł}{{\l{}}}1
-                    {Ł}{{\L{}}}1
-                    {ż}{{\.z}}1
-                    {Ż}{{\.Z}}1
-                    {ź}{{\'z}}1
-                    {Ź}{{\'Z}}1
-                    {ć}{{\'c}}1
-                    {Ć}{{\'C}}1
-                    {ń}{{\'n}}1
-                    {Ń}{{\'N}}1
-            }
-            \ifenglish
-                \renewcommand{\lstlistlistingname}{List of Listings}
-            \else
-                \renewcommand{\lstlistingname}{Kod źródłowy}%
-                \renewcommand{\lstlistlistingname}{Lista kodów źródłowych}
-            \fi
-        }{}
+\@ifpackageloaded{minted}{
+    \ifenglish\else
+        \SetupFloatingEnvironment{listing}{name=Kod źródłowy}
+        \SetupFloatingEnvironment{listing}{listname=Lista kodów źródłowych}
+    \fi
+    \setminted{
+        % Display line numbers                
+        linenos,
+        % A single frame around the listing                
+        frame=single
     }
+}{}
+%        The 'listings' package
+\@ifpackageloaded{listings}{
+\lstset{
+% Whether to underscore spaces inside strings                
+showstringspaces=false,
+% Where to place line numbers                     
+numbers=left,
+% Step between two line numbers. If 1, each line will be numbered                                 
+stepnumber=1,
+% How far the line numbers are offset from the code                             
+numbersep=5pt,
+% Whether to show spaces within strings using underscores                                
+showspaces=false,
+% Whether to show tabs within strings using underscores                          
+showtabs=false,
+% Add a single border around the code                               
+frame=single,
+% Set the default tab size to two spaces                                
+tabsize=2,
+% Set position for caption - captions on top                                    
+captionpos=t,
+% Enable automatic line breaks                                   
+breaklines=true,
+% Should automatic breaking only occur on white characters?                               
+breakatwhitespace=false,
+% Color and font for keywords                     
+keywordstyle=\ttfamily\color{blue},
+% Color and font identifiers                
+identifierstyle=\ttfamily\color{violet}\bfseries,
+% Color and font for comments                
+commentstyle=\color{brown},
+% Color and font for strings
+stringstyle=\ttfamily,
+% If you want to add LaTeX within your code                
+escapeinside={\%*}{*)},
+inputencoding=utf8,
+% The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below                        
+literate={ą}{{\k{a}}}1
+{Ą}{{\k{A}}}1
+{ę}{{\k{e}}}1
+{Ę}{{\k{E}}}1
+{ó}{{\'o}}1
+{Ó}{{\'O}}1
+{ś}{{\'s}}1
+{Ś}{{\'S}}1
+{ł}{{\l{}}}1
+{Ł}{{\L{}}}1
+{ż}{{\.z}}1
+{Ż}{{\.Z}}1
+{ź}{{\'z}}1
+{Ź}{{\'Z}}1
+{ć}{{\'c}}1
+{Ć}{{\'C}}1
+{ń}{{\'n}}1
+{Ń}{{\'N}}1
+}
+\ifenglish
+    \renewcommand{\lstlistlistingname}{List of Listings}
+\else
+    \renewcommand{\lstlistingname}{Kod źródłowy}%
+    \renewcommand{\lstlistlistingname}{Lista kodów źródłowych}
+\fi
+}{}
+}
 %    \end{macrocode}
 
 \definecolor{AGH@black}{RGB}{30,30,30}
@@ -1099,7 +1099,7 @@ example.tex.
 %    \begin{macrocode}
 \def\logoscale {1.000000}
 \tikzset {
-% AGH logo
+    % AGH logo
     logoAGH/.pic= {
             \begin{tikzpicture}[y=1cm, x=1cm, yscale=\logoscale,xscale=\logoscale, every node/.append style={scale=\logoscale}, inner sep=0pt, outer sep=0pt]
                 \begin{scope}[cm={ 1.25,-0.0,-0.0,-1.25,(0.0, 6.288)}]
@@ -1150,41 +1150,50 @@ example.tex.
 \renewcommand\maketitle{
     \KOMAoptions{twoside = false}
     \begin{titlepage}
-    \centering
-            \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000]
-            \path pic {logoAGH};\par
-            \vspace*{3\baselineskip}%
-            {    \bfseries\large
-                Akademia Górniczo-Hutnicza
-                im. Stanisława Staszica
-                w Krakowie
-            }\par
-            \vspace*{\baselineskip}%
-            {
-                \large Wydział Informatyki
-            }\par
-            \vspace*{3\baselineskip}%
-            {
-                \scshape\Large Praca dyplomowa
-            }\par
-            \vspace*{3\baselineskip}%
-            \ifenglish
-            {\sffamily\Large\bfseries \@titleEN}\par%
-            \vspace*{\baselineskip}%
-            {\sffamily\small\bfseries \@titlePL}\par%
-            \else
-            {\sffamily\Large\bfseries \@titlePL}\par%
-            \vspace*{\baselineskip}%
-            {\sffamily\small\bfseries \@titleEN}\par%
-            \fi
-            \vfill
-            \par
-            \begin{tabular}{ll}
-                Autor:         & {\bfseries\@author}      \\[0.8mm]
-                Kierunek:      & {\bfseries\fieldOfStudy} \\[0.8mm]
-                Opiekun pracy: & {\bfseries\@supervisor}  \\[0.8mm]
-            \end{tabular}
-            \par
+        \centering
+        \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000]
+        \path pic {logoAGH};\par
+        \vspace*{3\baselineskip}%
+        {    \bfseries\large
+            Akademia Górniczo-Hutnicza
+            im. Stanisława Staszica
+            w Krakowie
+        }\par
+        \vspace*{\baselineskip}%
+        {
+            \large Wydział Informatyki
+        }\par
+        \vspace*{3\baselineskip}%
+        {
+            \scshape\Large Praca dyplomowa
+        }\par
+        \vspace*{3\baselineskip}%
+        \ifenglish
+        {\sffamily\Large\bfseries \@titleEN}\par%
+        \vspace*{\baselineskip}%
+        {\sffamily\small\bfseries \@titlePL}\par%
+        \else
+        {\sffamily\Large\bfseries \@titlePL}\par%
+        \vspace*{\baselineskip}%
+        {\sffamily\small\bfseries \@titleEN}\par%
+        \fi
+        \vfill
+        \par
+        \begin{tabular}{ll}
+            Autor:         & {\bfseries
+            \begin{tabular}[t]{c}
+                        \@author
+                    \end{tabular}}        \\[0.8mm]
+            Kierunek:      & {\bfseries
+            \begin{tabular}[t]{c}
+                        \fieldOfStudy
+                    \end{tabular}}        \\[0.8mm]
+            Opiekun pracy: & {\bfseries
+            \begin{tabular}[t]{c}
+                        \@supervisor
+                    \end{tabular}}        \\[0.8mm]
+        \end{tabular}
+        \par
         \vspace*{3\baselineskip}%
         \centering Kraków, \the\year
     \end{titlepage}%
