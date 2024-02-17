@@ -110,7 +110,7 @@ and the derived files
 %<*example>
 % This example uses the 'minted' package, so you need to run the compiler with 
 % the '-shell-escape' option, i.e.
-% 	pdflatex -shell-escape example.tex
+%     pdflatex -shell-escape example.tex
 % Additionally, you must have the 'pygmentize' program installed, which is part of 
 % the 'Pygments' package (https://pygments.org/)
 
@@ -119,68 +119,68 @@ and the derived files
 \usepackage{babel}
 \makeatletter
 \@ifclasswith{beamer}{polish}{
-	\usepackage{polski}
+    \usepackage{polski}
 }
 \makeatother
 \usepackage[utf8]{inputenc}
 \usepackage{listings} % We want to put listings
 \usepackage{minted}   % We want to put listings
 
-\mode<beamer>{ 	% In the 'beamer' mode
-	\definecolor{links}{HTML}{2A1B81}
-	\hypersetup{
-		pdfpagemode=FullScreen,                 % Enable Full screen mode
-		colorlinks,
-		linkcolor=,
-		urlcolor=links
-	}
-	\usetheme[parttitle=rightfooter]{AGH}       % Show part title in right footer
-	%\usetheme[nosidebar]{AGH}                  % Do not show sidebar on non-title slides
-	%\usetheme[nosidebar, margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
-	%\usetheme[dark]{AGH}                       % Use dark background
-	%\usetheme[dark, parttitle=leftfooter]{AGH} % Use dark background and show part title in left footer
+\mode<beamer>{     % In the 'beamer' mode
+    \definecolor{links}{HTML}{2A1B81}
+    \hypersetup{
+        pdfpagemode=FullScreen,                 % Enable Full screen mode
+        colorlinks,
+        linkcolor=,
+        urlcolor=links
+    }
+    \usetheme[parttitle=rightfooter]{AGH}       % Show part title in right footer
+    %\usetheme[nosidebar]{AGH}                  % Do not show sidebar on non-title slides
+    %\usetheme[nosidebar, margins=1em]{AGH}     % Do not show sidebar on non-title slides and set both margins (left / right) to 1em
+    %\usetheme[dark]{AGH}                       % Use dark background
+    %\usetheme[dark, parttitle=leftfooter]{AGH} % Use dark background and show part title in left footer
 }
-\mode<handout>{	% In the 'handout' mode
-	\hypersetup{pdfpagemode=None}		
-	\usepackage{pgfpages}
-	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]	% Show 4 slides on 1 page
-	\pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}
-	\pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}
-	\pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}
-	\pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}
-  	\usetheme{boxes}
-  	\addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad}          % Content of header
- 	\addfootbox{structure}{\quad\insertshortauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} % Content of footer
+\mode<handout>{    % In the 'handout' mode
+    \hypersetup{pdfpagemode=None}        
+    \usepackage{pgfpages}
+    \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]    % Show 4 slides on 1 page
+    \pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}
+    \pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}
+    \pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}
+    \pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}
+      \usetheme{boxes}
+      \addheadbox{structure}{\quad\insertpart\hfill\insertsection\hfill\insertsubsection\qquad}          % Content of header
+      \addfootbox{structure}{\quad\insertshortauthor\hfill\insertframenumber\hfill\insertsubtitle\qquad} % Content of footer
 }
 
 \AtBeginPart{ % At begin part: display its name
-	\frame{\partpage}
+    \frame{\partpage}
 } 
 \author[Stanisław Polak]{Stanisław Polak\inst{1,2}\newline
    {\scriptsize \href{mailto:polak@agh.edu.pl}{polak@agh.edu.pl}}
 }
 \date{}
 \iflanguage{polish}{
-	\title{Temat AGH dla Beamer{\dywiz}a}
-	\institute[AGH]{
-			\inst{1}Wydział Informatyki\newline
-			ul. Kawiory 21\newline
-			30-055 Kraków\newline
-			\url{http://www.icsr.agh.edu.pl/~polak/}
-		\and
-			\inst{2}Druga afiliacja
- 	}
+    \title{Temat AGH dla Beamer{\dywiz}a}
+    \institute[AGH]{
+            \inst{1}Wydział Informatyki\newline
+            ul. Kawiory 21\newline
+            30-055 Kraków\newline
+            \url{http://www.icsr.agh.edu.pl/~polak/}
+        \and
+            \inst{2}Druga afiliacja
+     }
 }{
-	\title{AGH Beamer Theme}
-	\institute[AGH]{
-			\inst{1}IT Department\newline
-			Kawiory 21 Street\newline
-			30-055 Kraków\newline
-			Poland\newline
-			\url{http://www.icsr.agh.edu.pl/~polak/}
-		\and
-			\inst{2}Second affiliation
-	}
+    \title{AGH Beamer Theme}
+    \institute[AGH]{
+            \inst{1}IT Department\newline
+            Kawiory 21 Street\newline
+            30-055 Kraków\newline
+            Poland\newline
+            \url{http://www.icsr.agh.edu.pl/~polak/}
+        \and
+            \inst{2}Second affiliation
+    }
 }
 %%%%%%%%%%% Configuration of the listings package %%%%%%%%%%%%%%%%%%%%%%%%%%
 % Source: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Using_the_listings_package
@@ -195,7 +195,7 @@ and the derived files
   deletekeywords={...},            % if you want to delete keywords from the given language
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
   extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-  frame=single,	                   % adds a frame around the code
+  frame=single,                       % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
   morekeywords={*,...},            % if you want to add more keywords to the set
@@ -208,7 +208,7 @@ and the derived files
   showtabs=false,                  % show tabs within strings adding particular underscores
   stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{cyan},        % string literal style
-  tabsize=2,	                   % sets default tabsize to 2 spaces
+  tabsize=2,                       % sets default tabsize to 2 spaces
   title=\lstname,                  % show the filename of files included with \lstinputlisting; also try caption instead of title
                                    % needed if you want to use UTF-8 Polish chars
   literate={ą}{{\k{a}}}1
@@ -238,128 +238,128 @@ and the derived files
 \maketitle
 
 \ifdefined\textleftmargin
-	%%%%%%%%%%%%%%%%
-	\begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
-		\begin{center}
-			\iflanguage{polish}{
-				$\Longleftarrow$ Aktualna wartość \hfill Aktualna wartość $\Longrightarrow$\\
-				$\Longleftarrow$ rozmiaru lewego marginesu \hfill rozmiaru prawego marginesu $\Longrightarrow$\\
-				$\Longleftarrow$ to \the\textleftmargin \hfill to \the\textrightmargin $\Longrightarrow$
-			}{
-				$\Longleftarrow$ The current value of \hfill The current value of $\Longrightarrow$\\
-				$\Longleftarrow$ the  left  margin size \hfill the right margin size $\Longrightarrow$\\
-				$\Longleftarrow$ is \the\textleftmargin \hfill is \the\textrightmargin $\Longrightarrow$
-			}
-		\end{center}
-		\iflanguage{polish}{
-			Możesz je zmieniać za pomocą parametru 'margins' \pauza
-		}{
-			You can change them with the 'margins' parameter ---
-		}
-		\verb+\usetheme[margins=...]{AGH}+
-	\end{frame}
+    %%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
+        \begin{center}
+            \iflanguage{polish}{
+                $\Longleftarrow$ Aktualna wartość \hfill Aktualna wartość $\Longrightarrow$\\
+                $\Longleftarrow$ rozmiaru lewego marginesu \hfill rozmiaru prawego marginesu $\Longrightarrow$\\
+                $\Longleftarrow$ to \the\textleftmargin \hfill to \the\textrightmargin $\Longrightarrow$
+            }{
+                $\Longleftarrow$ The current value of \hfill The current value of $\Longrightarrow$\\
+                $\Longleftarrow$ the  left  margin size \hfill the right margin size $\Longrightarrow$\\
+                $\Longleftarrow$ is \the\textleftmargin \hfill is \the\textrightmargin $\Longrightarrow$
+            }
+        \end{center}
+        \iflanguage{polish}{
+            Możesz je zmieniać za pomocą parametru 'margins' \pauza
+        }{
+            You can change them with the 'margins' parameter ---
+        }
+        \verb+\usetheme[margins=...]{AGH}+
+    \end{frame}
 \fi
 %%%%%%%%%%%%%%%%
 \part{\iflanguage{polish}{Przykłady}{Examples}}
 %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Plan prezentacji}{Outline}}
-	\tableofcontents[pausesections]
+    \tableofcontents[pausesections]
 \end{frame}
 %%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Elementy podstawowe}{Basic elements}}
 %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Wyszczególnienie}{Itemize}}
-	\begin{columns}
-		\column{0.5\textwidth}
-		\begin{itemize}
-			\item \iflanguage{polish}{Element 1}{Item 1}
-			\item \iflanguage{polish}{Element 2}{Item 2}
-			\item \iflanguage{polish}{Element 3}{Item 3}
-		\end{itemize}
-		\column{0.5\textwidth}
-		\pause
-		\structure{\iflanguage{polish}{Odkrywanie po kolei}{Uncovering one by one}}
-		\begin{itemize}[<+->]
-			\item \iflanguage{polish}{Element 1}{Item 1}
-			\item \iflanguage{polish}{Element 2}{Item 2}
-			\item \iflanguage{polish}{Element 3}{Item 3}
-		\end{itemize}
-		\onslide
-	\end{columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item \iflanguage{polish}{Element 1}{Item 1}
+            \item \iflanguage{polish}{Element 2}{Item 2}
+            \item \iflanguage{polish}{Element 3}{Item 3}
+        \end{itemize}
+        \column{0.5\textwidth}
+        \pause
+        \structure{\iflanguage{polish}{Odkrywanie po kolei}{Uncovering one by one}}
+        \begin{itemize}[<+->]
+            \item \iflanguage{polish}{Element 1}{Item 1}
+            \item \iflanguage{polish}{Element 2}{Item 2}
+            \item \iflanguage{polish}{Element 3}{Item 3}
+        \end{itemize}
+        \onslide
+    \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Wyliczenie}{Enumerate}}
-	\begin{columns}
-		\column{0.5\textwidth}
-		\begin{enumerate}
-			\item \iflanguage{polish}{Element 1}{Item 1}
-			\item \iflanguage{polish}{Element 2}{Item 2}
-			\item \iflanguage{polish}{Element 3}{Item 3}
-		\end{enumerate}
-		\column{0.5\textwidth}
-		\pause
-		\structure{\iflanguage{polish}{Odkrywanie elementów po kolei z jednoczesnym wyróżnianiem}{Uncovering elements in turn with simultaneous highlighting}}
-		\begin{enumerate}[<+-|alert@+>]
-			\item \iflanguage{polish}{Element 1}{Item 1}
-			\item \iflanguage{polish}{Element 2}{Item 2}
-			\item \iflanguage{polish}{Element 3}{Item 3}
-		\end{enumerate}
-		\onslide
-	\end{columns}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{enumerate}
+            \item \iflanguage{polish}{Element 1}{Item 1}
+            \item \iflanguage{polish}{Element 2}{Item 2}
+            \item \iflanguage{polish}{Element 3}{Item 3}
+        \end{enumerate}
+        \column{0.5\textwidth}
+        \pause
+        \structure{\iflanguage{polish}{Odkrywanie elementów po kolei z jednoczesnym wyróżnianiem}{Uncovering elements in turn with simultaneous highlighting}}
+        \begin{enumerate}[<+-|alert@+>]
+            \item \iflanguage{polish}{Element 1}{Item 1}
+            \item \iflanguage{polish}{Element 2}{Item 2}
+            \item \iflanguage{polish}{Element 3}{Item 3}
+        \end{enumerate}
+        \onslide
+    \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Matematyka}{Mathematics}}
 %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Podstawowe bloki}{Basic blocks}}
-	% Examples from "The beamer class User Guide"
-	\iflanguage{polish}{
-		\begin{block}{Definicja}
-			\alert{Zbiór} składa się z elementów.
-		\end{block}
-		\begin{exampleblock}{Przykład}
-			Zbiór $\{1,2,3,5\}$ zawiera cztery elementy.
-		\end{exampleblock}
-		\begin{alertblock}{Błędne Twierdzenie}
-			$1=2$.
-		\end{alertblock}
-	}{
-		\begin{block}{Definition}
-			A \alert{set} consists of elements.
-		\end{block}
-		\begin{exampleblock}{Example}
-			The set $\{1,2,3,5\}$ has four elements.
-		\end{exampleblock}
-		\begin{alertblock}{Wrong Theorem}
-			$1=2$.
-		\end{alertblock}
-	}
+    % Examples from "The beamer class User Guide"
+    \iflanguage{polish}{
+        \begin{block}{Definicja}
+            \alert{Zbiór} składa się z elementów.
+        \end{block}
+        \begin{exampleblock}{Przykład}
+            Zbiór $\{1,2,3,5\}$ zawiera cztery elementy.
+        \end{exampleblock}
+        \begin{alertblock}{Błędne Twierdzenie}
+            $1=2$.
+        \end{alertblock}
+    }{
+        \begin{block}{Definition}
+            A \alert{set} consists of elements.
+        \end{block}
+        \begin{exampleblock}{Example}
+            The set $\{1,2,3,5\}$ has four elements.
+        \end{exampleblock}
+        \begin{alertblock}{Wrong Theorem}
+            $1=2$.
+        \end{alertblock}
+    }
 \end{frame}
 %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Otoczenia matematyczne}{Math environments}}
-	\begin{columns}
-		\column{0.45\textwidth} %The first column
-		\structure{\iflanguage{polish}{Twierdzenia}{Theorems}}
-		\begin{theorem}[\iflanguage{polish}{Pitagorasa}{Pythagorean}]
-			$a^{2}+  b^{2}=  c^{2}$
-		\end{theorem}
-		\column{0.45\textwidth} %The second column
-		\structure{\iflanguage{polish}{Dowody}{Proofs}}
-		\begin{proof}
-			\ldots
-		\end{proof}
-	\end{columns}
-	\vfill
-	\ldots
-	\vfill
-	\begin{definition}
-		\ldots
-	\end{definition}
+    \begin{columns}
+        \column{0.45\textwidth} %The first column
+        \structure{\iflanguage{polish}{Twierdzenia}{Theorems}}
+        \begin{theorem}[\iflanguage{polish}{Pitagorasa}{Pythagorean}]
+            $a^{2}+  b^{2}=  c^{2}$
+        \end{theorem}
+        \column{0.45\textwidth} %The second column
+        \structure{\iflanguage{polish}{Dowody}{Proofs}}
+        \begin{proof}
+            \ldots
+        \end{proof}
+    \end{columns}
+    \vfill
+    \ldots
+    \vfill
+    \begin{definition}
+        \ldots
+    \end{definition}
 \end{frame}
 %%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Dynamiczny wzór matematyczny}{Dynamic mathematical formula}}
-	\[
-		\binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
-	\]
+    \[
+        \binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
+    \]
 \end{frame}
 %%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Informatyka}{Computer Science}}
@@ -367,7 +367,7 @@ and the derived files
 \subsection*{\iflanguage{polish}{Wstawianie kodów źródłowych}{Inserting source codes}}
 %%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'listings'}{Using the 'listings' environment}}
-	\begin{lstlisting}[language=C++]
+    \begin{lstlisting}[language=C++]
 /* The first  program in C++ */  %*\pause*)
 #include <iostream>  %*\pause*)
 using namespace std; %*\pause*)
@@ -379,7 +379,7 @@ void main()
 \end{frame}
 %%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'minted'}{Using the 'minted' environment}}
-	\begin{minted}[beameroverlays,escapeinside=||]{C++}
+    \begin{minted}[beameroverlays,escapeinside=||]{C++}
 /* The first  program in C++ */  |\pause|
 #include <iostream>  |\pause|
 using namespace std; |\pause|
@@ -387,40 +387,40 @@ void main()
 {       |\pause|
   cout |\pause| << "Hello World!"|\pause| << endl; |\onslide<4->|
 } |\onslide|
-	\end{minted}
+    \end{minted}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 %%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
-	\iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}{The current version of the template is available at \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}
+    \iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}{The current version of the template is available at \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%		
+%%%%%%%%%%%%%%%%%%%%%%%        
 \begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
-	\begin{thebibliography}{9}
-		\setbeamertemplate{bibliography item}[online]
-		\bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
-		\bibitem{beamer}{Till Tantau, Joseph Wright, Vedran Miletić \newblock The beamer class \newblock \url{http://mirror.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
-		\setbeamertemplate{bibliography item}[book]
-		\bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
-		\setbeamertemplate{bibliography item}[article]
-		\iflanguage{polish}{
-			\bibitem{article1}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
-			\setbeamertemplate{bibliography item}[triangle]
-			\bibitem{article2}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
-			\setbeamertemplate{bibliography item}[text]
-			\bibitem{article3}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
-			\bibitem[Polak98]{article4}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
-		}{
-			\bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-			\setbeamertemplate{bibliography item}[triangle]
-			\bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-			\setbeamertemplate{bibliography item}[text]
-			\bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-			\bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
-		}
-	\end{thebibliography}
+    \begin{thebibliography}{9}
+        \setbeamertemplate{bibliography item}[online]
+        \bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
+        \bibitem{beamer}{Till Tantau, Joseph Wright, Vedran Miletić \newblock The beamer class \newblock \url{http://mirror.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
+        \setbeamertemplate{bibliography item}[book]
+        \bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
+        \setbeamertemplate{bibliography item}[article]
+        \iflanguage{polish}{
+            \bibitem{article1}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+            \setbeamertemplate{bibliography item}[triangle]
+            \bibitem{article2}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+            \setbeamertemplate{bibliography item}[text]
+            \bibitem{article3}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+            \bibitem[Polak98]{article4}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
+        }{
+            \bibitem{article1}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+            \setbeamertemplate{bibliography item}[triangle]
+            \bibitem{article2}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+            \setbeamertemplate{bibliography item}[text]
+            \bibitem{article3}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+            \bibitem[Polak98]{article4}{Author \newblock Title of the article\newblock Editor, year \newblock Notes}
+        }
+    \end{thebibliography}
 \end{frame}
 \end{document}
 %</example>
