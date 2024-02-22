@@ -192,7 +192,7 @@ backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomo
 \usepackage[newfloat]{minted}                 % Wstawianie kodów źródłowych programów
 \usepackage{caption}                          % Modyfikacji pozycji podpisu
 \captionsetup[listing]{position=top}          %       dla listingów 'minted'
-\usepackage{hyperref}                         % Obsługa odsyłaczy HTML
+\usepackage[pdfusetitle]{hyperref}            % Obsługa odsyłaczy HTML
 \usepackage{csquotes}                         % Rekomendowany, gdyż używasz 'biblatex'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ładowanie danych bibliograficznych
@@ -205,10 +205,10 @@ backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomo
 \definecolor{shadecolor}{gray}{0.9}
 % Pakiet 'hyperref'
 \hypersetup{
-colorlinks=true,
-linkcolor=blue,
-filecolor=magenta,
-urlcolor=cyan
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan
 }
 % Pakiet 'nomencl'
 \makenomenclature % Otwórz plik 'example.nlo'
@@ -756,8 +756,8 @@ example.tex.
 \fi
 %</internal>
 %<*class>
-\def\fileversion{1.0}
-\def\filedate{2024/02/14}
+\def\fileversion{1.1}
+\def\filedate{2024/02/22}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{agh-wi}[\filedate\space\fileversion\space Diploma thesis at WI AGH Kraków, Poland]
 %</class>
@@ -885,7 +885,9 @@ example.tex.
 %
 %\maketitle
 %
-%\changes{v1.0}{2024/02/08}{initial release}
+%\changes{v1.0}{2024/02/08}{Initial release}
+%\changes{v1.1}{2024/02/22}{When using the "hyperref" package with the 'pdfusetitle' option, the main title will be added to the PDF metadata}
+
 %
 %\begin{abstract}
 %  \LaTeX{} class for diploma theses at the Faculty of Computer Science of the AGH University of Krakow, Poland.
@@ -1150,6 +1152,7 @@ example.tex.
 %
 %\begin{macro}{\maketitle}
 %\changes{v1.0}{2024/02/08}{Initial version}
+%\changes{v1.1}{2024/02/22}{Added '\textbackslash{}title' command call}
 %    \begin{macrocode}
 \renewcommand\maketitle{
     \KOMAoptions{twoside = false}
@@ -1173,13 +1176,15 @@ example.tex.
         }\par
         \vspace*{3\baselineskip}%
         \ifenglish
-        {\sffamily\Large\bfseries \@titleEN}\par%
-        \vspace*{\baselineskip}%
-        {\sffamily\small\bfseries \@titlePL}\par%
+            \title{\@titleEN}
+            {\sffamily\Large\bfseries \@titleEN}\par%
+            \vspace*{\baselineskip}%
+            {\sffamily\small\bfseries \@titlePL}\par%
         \else
-        {\sffamily\Large\bfseries \@titlePL}\par%
-        \vspace*{\baselineskip}%
-        {\sffamily\small\bfseries \@titleEN}\par%
+            \title{\@titlePL}
+            {\sffamily\Large\bfseries \@titlePL}\par%
+            \vspace*{\baselineskip}%
+            {\sffamily\small\bfseries \@titleEN}\par%
         \fi
         \vfill
         \par
