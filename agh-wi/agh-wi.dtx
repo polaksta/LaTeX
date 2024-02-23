@@ -757,7 +757,7 @@ example.tex.
 %</internal>
 %<*class>
 \def\fileversion{1.1}
-\def\filedate{2024/02/22}
+\def\filedate{2024/02/23}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{agh-wi}[\filedate\space\fileversion\space Diploma thesis at WI AGH Kraków, Poland]
 %</class>
@@ -887,7 +887,7 @@ example.tex.
 %\maketitle
 %
 %\changes{v1.0}{2024/02/08}{Initial release}
-%\changes{v1.1}{2024/02/22}{When using the "hyperref" package with the 'pdfusetitle' option, the main title will be added to the PDF metadata}
+%\changes{v1.1}{2024/02/23}{When using the "hyperref" package with the 'pdfusetitle' option, the main title will be added to the PDF metadata}
 
 %
 %\begin{abstract}
@@ -1093,6 +1093,8 @@ example.tex.
 }{}
 }
 %    \end{macrocode}
+%\section{Definitions}
+%    \begin{macrocode}
 \definecolor{AGH@black}{RGB}{30,30,30}
 \definecolor{AGH@red}{RGB}{167,25,48}
 \definecolor{AGH@green}{RGB}{0,105,60}
@@ -1101,6 +1103,13 @@ example.tex.
 \def\@titleEN{\@latex@error{No \noexpand\titleEN given}\@ehc}
 \def\@author{\@latex@error{No \noexpand\author given}\@ehc}
 \def\@supervisor{\@latex@error{No \noexpand\supervisor given}\@ehc}
+
+\ifenglish
+    \title{\@titleEN}
+\else
+    \title{\@titlePL}
+\fi
+%    \end{macrocode}
 % \section{AGH logo}
 % Tikz code generated from SVG by 'svg2tikz' tool.
 %    \begin{macrocode}
@@ -1153,7 +1162,7 @@ example.tex.
 %
 %\begin{macro}{\maketitle}
 %\changes{v1.0}{2024/02/08}{Initial version}
-%\changes{v1.1}{2024/02/22}{Added '\textbackslash{}title' command call}
+%\changes{v1.1}{2024/02/23}{Added '\textbackslash{}@title' command call}
 %    \begin{macrocode}
 \renewcommand\maketitle{
     \KOMAoptions{twoside = false}
@@ -1176,15 +1185,11 @@ example.tex.
             \scshape\Large Praca dyplomowa
         }\par
         \vspace*{3\baselineskip}%
+        {\sffamily\Large\bfseries \@title}\par%
+        \vspace*{\baselineskip}%
         \ifenglish
-            \title{\@titleEN}
-            {\sffamily\Large\bfseries \@titleEN}\par%
-            \vspace*{\baselineskip}%
             {\sffamily\small\bfseries \@titlePL}\par%
         \else
-            \title{\@titlePL}
-            {\sffamily\Large\bfseries \@titlePL}\par%
-            \vspace*{\baselineskip}%
             {\sffamily\small\bfseries \@titleEN}\par%
         \fi
         \vfill
