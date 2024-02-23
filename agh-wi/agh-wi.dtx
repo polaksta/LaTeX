@@ -1008,89 +1008,89 @@ example.tex.
 %    \begin{macrocode}
 \AtBeginDocument{
 % The 'algorithm2e' package
-\@ifpackageloaded{algorithm2e}{
-    \ifenglish\else
-        \renewcommand{\listalgorithmcfname}{Lista algorytmów}%
-        \renewcommand{\algorithmcfname}{Algorytm}%
-    \fi
-}{}
+    \@ifpackageloaded{algorithm2e}{
+        \ifenglish\else
+            \renewcommand{\listalgorithmcfname}{Lista algorytmów}%
+            \renewcommand{\algorithmcfname}{Algorytm}%
+        \fi
+    }{}
 % The 'minted' package
-\@ifpackageloaded{minted}{
-    \ifenglish\else
-        \SetupFloatingEnvironment{listing}{name=Kod źródłowy}
-        \SetupFloatingEnvironment{listing}{listname=Lista kodów źródłowych}
-    \fi
-    \setminted{
+    \@ifpackageloaded{minted}{
+        \ifenglish\else
+            \SetupFloatingEnvironment{listing}{name=Kod źródłowy}
+            \SetupFloatingEnvironment{listing}{listname=Lista kodów źródłowych}
+        \fi
+        \setminted{
 % Display line numbers                
-        linenos,
+            linenos,
 % A single frame around the listing                
-        frame=single
-    }
-}{}
+            frame=single
+        }
+    }{}
 %  The 'listings' package
-\@ifpackageloaded{listings}{
-\lstset{
+    \@ifpackageloaded{listings}{
+        \lstset{
 % Whether to underscore spaces inside strings                
-    showstringspaces=false,
+            showstringspaces=false,
 % Where to place line numbers                     
-    numbers=left,
+            numbers=left,
 % Step between two line numbers. If 1, each line will be numbered                                 
-    stepnumber=1,
+            stepnumber=1,
 % How far the line numbers are offset from the code                             
-    numbersep=5pt,
+            numbersep=5pt,
 % Whether to show spaces within strings using underscores                                
-    showspaces=false,
+            showspaces=false,
 % Whether to show tabs within strings using underscores                          
-    showtabs=false,
+            showtabs=false,
 % Add a single border around the code                               
-    frame=single,
+            frame=single,
 % Set the default tab size to two spaces                                
-    tabsize=2,
+            tabsize=2,
 % Set position for caption - captions on top                                    
-    captionpos=t,
+            captionpos=t,
 % Enable automatic line breaks                                   
-    breaklines=true,
+            breaklines=true,
 % Should automatic breaking only occur on white characters?                               
-    breakatwhitespace=false,
+            breakatwhitespace=false,
 % Color and font for keywords                     
-    keywordstyle=\ttfamily\color{blue},
+            keywordstyle=\ttfamily\color{blue},
 % Color and font identifiers                
-    identifierstyle=\ttfamily\color{violet}\bfseries,
+            identifierstyle=\ttfamily\color{violet}\bfseries,
 % Color and font for comments                
-    commentstyle=\color{brown},
+            commentstyle=\color{brown},
 % Color and font for strings
-    stringstyle=\ttfamily,
+            stringstyle=\ttfamily,
 % If you want to add LaTeX within your code                
-    escapeinside={\%*}{*)},
+            escapeinside={\%*}{*)},
 %    
-    inputencoding=utf8,
+            inputencoding=utf8,
 % The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below                        
-    literate={ą}{{\k{a}}}1
-        {Ą}{{\k{A}}}1
-        {ę}{{\k{e}}}1
-        {Ę}{{\k{E}}}1
-        {ó}{{\'o}}1
-        {Ó}{{\'O}}1
-        {ś}{{\'s}}1
-        {Ś}{{\'S}}1
-        {ł}{{\l{}}}1
-        {Ł}{{\L{}}}1
-        {ż}{{\.z}}1
-        {Ż}{{\.Z}}1
-        {ź}{{\'z}}1
-        {Ź}{{\'Z}}1
-        {ć}{{\'c}}1
-        {Ć}{{\'C}}1
-        {ń}{{\'n}}1
-        {Ń}{{\'N}}1
-}
-\ifenglish
-    \renewcommand{\lstlistlistingname}{List of Listings}
-\else
-    \renewcommand{\lstlistingname}{Kod źródłowy}%
-    \renewcommand{\lstlistlistingname}{Lista kodów źródłowych}
-\fi
-}{}
+            literate={ą}{{\k{a}}}1
+                {Ą}{{\k{A}}}1
+                {ę}{{\k{e}}}1
+                {Ę}{{\k{E}}}1
+                {ó}{{\'o}}1
+                {Ó}{{\'O}}1
+                {ś}{{\'s}}1
+                {Ś}{{\'S}}1
+                {ł}{{\l{}}}1
+                {Ł}{{\L{}}}1
+                {ż}{{\.z}}1
+                {Ż}{{\.Z}}1
+                {ź}{{\'z}}1
+                {Ź}{{\'Z}}1
+                {ć}{{\'c}}1
+                {Ć}{{\'C}}1
+                {ń}{{\'n}}1
+                {Ń}{{\'N}}1
+        }
+        \ifenglish
+            \renewcommand{\lstlistlistingname}{List of Listings}
+        \else
+            \renewcommand{\lstlistingname}{Kod źródłowy}%
+            \renewcommand{\lstlistlistingname}{Lista kodów źródłowych}
+        \fi
+    }{}
 }
 %    \end{macrocode}
 %\section{Definitions}
