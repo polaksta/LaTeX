@@ -136,31 +136,31 @@ and the derived files
  % Autor: Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
  \documentclass{agh-wi} % Praca po polsku,
  % Kierunek 'Informatyka'.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Inne, przykładowe, użycia klasy
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \documentclass[english]{agh-wi}               % Praca po angielsku,
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Inne, przykładowe, użycia klasy
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % \documentclass[english]{agh-wi}               % Praca po angielsku,
                            % Kierunek 'Informatyka',
                            % Przeznaczona do oglądania przy użyciu przegladarki PDF.
-% \documentclass[english, data-science]{agh-wi} % Praca po angielsku,
+ % \documentclass[english, data-science]{agh-wi} % Praca po angielsku,
                            % Kierunek 'Informatyka - Data Science',
                            % Przeznaczona do oglądania przy użyciu przegladarki PDF.
-% \documentclass[print]{agh-wi}                 % Praca po polsku,
+ % \documentclass[print]{agh-wi}                 % Praca po polsku,
                            % Kierunek 'Informatyka',
                            % Przeznaczona do drukowania - każda strona posiada,
                            %    dodatkowy (2cm), margines na oprawę.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Parametry dla strony tytułowej
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Parametry dla strony tytułowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \titlePL{Tytuł zgodny z tematyką/dziedziną pracy dyplomowej}  % Tytuł po polsku
 \titleEN{Title consistent with the topic/field of the thesis} % Tytuł po angielsku
 \author{Imiona i nazwisko dyplomanta}
 \supervisor{Stopień lub tytuł naukowy imiona i nazwisko promotora}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Pakiety
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Podstawowe — na pewno będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Pakiety
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Podstawowe — na pewno będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{polski}                           % Obsługa języka polskiego
 \usepackage[                                  % Obsługa spisu literatury
     style=numeric,   % Odnośniki są liczbami
@@ -177,9 +177,9 @@ and the derived files
     maxbibnames=3,
 backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomocą Bibera
 ]{biblatex}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath}                          % Dodatkowe środowiska matematyczne
 \usepackage{amssymb}                          % Dodatkowe symbole matematyczne
 \usepackage[polish, intoc]{nomencl}           % Definiowanie symboli
@@ -192,277 +192,277 @@ backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomo
 \usepackage[newfloat]{minted}                 % Wstawianie kodów źródłowych programów
 \usepackage{hyperref}                         % Obsługa odsyłaczy HTML
 \usepackage{csquotes}                         % Rekomendowany jeżeli używasz 'biblatex'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Ładowanie danych bibliograficznych
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Ładowanie danych bibliograficznych
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addbibresource{bibliography.bib}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Opcje konfiguracyjne pakietów
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Pakiet 'framed'
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Opcje konfiguracyjne pakietów
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Pakiet 'framed'
 \definecolor{shadecolor}{gray}{0.9}
-% Pakiet 'nomencl'
+ % Pakiet 'nomencl'
 \makenomenclature % Otwórz plik 'example.nlo'
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definicje komend
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Definicje komend
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\alert}[1]{\colorbox{red!50}{#1}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Twierdzenia i podobne struktury
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Twierdzenia i podobne struktury
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtheorem{theorem}{Twierdzenie}
 \newtheorem{definition}{Definicja}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter % Część wstępna
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle % Dodaj stronę tytułową
-%%%%%%%%%%%%%%%%%%%%%%%
-% Jeżeli chcesz komuś podziękować, to możesz użyć poniższego kodu
+ %%%%%%%%%%%%%%%%%%%%%%%
+ % Jeżeli chcesz komuś podziękować, to możesz użyć poniższego kodu
 \cleardoublepage
 \thispagestyle{empty}
 \vspace*{\fill}
 \begin{flushright}
-\em
-\begin{minipage}{0.75\textwidth}
-Tutaj możesz umieścić treść podziękowań.
-Tutaj możesz umieścić treść podziękowań.
-Tutaj możesz umieścić treść podziękowań.
-Tutaj możesz umieścić treść podziękowań.
-Tutaj możesz umieścić treść podziękowań.
-\end{minipage}
+	\em
+	\begin{minipage}{0.75\textwidth}
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+		Tutaj możesz umieścić treść podziękowań.
+	\end{minipage}
 \end{flushright}
-%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstractPL}
-Streszczenie po polsku \ldots
+	Streszczenie po polsku \ldots
 \end{abstractPL}
 \begin{abstractEN}
-Abstract in english \ldots
+	Abstract in english \ldots
 \end{abstractEN}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents   % Wygeneruj spis treści
 \begin{shaded}
-Zawartość spisu treści \pauza tytuły rozdziałów oraz ich liczba zależą od tematyki pracy \pauza należy ustalić z opiekunem pracy.
+	Zawartość spisu treści \pauza tytuły rozdziałów oraz ich liczba zależą od tematyki pracy \pauza należy ustalić z opiekunem pracy.
 \end{shaded}
 \listoffigures     % Wygeneruj listę rysunków
 \listoftables      % Wygeneruj listę tabel
 \listofalgorithms  % Wygeneruj listę algorytmów
-% Wygeneruj listę kodów źródłowych
+ % Wygeneruj listę kodów źródłowych
 \lstlistoflistings % Jeżeli do tworzenia listingów używasz pakietu 'listings'
  % \listoflistings % Jeżeli do tworzenia listingów używasz pakietu 'minted'
 \printnomenclature % Wyświetl listę symboli
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter % Część główna
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Wstęp}
 \begin{shaded}
-Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
 \end{shaded}
 Wprowadzenie w tematykę pracy.
 \section{Cel i zakres pracy}
 Streszczenie specyfikacji wymagań Promotora.
 \chapter{Część literaturowa}
 \begin{shaded}
-Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
 \end{shaded}
 
 Aktualny stan wiedzy, na dany temat, na podstawie dostępnej literatury naukowej oraz specjalistycznej.
 \chapter{Część badawcza}
 \begin{shaded}
-Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
 \end{shaded}
 
 \begin{itemize}
-\item Problemy / pytania badawcze.
-\item Opis idei / metod rozwiązania postawionego problemu.
-\item Opis przebiegu badań.
-\item Interpretacja uzyskanych wyników.
+	\item Problemy / pytania badawcze.
+	\item Opis idei / metod rozwiązania postawionego problemu.
+	\item Opis przebiegu badań.
+	\item Interpretacja uzyskanych wyników.
 \end{itemize}
 \chapter{Zakończenie}
 \begin{shaded}
-Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
+	Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
 \end{shaded}
 \begin{enumerate}
-\item Podsumowanie.
-\item Możliwości dalszego rozwoju.
-\item Potencjalne obszary zastosowania pracy.
+	\item Podsumowanie.
+	\item Możliwości dalszego rozwoju.
+	\item Potencjalne obszary zastosowania pracy.
 \end{enumerate}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix % Dodatek
 \chapter{Typowe elementy składowe pracy dyplomowej z Informatyki}
 \section{Tabele}
 W tabeli \ref{tab:result} przedstawiono wyniki pomiarów.
 \begin{shaded}
-Podpis ma być przed tabelą.
+	Podpis ma być przed tabelą.
 \end{shaded}
 \begin{table}[!h]
-\caption{Pomiary zużycia energii elektrycznej\label{tab:result}.}
-\centering
-\begin{tabular}{|l||r@{,}l|}
-\hline
-\textbf{L.p.} & \multicolumn{2}{|c|}{\textbf{Wartość}}          \\
-\hline
-\hline
-\cline{2-3}
-%\textbf{L.p.} & \multicolumn{1}{r@{\,\vline\,}}{Całkowita} & Ułamkowa \\
-\hline
-1             & 12345                                  & 6789   \\
-\cline{2-3}
-& 45                                     & 89     \\
-\hline
-2             & 45                                     & 678901 \\
-\hline
-\end{tabular}
+	\caption{Pomiary zużycia energii elektrycznej\label{tab:result}.}
+	\centering
+	\begin{tabular}{|l||r@{,}l|}
+		\hline
+		\textbf{L.p.} & \multicolumn{2}{|c|}{\textbf{Wartość}}          \\
+		\hline
+		\hline
+		\cline{2-3}
+		%\textbf{L.p.} & \multicolumn{1}{r@{\,\vline\,}}{Całkowita} & Ułamkowa \\
+		\hline
+		1             & 12345                                  & 6789   \\
+		\cline{2-3}
+		              & 45                                     & 89     \\
+		\hline
+		2             & 45                                     & 678901 \\
+		\hline
+	\end{tabular}
 \end{table}
 
 Jeżeli tabela zawiera dużą liczbę wierszy i może nie zmieścić się na stronie \pauza patrz tabela \ref{tab:longtable} \pauza należy skorzystać z pakietu \emph{longtable} \cite{longtable}.
 \begin{longtable}{|p{14ex}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|p{1.5em}|}
-\caption{Tabela, która zawiera dużą liczbę wierszy\label{tab:longtable}.}
-\endfirsthead
-\hline
-& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline
-\endhead
-\endfoot
-\hline\hline
-& 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 1  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 2  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 3  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 4  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 5  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 6  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 7  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 8  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 9  &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 10 &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 11 &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 12 &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
-Student 13 &   &   &   &   &   &   &   &   & \\
-\cline{2-9}
-&   &   &   &   &   &   &   &   & \\
-\hline\hline
+	\caption{Tabela, która zawiera dużą liczbę wierszy\label{tab:longtable}.}
+	\endfirsthead
+	\hline
+	           & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline
+	\endhead
+	\endfoot
+	\hline\hline
+	           & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 1  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 2  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 3  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 4  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 5  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 6  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 7  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 8  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 9  &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 10 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 11 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 12 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
+	Student 13 &   &   &   &   &   &   &   &   & \\
+	\cline{2-9}
+	           &   &   &   &   &   &   &   &   & \\
+	\hline\hline
 \end{longtable}
 
 Tabele, w których występuje długi tekst, a co za tym idzie może się on nie zmieścić \pauza musi zostać zawinięty, należy składać za pomocą środowiska 'tabularx' \cite{tabularx} zamiast 'tabular' \pauza  patrz tabela \ref{tab:tabularx} na stronie \pageref{tab:tabularx}.
 \begin{table}[!ht]
-\caption{Tabela zawierająca długi tekst\label{tab:tabularx}.}
-\centering
-\begin{tabularx}{300pt}{|c|X|c|X|}
-\hline
-\multicolumn{2}{|c|}{Wpis wielokolumnowy!} &
-TRZY                                       &
-CZTERY                                       \\
-\hline
-jeden                                      &
-\raggedright\arraybackslash Szerokość tej kolumny zależy od
-szerokości tabeli.                         &
-trzy                                       &
-\raggedright\arraybackslash Kolumna czwarta będzie zachowywać się w taki sam sposób jak
-druga kolumna o tej samej szerokości.        \\
-\hline
-\end{tabularx}
+	\caption{Tabela zawierająca długi tekst\label{tab:tabularx}.}
+	\centering
+	\begin{tabularx}{300pt}{|c|X|c|X|}
+		\hline
+		\multicolumn{2}{|c|}{Wpis wielokolumnowy!} &
+		TRZY                                       &
+		CZTERY                                       \\
+		\hline
+		jeden                                      &
+		\raggedright\arraybackslash Szerokość tej kolumny zależy od
+		szerokości tabeli.                         &
+		trzy                                       &
+		\raggedright\arraybackslash Kolumna czwarta będzie zachowywać się w taki sam sposób jak
+		druga kolumna o tej samej szerokości.        \\
+		\hline
+	\end{tabularx}
 \end{table}
 
 \paragraph{Uwaga}
 \alert{Każda tabela powinna być opisana w treści pracy.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rysunki}
 \paragraph{Uwagi}
 \begin{itemize}
-\item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
-których twórcy zezwolili na ich rozpowszechnianie oraz kopiowanie, czyli
-np. rysunki objęte licencją Creative Commons.
-\item \alert{Każdy rysunek powinien być opisany w treści pracy.}
+	\item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
+	      których twórcy zezwolili na ich rozpowszechnianie oraz kopiowanie, czyli
+	      np. rysunki objęte licencją Creative Commons.
+	\item \alert{Każdy rysunek powinien być opisany w treści pracy.}
 \end{itemize}
 \subsection{Wewnętrzne}
 
 Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pauza dostarcza on komend pozwalających na tworzenie grafik. Przykładowe grafiki pokazano na rysunku \ref{fig:tikz1} oraz \ref{fig:tikz2}.
 
 \begin{figure}[!h]
-\begin{center}
-\tikz \draw[thick,rounded corners=8pt]
-(0,0) -- (0,2) -- (1,3.25) -- (2,2) -- (2,0) -- (0,2) -- (2,2) -- (0,0) -- (2,0);
-\end{center}
-\caption{Prosty rysunek \emph{TikZ}\label{fig:tikz1}.}
+	\begin{center}
+		\tikz \draw[thick,rounded corners=8pt]
+		(0,0) -- (0,2) -- (1,3.25) -- (2,2) -- (2,0) -- (0,2) -- (2,2) -- (0,0) -- (2,0);
+	\end{center}
+	\caption{Prosty rysunek \emph{TikZ}\label{fig:tikz1}.}
 \end{figure}
 
 \begin{figure}[!h]
-\begin{center}
-\begin{tikzpicture}
-\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
-\draw (-1.5,0) -- (1.5,0);
-\draw (0,-1.5) -- (0,1.5);
-\draw (0,0) circle [radius=1cm];
-\end{tikzpicture}
-\end{center}
-\caption{Bardziej złożony rysunek \emph{TikZ}\label{fig:tikz2}.}
+	\begin{center}
+		\begin{tikzpicture}
+			\draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
+			\draw (-1.5,0) -- (1.5,0);
+			\draw (0,-1.5) -- (0,1.5);
+			\draw (0,0) circle [radius=1cm];
+		\end{tikzpicture}
+	\end{center}
+	\caption{Bardziej złożony rysunek \emph{TikZ}\label{fig:tikz2}.}
 \end{figure}
 
 \subsection{Zewnętrzne}
 Oczywiście możliwe jest również dołączanie rysunków zewnętrznych \pauza
 pakiet \emph{graphicx} \cite{graphicx} pozwala na wstawianie grafik zapisanych w  plikach: '.png', '.jpg' oraz '.pdf'. Rysunek \ref{fig:logo} wstawiono przy użyciu tego pakietu.
 \begin{figure}[!h]
-\begin{center}
-\IfFileExists{logo_podstawowe.png}{
-\includegraphics[width=0.7\linewidth]{logo_podstawowe}
-}
-{Nie znaleziono pliku 'logo\_podstawowe.png' \pauza pobierz go ze strony \url{https://www.informatyka.agh.edu.pl/media/uploads/Logo WI/PNG/logo_podstawowe.png}}
-\end{center}
-\caption{Logo Wydziału Informatyki.}
-\label{fig:logo}
+	\begin{center}
+		\IfFileExists{logo_podstawowe.png}{
+			\includegraphics[width=0.7\linewidth]{logo_podstawowe}
+		}
+		{Nie znaleziono pliku 'logo\_podstawowe.png' \pauza pobierz go ze strony \url{https://www.informatyka.agh.edu.pl/media/uploads/Logo WI/PNG/logo_podstawowe.png}}
+	\end{center}
+	\caption{Logo Wydziału Informatyki.}
+	\label{fig:logo}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kody źródłowe}
 Najpopularniejszymi pakietami, które umożliwiają składanie kodów źródłowych programów, są:
 \begin{description}
-\item[listings \cite{listings}] \pauza kod źródłowy jest formatowany bezpośrednio przez \LaTeX{}\dywiz{}a \pauza nie jest używany żaden, zewnętrzny, formater kodu.
-\begin{lstlisting}[language=C++, float=ht, label=lst:code1, caption={Przykładowy kod źródłowy sformatowany za pomocą pakietu 'listings'.}]
+	\item[listings \cite{listings}] \pauza kod źródłowy jest formatowany bezpośrednio przez \LaTeX{}\dywiz{}a \pauza nie jest używany żaden, zewnętrzny, formater kodu.
+		\begin{lstlisting}[language=C++, float=ht, label=lst:code1, caption={Przykładowy kod źródłowy sformatowany za pomocą pakietu 'listings'.}]
 /* Pierwszy program w C++ */
 
 #include <iostream>
@@ -472,10 +472,10 @@ std::cout << "Hello World!";
 return 0;
 }
 \end{lstlisting}
-\item[minted \cite{minted}] \pauza formatuje kod źródłowy przy użyciu biblioteki języka Python  o nazwie \emph{Pygments} \cite{pygments}.
-\begin{listing}[!ht]
-\caption{Przykładowy listing sformatowany za pomocą pakietu 'minted'.\label{lst:code2}}
-\begin{minted}{c++}
+	\item[minted \cite{minted}] \pauza formatuje kod źródłowy przy użyciu biblioteki języka Python  o nazwie \emph{Pygments} \cite{pygments}.
+		\begin{listing}[!ht]
+			\caption{Przykładowy listing sformatowany za pomocą pakietu 'minted'.\label{lst:code2}}
+			\begin{minted}{c++}
 /* Pierwszy program w C++ */
 
 #include <iostream>
@@ -485,136 +485,136 @@ std::cout << "Hello World!";
 return 0;
 }
 \end{minted}
-\end{listing}
+		\end{listing}
 \end{description}
 
 \begin{shaded}
-\begin{itemize}
-\item Podpis ma być przed kodem źródłowym.
-\item \alert{Proszę używać tylko jednego z tych pakietów}; w przeciwnym razie otrzymasz taki efekt, jak w przykładowej pracy \pauza obydwa listingi mają ten sam numer.
-\end{itemize}
+	\begin{itemize}
+		\item Podpis ma być przed kodem źródłowym.
+		\item \alert{Proszę używać tylko jednego z tych pakietów}; w przeciwnym razie otrzymasz taki efekt, jak w przykładowej pracy \pauza obydwa listingi mają ten sam numer.
+	\end{itemize}
 \end{shaded}
 
 Kod źródłowy w C++ sformatowany przy użyciu pakietu \emph{listings}, pokazano na listingu \ref{lst:code1}; sformatowany przy użyciu pakietu \emph{minted}, pokazano na listingu \ref{lst:code2}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algorytmy}
 Pakiet \emph{algorithm2e} \cite{algorithm2e} pozwala zapisywać algorytmy w formie pseudokodu \pauza patrz
 algorytm \ref{alg:algo_disjdecomp} na stronie \pageref{alg:algo_disjdecomp}.
 \begin{shaded}
-Podpis ma być przed algorytmem.
+	Podpis ma być przed algorytmem.
 \end{shaded}
 \begin{algorithm}[!htb]
-\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
-\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-\Input{A bitmap $Im$ of size $w\times l$}
-\Output{A partition of the bitmap}
-\BlankLine
-\emph{special treatment of the first line}\;
-\For{$i\leftarrow 2$ \KwTo $l$}{
-\emph{special treatment of the first element of line $i$}\;
-\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
-\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
-\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
-\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
-\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
-\lIf{\Left $<$ \This}{\Union{\Left,\This}}
-\lElse{\Union{\This,\Left}}
-}
-\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
-\lIf{\Up $<$ \This}{\Union{\Up,\This}}
-\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
-\lElse{\Union{\This,\Up}}\tcp*[h]{\This linked to \Up}\label{lelse}
-}
-}
-\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
-}
-\caption{Disjoint decomposition.}\label{alg:algo_disjdecomp}
+	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+	\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\Input{A bitmap $Im$ of size $w\times l$}
+	\Output{A partition of the bitmap}
+	\BlankLine
+	\emph{special treatment of the first line}\;
+	\For{$i\leftarrow 2$ \KwTo $l$}{
+		\emph{special treatment of the first element of line $i$}\;
+		\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
+			\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
+			\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
+			\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
+			\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
+				\lIf{\Left $<$ \This}{\Union{\Left,\This}}
+				\lElse{\Union{\This,\Left}}
+			}
+			\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
+				\lIf{\Up $<$ \This}{\Union{\Up,\This}}
+				\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
+				\lElse{\Union{\This,\Up}}\tcp*[h]{\This linked to \Up}\label{lelse}
+			}
+		}
+		\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
+	}
+	\caption{Disjoint decomposition.}\label{alg:algo_disjdecomp}
 \end{algorithm}\DecMargin{1em}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Wzory}
 \LaTeX{} bardzo dobrze sprawdza się w przypadku prac dyplomowych zawierających wzory matematyczne\footnote{ W przypadku złożonych wzorów warto zastosować pakiet \emph{amsmath} \cite{amsmath}.}.
 \subsection{Przykłady}
 Wzór $E = mc^{2}$\nomenclature{$c$}{Prędkość światła w próżni} jest częścią zdania.
 
 \begin{equation}
-\left|\sum_{i=1}^n a_ib_i\right|
-\le
-\left(\sum_{i=1}^n a_i^2\right)^{1/2}
-\left(\sum_{i=1}^n b_i^2\right)^{1/2}
+	\left|\sum_{i=1}^n a_ib_i\right|
+	\le
+	\left(\sum_{i=1}^n a_i^2\right)^{1/2}
+	\left(\sum_{i=1}^n b_i^2\right)^{1/2}
 \end{equation}
 
-% Do wstawienia poniższych wzorów użyto środowisk (otoczeń) zdefiniowanych w pakiecie 'amsmath'
+ % Do wstawienia poniższych wzorów użyto środowisk (otoczeń) zdefiniowanych w pakiecie 'amsmath'
 Wartości zmiennej opisano wzorem \ref{eq:r1}.
 \begin{equation}
-\label{eq:r1}
-x=\begin{cases}
-y           & \text{dla } y > 0    \\
-\frac{z}{y} & \text{dla } y \leq 0
-\end{cases}
+	\label{eq:r1}
+	x=\begin{cases}
+		y           & \text{dla } y > 0    \\
+		\frac{z}{y} & \text{dla } y \leq 0
+	\end{cases}
 \end{equation}
 
 Wzór \ref{eq:r2} to wzór wielowierszowy.
 \begin{align}
-\label{eq:r2}
-2x^2 + 3(x-1)(x-2) & =2x^2 + 3(x^2-3x+2)             \\
- & = 2x^2 + 3x^2 - 9x + 6\nonumber \\
- & = 5x^2 - 9x + 6\nonumber
+	\label{eq:r2}
+	2x^2 + 3(x-1)(x-2) & =2x^2 + 3(x^2-3x+2)             \\
+	                   & = 2x^2 + 3x^2 - 9x + 6\nonumber \\
+	                   & = 5x^2 - 9x + 6\nonumber
 \end{align}
 \begin{shaded}
-Należy używać tylko dwóch rodzajów wzorów:
-\begin{enumerate}
-\item ,,W linii''.
-\item Eksponowane, numerowane.
-\end{enumerate}
+	Należy używać tylko dwóch rodzajów wzorów:
+	\begin{enumerate}
+		\item \enquote{W linii}.
+		\item Eksponowane, numerowane.
+	\end{enumerate}
 \end{shaded}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Twierdzenia i podobne struktury}
 Twierdzenie nr \ref{tw} opublikował, w roku 1691, francuski matematyk Michel Rolle.
 \begin{theorem}[Rolle'a]
-\label{tw}
-Jeśli dana funkcja f: $\mathbb R \to \mathbb R$ jest:
-\begin{enumerate}
-\item ciągła w przedziale $[a,b]$
-\item jest różniczkowalna w przedziale $(a,b)$
-\item na końcach przedziału $[a,b]$ przyjmuje równe wartości: $f(a) = f(b)$,
-\end{enumerate}
-to w przedziale $(a,b)$ istnieje co najmniej jeden punkt c taki, że $f'(c) = 0$.
+	\label{tw}
+	Jeśli dana funkcja f: $\mathbb R \to \mathbb R$ jest:
+	\begin{enumerate}
+		\item ciągła w przedziale $[a,b]$
+		\item jest różniczkowalna w przedziale $(a,b)$
+		\item na końcach przedziału $[a,b]$ przyjmuje równe wartości: $f(a) = f(b)$,
+	\end{enumerate}
+	to w przedziale $(a,b)$ istnieje co najmniej jeden punkt c taki, że $f'(c) = 0$.
 \end{theorem}
 
 Teraz coś z informatyki \ldots
 \begin{definition}
-Bit to najmniejsza jednostka informacji w komputerze.
+	Bit to najmniejsza jednostka informacji w komputerze.
 \end{definition}
 \begin{definition}
-Bajtem nazywamy ciąg ośmiu bitów.
+	Bajtem nazywamy ciąg ośmiu bitów.
 \end{definition}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \backmatter % Część końcowa
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Uwagi Autora}
 \begin{itemize}
-\item Aktualna wersja klasy jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/agh-wi}.
-\item Skoro Twoja praca dyplomowa powstała w \LaTeX{}u, to zachęcam Cię również do przygotowania prezentacji (na obronę pracy magisterskiej) w tym języku. Najpopularniejszą klasą do tworzenia tego typu dokumentów jest \emph{beamer} \cite{beamer}.
-\item Pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH} możesz znaleźć szablon 'Beamer' mojego autorstwa\footnote{W przypadku Overleaf-a jest on pod adresem  \url{https://www.overleaf.com/read/fkjdthnbrfhj\#9c6184}}.
-\item Treść wszystkich rozdziałów tej, przykładowej, pracy dyplomowej znajduje się w jednym pliku \pauza \textbf{nie jest to polecane rozwiązanie}. W przypadku pisania własnej pracy warto umieścić zawartość każdego z rozdziałów w osobnych plikach, a następnie dołączać je do dokumentu głównego \pauza patrz opis na stronie \url{https://www.dickimaw-books.com/latex/thesis/html/include.html}.
-\item Jeżeli pewne elementy mają być wyróżniane w \alert{jednakowy} \alert{sposób}, to proponuję nie używać bezpośredniego stylowania, tzn.
-\mint{tex}{\colorbox{red!50}{jednakowy} \colorbox{red!50}{sposób}} ale zdefiniować własną komendę stylującą, np. \verb+\alert+,
-\mint{tex}{\newcommand{\alert}[1]{\colorbox{red!50}{#1}}}
-a następnie użyć jej w dokumencie.
-\mint{tex}{\alert{jednakowy} \alert{sposób}}
+	\item Aktualna wersja klasy jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/agh-wi}.
+	\item Skoro Twoja praca dyplomowa powstała w \LaTeX{}u, to zachęcam Cię również do przygotowania prezentacji (na obronę pracy magisterskiej) w tym języku. Najpopularniejszą klasą do tworzenia tego typu dokumentów jest \emph{beamer} \cite{beamer}.
+	\item Pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH} możesz znaleźć szablon 'Beamer' mojego autorstwa\footnote{W przypadku Overleaf-a jest on pod adresem  \url{https://www.overleaf.com/read/fkjdthnbrfhj\#9c6184}}.
+	\item Treść wszystkich rozdziałów tej, przykładowej, pracy dyplomowej znajduje się w jednym pliku \pauza \textbf{nie jest to polecane rozwiązanie}. W przypadku pisania własnej pracy warto umieścić zawartość każdego z rozdziałów w osobnych plikach, a następnie dołączać je do dokumentu głównego \pauza patrz opis na stronie \url{https://www.dickimaw-books.com/latex/thesis/html/include.html}.
+	\item Jeżeli pewne elementy mają być wyróżniane w \alert{jednakowy} \alert{sposób}, to proponuję nie używać bezpośredniego stylowania, tzn.
+	      \mint{tex}{\colorbox{red!50}{jednakowy} \colorbox{red!50}{sposób}} ale zdefiniować własną komendę stylującą, np. \verb+\alert+,
+	      \mint{tex}{\newcommand{\alert}[1]{\colorbox{red!50}{#1}}}
+	      a następnie użyć jej w dokumencie.
+	      \mint{tex}{\alert{jednakowy} \alert{sposób}}
 
-Dzięki temu, jeżeli będziesz chciał / chciała zmienić sposób stylowania tych elementów, np. niebieskie tło zamiast czerwonego, to wystarczy zmodyfikować, tylko, definicję komendy, zamiast zastępować, w tekście pracy dyplomowej, wybrane (niekoniecznie wszystkie!) wystąpienia tekstu \texttt{red}, tekstem \texttt{blue}.
+	      Dzięki temu, jeżeli będziesz chciał / chciała zmienić sposób stylowania tych elementów, np. niebieskie tło zamiast czerwonego, to wystarczy zmodyfikować, tylko, definicję komendy, zamiast zastępować, w tekście pracy dyplomowej, wybrane (niekoniecznie wszystkie!) wystąpienia tekstu \texttt{red}, tekstem \texttt{blue}.
 \end{itemize}
 Stanisław Polak
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Wyświetl spis literatury
-% UWAGA: Powinien zawierać tylko te publikacje, do których odwołujesz się w pracy
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Wyświetl spis literatury
+ % UWAGA: Powinien zawierać tylko te publikacje, do których odwołujesz się w pracy
 \printbibliography
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
 %</example>
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bibliography.bib %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
