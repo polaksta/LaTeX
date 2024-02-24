@@ -193,7 +193,7 @@ backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomo
 \usepackage{caption}                          % Modyfikacji pozycji podpisu
 \captionsetup[listing]{position=top}          %       dla listingów 'minted'
 \usepackage[pdfusetitle]{hyperref}            % Obsługa odsyłaczy HTML
-\usepackage{csquotes}                         % Rekomendowany, gdyż używasz 'biblatex'
+\usepackage{csquotes}                         % Rekomendowany jeżeli używasz 'biblatex'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ładowanie danych bibliograficznych
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -204,12 +204,16 @@ backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomo
 % Pakiet 'framed'
 \definecolor{shadecolor}{gray}{0.9}
 % Pakiet 'hyperref'
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=cyan
-}
+\ifprint
+    \hypersetup{hidelinks}
+\else
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=blue,
+        filecolor=magenta,
+        urlcolor=cyan
+    }
+\fi
 % Pakiet 'nomencl'
 \makenomenclature % Otwórz plik 'example.nlo'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
