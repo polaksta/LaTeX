@@ -748,7 +748,7 @@ example.tex.
 \fi
 %</internal>
 %<*class>
-\def\fileversion{1.2}
+\def\fileversion{1.2.1}
 \def\filedate{2024/02/24}
 %<class>\NeedsTeXFormat{LaTeX2e}
 %<class>\ProvidesClass{agh-wi}[\filedate\space v\fileversion\space Diploma thesis at WI AGH Kraków, Poland]
@@ -878,6 +878,7 @@ example.tex.
 %\DoNotIndex{\@latex@error}
 %\DoNotIndex{\noexpand}
 %\DoNotIndex{\hypersetup}
+%\DoNotIndex{\foreignlanguage}
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -886,6 +887,7 @@ example.tex.
 %\changes{v1.0}{2024/02/08}{Initial release}
 %\changes{v1.1}{2024/02/23}{When using the "hyperref" package with the 'pdfusetitle' option, the main title will be added to the PDF metadata}
 %\changes{v1.2}{2024/02/24}{Added configuration options for the 'hyperref' package}
+%\changes{v1.2.1}{2024/02/24}{The title in a language opposite to the language of the diploma thesis is typeset according to the rules of the opposite language}
 %
 %\begin{abstract}
 %  \LaTeX{} class for diploma theses at the Faculty of Computer Science of the AGH University of Krakow, Poland.
@@ -1173,6 +1175,7 @@ example.tex.
 %\begin{macro}{\maketitle}
 %\changes{v1.0}{2024/02/08}{Initial version}
 %\changes{v1.1}{2024/02/23}{Added '\textbackslash{}@title' command call}
+%\changes{v1.2}{2024/02/24}{Added '\textbackslash{}foreignlanguage' command call}
 %    \begin{macrocode}
 \renewcommand\maketitle{
     \KOMAoptions{twoside = false}
@@ -1198,9 +1201,9 @@ example.tex.
         {\sffamily\Large\bfseries \@title}\par%
         \vspace*{\baselineskip}%
         \ifenglish
-            {\sffamily\small\bfseries \@titlePL}\par%
+            {\sffamily\small\bfseries \foreignlanguage{polish}{\@titlePL}}\par%
         \else
-            {\sffamily\small\bfseries \@titleEN}\par%
+            {\sffamily\small\bfseries \foreignlanguage{english}{\@titleEN}}\par%
         \fi
         \vfill
         \par
