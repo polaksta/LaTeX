@@ -878,7 +878,7 @@ example.tex.
 %\DoNotIndex{\@latex@error}
 %\DoNotIndex{\noexpand}
 %\DoNotIndex{\hypersetup}
-%\DoNotIndex{\foreignlanguage}
+%\DoNotIndex{\selectlanguage}
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -1175,7 +1175,7 @@ example.tex.
 %\begin{macro}{\maketitle}
 %\changes{v1.0}{2024/02/08}{Initial version}
 %\changes{v1.1}{2024/02/23}{Added '\textbackslash{}@title' command call}
-%\changes{v1.2}{2024/02/24}{Added '\textbackslash{}foreignlanguage' command call}
+%\changes{v1.2}{2024/02/24}{Added '\textbackslash{}selectlanguage' command call}
 %    \begin{macrocode}
 \renewcommand\maketitle{
     \KOMAoptions{twoside = false}
@@ -1201,9 +1201,9 @@ example.tex.
         {\sffamily\Large\bfseries \@title}\par%
         \vspace*{\baselineskip}%
         \ifenglish
-            {\sffamily\small\bfseries \foreignlanguage{polish}{\@titlePL}}\par%
+            {\selectlanguage{polish}\sffamily\small\bfseries \@titlePL}\par%
         \else
-            {\sffamily\small\bfseries \foreignlanguage{english}{\@titleEN}}\par%
+            {\selectlanguage{english}\sffamily\small\bfseries \@titleEN}\par%
         \fi
         \vfill
         \par
