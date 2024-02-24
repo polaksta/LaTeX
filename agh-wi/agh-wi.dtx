@@ -163,18 +163,18 @@ and the derived files
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{polski}                           % Obsługa języka polskiego
 \usepackage[                                  % Obsługa spisu literatury
-style=numeric,   % Odnośniki są liczbami
-sorting=none,    % Kolejność pozycji spisu literary <=> kolejności cytowania
-language=autobib,% Zastosuj styl wpisu bibliograficznego
-autolang=other,  %          właściwy językowi publikacji.
-urldate=iso,     % Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
-seconds=true,    % Wyświetlaj liczbę sekund w przypadku prezentowania czasów.
-backref=false,   % Nie dodawaj numerów stron, na których występuje cytowanie.
-isbn=true,       % Podawaj ISBN.
-url=false,       % Nie podawaj URL-i, o ile nie jest to konieczne.
-%
-% Ustawienia związane z polskimi normami dla bibliografii.
-maxbibnames=3,
+    style=numeric,   % Odnośniki są liczbami
+    sorting=none,    % Kolejność pozycji spisu literary <=> kolejności cytowania
+    language=autobib,% Zastosuj styl wpisu bibliograficznego
+    autolang=other,  %          właściwy językowi publikacji.
+    urldate=iso,     % Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
+    seconds=true,    % Wyświetlaj liczbę sekund w przypadku prezentowania czasów.
+    backref=false,   % Nie dodawaj numerów stron, na których występuje cytowanie.
+    isbn=true,       % Podawaj ISBN.
+    url=false,       % Nie podawaj URL-i, o ile nie jest to konieczne.
+    %
+    % Ustawienia związane z polskimi normami dla bibliografii.
+    maxbibnames=3,
 backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomocą Bibera
 ]{biblatex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -203,17 +203,6 @@ backend=biber    % Przetwarzaj zawartość blibliograficznej bazy danych za pomo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pakiet 'framed'
 \definecolor{shadecolor}{gray}{0.9}
-% Pakiet 'hyperref'
-\ifprint
-    \hypersetup{hidelinks}
-\else
-    \hypersetup{
-        colorlinks=true,
-        linkcolor=blue,
-        filecolor=magenta,
-        urlcolor=cyan
-    }
-\fi
 % Pakiet 'nomencl'
 \makenomenclature % Otwórz plik 'example.nlo'
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -760,8 +749,8 @@ example.tex.
 \fi
 %</internal>
 %<*class>
-\def\fileversion{1.1}
-\def\filedate{2024/02/23}
+\def\fileversion{1.2}
+\def\filedate{2024/02/24}
 %<class>\NeedsTeXFormat{LaTeX2e}
 %<class>\ProvidesClass{agh-wi}[\filedate\space v\fileversion\space Diploma thesis at WI AGH Kraków, Poland]
 %</class>
@@ -883,12 +872,12 @@ example.tex.
 %\DoNotIndex{\@supervisor}
 %\DoNotIndex{\@titleEN}
 %\DoNotIndex{\@titlePL}
+%\DoNotIndex{\@title}
 %\DoNotIndex{\@ifpackageloaded}
 %\DoNotIndex{\@ehc}
 %\DoNotIndex{\@latex@error}
 %\DoNotIndex{\noexpand}
-
-
+%\DoNotIndex{\hypersetup}
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -896,7 +885,7 @@ example.tex.
 %
 %\changes{v1.0}{2024/02/08}{Initial release}
 %\changes{v1.1}{2024/02/23}{When using the "hyperref" package with the 'pdfusetitle' option, the main title will be added to the PDF metadata}
-
+%\changes{v1.2}{2024/02/24}{Added configuration options for the 'hyperref' package}
 %
 %\begin{abstract}
 %  \LaTeX{} class for diploma theses at the Faculty of Computer Science of the AGH University of Krakow, Poland.
@@ -1015,6 +1004,19 @@ example.tex.
 % Configuration of typical packages used when creating a diploma thesis in computer science.
 %    \begin{macrocode}
 \AtBeginDocument{
+% The 'hyperref' package
+    \@ifpackageloaded{hyperref}{
+        \ifprint
+            \hypersetup{hidelinks}
+        \else
+            \hypersetup{
+                colorlinks=true,
+                linkcolor=blue,
+                filecolor=magenta,
+                urlcolor=cyan
+           }
+        \fi
+    }{}
 % The 'algorithm2e' package
     \@ifpackageloaded{algorithm2e}{
         \ifenglish\else
