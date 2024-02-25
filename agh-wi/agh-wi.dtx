@@ -161,8 +161,11 @@ and the derived files
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Podstawowe — na pewno będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{polski}                           % Obsługa języka polskiego
-\usepackage[                                  % Obsługa spisu literatury
+\usepackage{polski}  % Obsługa języka polskiego
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[         % Obsługa spisu literatury
     style=numeric,   % Odnośniki są liczbami
     sorting=none,    % Kolejność pozycji spisu literatury <=> kolejności cytowania
     language=autobib,% Zastosuj styl wpisu bibliograficznego
@@ -175,11 +178,8 @@ and the derived files
     %
     % Ustawienia związane z polskimi normami dla bibliografii.
     maxbibnames=3,
-backend=biber    % Przetwarzaj zawartość bibliograficznej bazy danych za pomocą Bibera
+backend=biber                                 % Przetwarzaj zawartość bibliograficznej bazy danych za pomocą Bibera
 ]{biblatex}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- % Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath}                          % Dodatkowe środowiska matematyczne
 \usepackage{amssymb}                          % Dodatkowe symbole matematyczne
 \usepackage[polish, intoc]{nomencl}           % Definiowanie symboli
