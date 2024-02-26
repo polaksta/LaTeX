@@ -71,9 +71,9 @@ Ze względu na trudności związane z dostarczaniem przykładów użycia komend 
 
 Aby otrzymać wynikowy dokument PDF, należy skompilować dokument źródłowy za pomocą sekwencji komend:
 ```
-pdflatex -shell-escape example
-biber example
-makeindex example.nlo  -s nomencl.ist -o example.nls
-pdflatex -shell-escape example
-pdflatex -shell-escape example
+$ pdflatex -shell-escape example
+$ biber example
+$ makeindex example.nlo  -s nomencl.ist -o example.nls
+$ pdflatex -shell-escape example
+$ pdflatex -shell-escape example
 ```
