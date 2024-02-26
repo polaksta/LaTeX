@@ -39,7 +39,7 @@ $ pdflatex beamerthemeAGH.dtx
 ```
 do wygenerowania plików `.ins`, `.sty`, `.pdf` oraz `example.tex`.
 
-Aby poprawnie wygenerować historię zmian oraz indeks dla dokumentacji klasy, należy uruchomić
+Aby poprawnie wygenerować historię zmian oraz indeks dla dokumentacji pakietu, należy uruchomić
 ```
 $ makeindex -s gind.ist beamerthemeAGH
 $ makeindex -s gglo.ist -o beamerthemeAGH.gls beamerthemeAGH.glo
@@ -64,12 +64,12 @@ Aby mieć pewność, że instalacja się powiodła, wykonaj polecenie
 $ kpsewhich beamercolorthemeAGH.sty beamerthemeAGH.sty
 
 ```
-Jeśli wynikiem jest ścieżka do pliku, to znaczy, że poprawnie zainstalowałeś/aś klasę.
+Jeśli wynikiem jest ścieżka do pliku, to znaczy, że poprawnie zainstalowałeś/aś pakiet.
 
  
 ## Szablon przykładowej prezentacji
 
-Ze względu na trudności związane z dostarczaniem przykładów użycia komend oraz środowisk w dokumentacji klasy, są one pokazane w oddzielnym pliku — `example.tex` — zawiera on jednocześnie przykładową prezentację. Możesz ją więc potraktować jako szablon do utworzenia własnej prezentacji.
+Ze względu na trudności związane z dostarczaniem przykładów użycia komend oraz środowisk w dokumentacji pakietu, są one pokazane w oddzielnym pliku — `example.tex` — zawiera on jednocześnie przykładową prezentację. Możesz ją więc potraktować jako szablon do utworzenia własnej prezentacji.
 
 Aby otrzymać wynikowy dokument PDF, należy skompilować dokument źródłowy za pomocą  komendy:
 ```
