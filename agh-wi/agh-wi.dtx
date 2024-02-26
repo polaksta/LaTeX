@@ -113,7 +113,7 @@ and the derived files
 %<*example>
  % W tym przykładzie użyto, między innymi, pakietów:
  %   - "minted", co oznacza, że musisz uruchomić kompilator z opcją '-shell-escape'
- %   - "biblatex", co oznacza, że po kompilacji (dokumentu) musisz, jeszcze,  wygenerować plik '.bbl'
+ %   - "biblatex", co oznacza, że po kompilacji (dokumentu) musisz, jeszcze, wygenerować plik '.bbl'
  %   - "nomencl", co oznacza, że za pomocą komendy 'makeindex' musisz wygenerować wykaz symboli
  %
  % Tak więc, w celu wygenerowania wynikowego dokumentu PDF, musisz wykonać następujące komendy:
@@ -165,21 +165,7 @@ and the derived files
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Dodatkowe — niekoniecznie będziesz ich potrzebował(a) w swojej wersji pracy dyplomowej
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[         % Obsługa spisu literatury
-    style=numeric,   % Odnośniki są liczbami
-    sorting=none,    % Kolejność pozycji spisu literatury <=> kolejności cytowania
-    language=autobib,% Zastosuj styl wpisu bibliograficznego
-    autolang=other,  %          właściwy językowi publikacji.
-    urldate=iso,     % Zapisuj datę dostępu do strony WWW w formacie RRRR-MM-DD.
-    seconds=true,    % Wyświetlaj liczbę sekund w przypadku prezentowania czasów.
-    backref=false,   % Nie dodawaj numerów stron, na których występuje cytowanie.
-    isbn=true,       % Podawaj ISBN.
-    url=false,       % Nie podawaj URL-i, o ile nie jest to konieczne.
-    %
-    % Ustawienia związane z polskimi normami dla bibliografii.
-    maxbibnames=3,
-backend=biber                                 % Przetwarzaj zawartość bibliograficznej bazy danych za pomocą Bibera
-]{biblatex}
+\usepackage[sorting=none]{biblatex}           % Spis literatury jest tworzony na podstawie zawartości bibliograficznej bazy danych
 \usepackage{amsmath}                          % Dodatkowe środowiska matematyczne
 \usepackage{amssymb}                          % Dodatkowe symbole matematyczne
 \usepackage[polish, intoc]{nomencl}           % Definiowanie symboli
@@ -620,7 +606,7 @@ Stanisław Polak
 %</example>
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% bibliography.bib %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %<*bibliography>
-@yonline{algorithm2e,
+@online{algorithm2e,
     title = {algorithm2e.sty — package for algorithms},
     url = {http://mirrors.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf},
 }
