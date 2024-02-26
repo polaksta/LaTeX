@@ -198,12 +198,17 @@ and the derived files
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newtheorem{theorem}{Twierdzenie}
 \newtheorem{definition}{Definicja}
+
+\newcounter{comment}[chapter]
+\newenvironment{comment}[1][]{\begin{shaded}\refstepcounter{comment}
+    \noindent \textbf{Uwaga~\thechapter.\thecomment. #1} \rmfamily}{\end{shaded}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter % Część wstępna
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \maketitle % Dodaj stronę tytułową
  %%%%%%%%%%%%%%%%%%%%%%%
  % Jeżeli chcesz komuś podziękować, to możesz użyć poniższego kodu
@@ -244,22 +249,22 @@ and the derived files
 \mainmatter % Część główna
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Wstęp}
-\begin{shaded}
+\begin{comment}
     Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
-\end{shaded}
+\end{comment}
 Wprowadzenie w tematykę pracy.
 \section{Cel i zakres pracy}
 Streszczenie specyfikacji wymagań Promotora.
 \chapter{Część literaturowa}
-\begin{shaded}
+\begin{comment}
     Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
-\end{shaded}
+\end{comment}
 
 Aktualny stan wiedzy, na dany temat, na podstawie dostępnej literatury naukowej oraz specjalistycznej.
 \chapter{Część badawcza}
-\begin{shaded}
+\begin{comment}
     Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
-\end{shaded}
+\end{comment}
 
 \begin{itemize}
     \item Problemy / pytania badawcze.
@@ -268,9 +273,9 @@ Aktualny stan wiedzy, na dany temat, na podstawie dostępnej literatury naukowej
     \item Interpretacja uzyskanych wyników.
 \end{itemize}
 \chapter{Zakończenie}
-\begin{shaded}
+\begin{comment}
     Tytuł oraz strukturę rozdziału należy ustalić z opiekunem pracy.
-\end{shaded}
+\end{comment}
 \begin{enumerate}
     \item Podsumowanie.
     \item Możliwości dalszego rozwoju.
@@ -281,10 +286,13 @@ Aktualny stan wiedzy, na dany temat, na podstawie dostępnej literatury naukowej
 \appendix % Dodatek
 \chapter{Typowe elementy składowe pracy dyplomowej z informatyki}
 \section{Tabele}
+\begin{comment}
+    \begin{itemize}
+        \item Każda tabela powinna być opisana w treści pracy.
+        \item Podpis ma być przed tabelą.
+    \end{itemize}
+\end{comment}
 W tabeli \ref{tab:result} przedstawiono wyniki pomiarów.
-\begin{shaded}
-    Podpis ma być przed tabelą.
-\end{shaded}
 \begin{table}[!h]
     \caption{Pomiary zużycia energii elektrycznej\label{tab:result}.}
     \centering
@@ -349,33 +357,33 @@ Jeżeli tabela zawiera dużą liczbę wierszy i może nie zmieścić się na str
     \cline{2-9}
                &   &   &   &   &   &   &   &   & \\
     \hline\hline
-    Student 8  &   &   &   &   &   &   &   &   & \\
-    \cline{2-9}
-               &   &   &   &   &   &   &   &   & \\
-    \hline\hline
-    Student 9  &   &   &   &   &   &   &   &   & \\
-    \cline{2-9}
-               &   &   &   &   &   &   &   &   & \\
-    \hline\hline
-    Student 10 &   &   &   &   &   &   &   &   & \\
-    \cline{2-9}
-               &   &   &   &   &   &   &   &   & \\
-    \hline\hline
-    Student 11 &   &   &   &   &   &   &   &   & \\
-    \cline{2-9}
-               &   &   &   &   &   &   &   &   & \\
-    \hline\hline
-    Student 12 &   &   &   &   &   &   &   &   & \\
-    \cline{2-9}
-               &   &   &   &   &   &   &   &   & \\
-    \hline\hline
-    Student 13 &   &   &   &   &   &   &   &   & \\
-    \cline{2-9}
-               &   &   &   &   &   &   &   &   & \\
-    \hline\hline
+     Student 8  &   &   &   &   &   &   &   &   & \\
+     \cline{2-9}
+                &   &   &   &   &   &   &   &   & \\
+     \hline\hline
+    % Student 9  &   &   &   &   &   &   &   &   & \\
+    % \cline{2-9}
+    %            &   &   &   &   &   &   &   &   & \\
+    % \hline\hline
+    % Student 10 &   &   &   &   &   &   &   &   & \\
+    % \cline{2-9}
+    %            &   &   &   &   &   &   &   &   & \\
+    % \hline\hline
+    % Student 11 &   &   &   &   &   &   &   &   & \\
+    % \cline{2-9}
+    %            &   &   &   &   &   &   &   &   & \\
+    % \hline\hline
+    % Student 12 &   &   &   &   &   &   &   &   & \\
+    % \cline{2-9}
+    %            &   &   &   &   &   &   &   &   & \\
+    % \hline\hline
+    % Student 13 &   &   &   &   &   &   &   &   & \\
+    % \cline{2-9}
+    %            &   &   &   &   &   &   &   &   & \\
+    % \hline\hline
 \end{longtable}
 
-Tabele, w których występuje długi tekst, a co za tym idzie może się on nie zmieścić \pauza musi zostać zawinięty, należy składać za pomocą środowiska 'tabularx' \cite{tabularx} zamiast 'tabular' \pauza  patrz tabela \ref{tab:tabularx} na stronie \pageref{tab:tabularx}.
+Tabele, w których występuje długi tekst, a co za tym idzie może się on nie zmieścić \pauza musi zostać zawinięty, należy składać za pomocą środowiska 'tabularx' \cite{tabularx} zamiast 'tabular' \pauza  patrz tabela \ref{tab:tabularx}.
 \begin{table}[!ht]
     \caption{Tabela zawierająca długi tekst\label{tab:tabularx}.}
     \centering
@@ -394,18 +402,16 @@ Tabele, w których występuje długi tekst, a co za tym idzie może się on nie 
         \hline
     \end{tabularx}
 \end{table}
-
-\paragraph{Uwaga}
-\alert{Każda tabela powinna być opisana w treści pracy.}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rysunki}
-\paragraph{Uwagi}
-\begin{itemize}
-    \item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
+\begin{comment}  
+    \begin{itemize}
+        \item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
           których twórcy zezwolili na ich rozpowszechnianie oraz kopiowanie, czyli
           np. rysunki objęte licencją Creative Commons.
-    \item \alert{Każdy rysunek powinien być opisany w treści pracy.}
-\end{itemize}
+        \item Każdy rysunek powinien być opisany w treści pracy.
+    \end{itemize}
+\end{comment}
 \subsection{Wewnętrzne}
 
 Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pauza dostarcza on komend pozwalających na tworzenie grafik. Przykładowe grafiki pokazano na rysunku \ref{fig:tikz1} oraz \ref{fig:tikz2}.
@@ -418,7 +424,7 @@ Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pa
     \caption{Prosty rysunek \emph{TikZ}\label{fig:tikz1}.}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \begin{center}
         \begin{tikzpicture}
             \draw[step=.5cm,gray,very thin] (-1.4,-1.4) grid (1.4,1.4);
@@ -433,17 +439,17 @@ Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pa
 \subsection{Zewnętrzne}
 Oczywiście możliwe jest również dołączanie rysunków zewnętrznych \pauza
 pakiet \emph{graphicx} \cite{graphicx} pozwala na wstawianie grafik zapisanych w  plikach: '.png', '.jpg' oraz '.pdf'. Rysunek \ref{fig:logo} wstawiono przy użyciu tego pakietu.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \begin{center}
-        \IfFileExists{logo_podstawowe.png}{
-            \includegraphics[width=0.7\linewidth]{logo_podstawowe}
+        \IfFileExists{img/logo_podstawowe.png}{
+            \includegraphics[width=0.7\linewidth]{img/logo_podstawowe}
         }
-        {Nie znaleziono pliku 'logo\_podstawowe.png' \pauza pobierz go ze strony \url{https://www.informatyka.agh.edu.pl/media/uploads/Logo WI/PNG/logo_podstawowe.png}}
+        {Nie znaleziono pliku 'img/logo\_podstawowe.png' \pauza pobierz go ze strony \url{https://www.informatyka.agh.edu.pl/media/uploads/Logo WI/PNG/logo_podstawowe.png}}
     \end{center}
     \caption{Logo Wydziału Informatyki.}
     \label{fig:logo}
 \end{figure}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kody źródłowe}
 Najpopularniejszymi pakietami, które umożliwiają składanie kodów źródłowych programów, są:
 \begin{description}
@@ -454,10 +460,10 @@ Najpopularniejszymi pakietami, które umożliwiają składanie kodów źródłow
 #include <iostream>
 
 int main() {
-std::cout << "Hello World!";
-return 0;
+    std::cout << "Hello World!";
+    return 0;
 }
-\end{lstlisting}
+    \end{lstlisting}
     \item[minted \cite{minted}] \pauza formatuje kod źródłowy przy użyciu biblioteki języka Python  o nazwie \emph{Pygments} \cite{pygments}.
         \begin{listing}[!ht]
             \caption{Przykładowy listing sformatowany za pomocą pakietu 'minted'.\label{lst:code2}}
@@ -467,28 +473,28 @@ return 0;
 #include <iostream>
 
 int main() {
-std::cout << "Hello World!";
-return 0;
+    std::cout << "Hello World!";
+    return 0;
 }
-\end{minted}
+    \end{minted}
         \end{listing}
 \end{description}
 
-\begin{shaded}
+\begin{comment}
     \begin{itemize}
         \item Podpis ma być przed kodem źródłowym.
         \item \alert{Proszę używać tylko jednego z tych pakietów}; w przeciwnym razie otrzymasz taki efekt, jak w przykładowej pracy \pauza obydwa listingi mają ten sam numer.
     \end{itemize}
-\end{shaded}
+\end{comment}
 
 Kod źródłowy w C++ sformatowany przy użyciu pakietu \emph{listings}, pokazano na listingu \ref{lst:code1}; sformatowany przy użyciu pakietu \emph{minted}, pokazano na listingu \ref{lst:code2}.
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algorytmy}
 Pakiet \emph{algorithm2e} \cite{algorithm2e} pozwala zapisywać algorytmy w formie pseudokodu \pauza patrz
 algorytm \ref{alg:algo_disjdecomp} na stronie \pageref{alg:algo_disjdecomp}.
-\begin{shaded}
+\begin{comment}
     Podpis ma być przed algorytmem.
-\end{shaded}
+\end{comment}
 \begin{algorithm}[!htb]
     \caption{Disjoint decomposition.}\label{alg:algo_disjdecomp}
     %%%%%%%%%%%%%%%%%%%%%%%%%%     
@@ -548,13 +554,13 @@ Wzór \ref{eq:r2} to wzór wielowierszowy.
                        & = 2x^2 + 3x^2 - 9x + 6\nonumber \\
                        & = 5x^2 - 9x + 6\nonumber
 \end{align}
-\begin{shaded}
+\begin{comment}
     Należy używać tylko dwóch rodzajów wzorów:
     \begin{enumerate}
         \item \enquote{W linii}.
         \item Eksponowane, numerowane.
     \end{enumerate}
-\end{shaded}
+\end{comment}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Twierdzenia i podobne struktury}
 Twierdzenie nr \ref{tw} opublikował, w roku 1691, francuski matematyk Michel Rolle.
