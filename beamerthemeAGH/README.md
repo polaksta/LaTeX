@@ -64,7 +64,7 @@ Aby mieć pewność, że instalacja się powiodła, wykonaj polecenie
 $ kpsewhich beamercolorthemeAGH.sty beamerthemeAGH.sty
 
 ```
-Jeśli wynikiem jest ścieżka do pliku, to znaczy, że poprawnie zainstalowałeś/aś pakiet.
+Jeśli wynikiem są ścieżki do plików, to znaczy, że poprawnie zainstalowałeś/aś pakiet.
 
  
 ## Szablon przykładowej prezentacji
