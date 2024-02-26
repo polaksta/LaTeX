@@ -71,8 +71,9 @@ Jeśli wynikiem jest ścieżka do pliku, to znaczy, że poprawnie zainstalowałe
 
 Ze względu na trudności związane z dostarczaniem przykładów użycia komend oraz środowisk w dokumentacji pakietu, są one pokazane w oddzielnym pliku — `example.tex` — zawiera on jednocześnie przykładową prezentację. Możesz ją więc potraktować jako szablon do utworzenia własnej prezentacji.
 
-Aby otrzymać wynikowy dokument PDF, należy skompilować, **dwukrotnie**, dokument źródłowy za pomocą komendy `pdflatex`:
+Aby otrzymać wynikowy dokument PDF, należy skompilować, **trzykrotnie**, dokument źródłowy za pomocą komendy `pdflatex`:
 ```
+$ pdflatex -shell-escape example
 $ pdflatex -shell-escape example
 $ pdflatex -shell-escape example
 ```
