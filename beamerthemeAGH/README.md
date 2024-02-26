@@ -74,4 +74,5 @@ Ze względu na trudności związane z dostarczaniem przykładów użycia komend 
 Aby otrzymać wynikowy dokument PDF, należy skompilować dokument źródłowy za pomocą  komendy:
 ```
 $ pdflatex -shell-escape example
+$ pdflatex -shell-escape example
 ```
