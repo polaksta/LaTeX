@@ -511,8 +511,8 @@ example.tex.
 \fi
 %</internal>
 %<*package>
-\def\fileversion{1.7}
-\def\filedate{2024/02/15}
+\def\fileversion{1.7.1}
+\def\filedate{2024/02/27}
 \def\filecolorversion{1.1}
 \def\filecolordate{2017/04/02}
 %    \begin{macrocode}
@@ -795,7 +795,7 @@ example.tex.
 %\DoNotIndex{\typeout}
 %\DoNotIndex{\insertpart}
 %\DoNotIndex{\ifdefined}
-
+%\DoNotIndex{\AtBeginDocument}
 %
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -813,12 +813,13 @@ example.tex.
 %\changes{v1.5.1}{2018/03/30}{Modification of the condition for defining the appearance of the titlle slide}
 %\changes{v1.5.2}{2018/04/11}{Bug fixes}
 %\changes{v1.5.3}{2019/01/11}{Typo fixed}
-%\changes{v1.5.4}{2019/01/18}{Changed value of the left and right margins}
+%\changes{v1.5.4}{2019/01/18}{The left and right margin values have been changed}
 %\changes{v1.5.5}{2024/01/08}{The English name of the university has been changed}
 %\changes{v1.5.6}{2024/01/09}{Fixed incorrect logo display}
 %\changes{v1.6.0}{2024/02/02}{Added IDUB logo}
 %\changes{v1.6.1}{2024/02/03}{Reducing the size of the IDUB logo}
 %\changes{v1.7.0}{2024/02/11}{DTX version}
+%\changes{v1.7.1}{2024/02/27}{The aspect ratio of the colored sidebar has been changed}
 %
 %\begin{abstract}
 %  A package containing the AGH template for \LaTeX{} Beamer presentations.
@@ -1056,12 +1057,12 @@ example.tex.
         \coordinate [xshift=\leftedgeskip,yshift=3ex] (black_x2) at (current page.south west);
         \draw[AGH@black,thick] (black_x1) -- (black_x2);
 % Green line
-        \coordinate [below left =  0.05\textheight and \coloredlinesskip of black_x1] (green_x1);
-        \coordinate [above left =  0.2\textheight and \coloredlinesskip of black_x2] (green_x2);
+        \coordinate [below left =  0.1\textheight and \coloredlinesskip of black_x1] (green_x1);
+        \coordinate [above left =  0.25\textheight and \coloredlinesskip of black_x2] (green_x2);
         \draw[AGH@green,thick] (green_x1) -- (green_x2);
 % Red line
         \coordinate [below right = 0.2\textheight and \coloredlinesskip of black_x1] (red_x1);
-        \coordinate [above right = 0.2\textheight and \coloredlinesskip of black_x2] (red_x2);
+        \coordinate [above right = 0.25\textheight and \coloredlinesskip of black_x2] (red_x2);
             \draw[AGH@red,thick] (red_x1) -- (red_x2);
     }
 }
