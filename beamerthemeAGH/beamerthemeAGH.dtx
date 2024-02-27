@@ -163,16 +163,16 @@ and the derived files
     \frame{\partpage}
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\author[Stanisław Polak]{Stanisław Polak\texorpdfstring{\inst{1,2}\newline
-    {\scriptsize \href{mailto:polak@agh.edu.pl}{polak@agh.edu.pl}}
-    }{}
+\author[Stanisław Polak]{Stanisław Polak%\texorpdfstring{\inst{1,2}\newline
+    %{\scriptsize \href{mailto:polak@agh.edu.pl}{polak@agh.edu.pl}}
+    %}{}
 }
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \date{}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iflanguage{polish}{
     \title{Temat AGH dla Beamer{\dywiz}a}
-    % \subtitle{Podtytuł prezentacji}
+    \subtitle{Przykładowa prezentacja}
     \institute[AGH]{
             \inst{1}Wydział Informatyki\newline
             ul. Kawiory 21\newline
@@ -182,8 +182,8 @@ and the derived files
             \inst{2}Druga afiliacja
      }
 }{
-    \title{AGH Beamer Theme}
-    % \subtitle{Presentation subtitle}
+    \title{Beamer theme AGH}
+    \subtitle{Sample presentation}
     \institute[AGH]{
             \inst{1}Faculty of Computer Science\newline
             Kawiory 21 Street\newline
@@ -247,7 +247,7 @@ and the derived files
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifdefined\textleftmargin
     \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
         \begin{center}
@@ -269,16 +269,16 @@ and the derived files
         \verb+\usetheme[margins=...]{AGH}+
     \end{frame}
 \fi
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \part{\iflanguage{polish}{Przykłady}{Examples}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}{\iflanguage{polish}{Plan prezentacji}{Outline}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\part{\iflanguage{polish}{Przykłady}{Examples}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\iflanguage{polish}{Plan prezentacji}{Outline}}
     \tableofcontents[pausesections]
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section{\iflanguage{polish}{Elementy podstawowe}{Basic elements}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}{\iflanguage{polish}{Wyszczególnienie}{Itemize}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\iflanguage{polish}{Elementy podstawowe}{Basic elements}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\iflanguage{polish}{Wyszczególnienie}{Itemize}}
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
@@ -297,8 +297,8 @@ and the derived files
         \onslide
     \end{columns}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}{\iflanguage{polish}{Wyliczenie}{Enumerate}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\iflanguage{polish}{Wyliczenie}{Enumerate}}
     \begin{columns}
         \column{0.5\textwidth}
         \begin{enumerate}
@@ -317,9 +317,9 @@ and the derived files
         \onslide
     \end{columns}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section{\iflanguage{polish}{Matematyka}{Mathematics}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\iflanguage{polish}{Matematyka}{Mathematics}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Podstawowe bloki}{Basic blocks}}
     % Examples from "The beamer class User Guide"
     \iflanguage{polish}{
@@ -344,8 +344,8 @@ and the derived files
         \end{alertblock}
     }
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}{\iflanguage{polish}{Otoczenia matematyczne}{Math environments}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\iflanguage{polish}{Otoczenia matematyczne}{Math environments}}
     \begin{columns}
         \column{0.45\textwidth} %The first column
         \structure{\iflanguage{polish}{Twierdzenia}{Theorems}}
@@ -365,18 +365,18 @@ and the derived files
         \ldots
     \end{definition}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}{\iflanguage{polish}{Dynamiczny wzór matematyczny}{Dynamic mathematical formula}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\iflanguage{polish}{Dynamiczny wzór matematyczny}{Dynamic mathematical formula}}
     \[
         \binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
     \]
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \section{\iflanguage{polish}{Informatyka}{Computer Science}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\iflanguage{polish}{Informatyka}{Computer Science}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{\iflanguage{polish}{Wstawianie kodów źródłowych}{Inserting source codes}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'listings'}{Using the 'listings' environment}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'listings'}{Using the 'listings' environment}}
     \begin{lstlisting}[language=C++]
 /* The first  program in C++ */  %*\pause*)
 #include <iostream>  %*\pause*)
@@ -387,7 +387,7 @@ void main()
 } %*\onslide*)
 \end{lstlisting}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'minted'}{Using the 'minted' environment}}
     \begin{minted}[beameroverlays,escapeinside=||]{C++}
@@ -400,14 +400,14 @@ void main()
 } |\onslide|
     \end{minted}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \appendix
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
     \iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}{The current version of the template is available at \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
     \begin{thebibliography}{9}
         \setbeamertemplate{bibliography item}[online]
         \bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
