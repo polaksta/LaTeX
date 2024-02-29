@@ -17,6 +17,7 @@ Szczegóły użycia klasy można znaleźć w pliku `agh-wi.pdf`.
 - **english** — praca dyplomowa jest po angielsku.
      - Teksty wstawiane automatycznie przez LaTeX (spis treści, spis rysunków itp.) są w języku angielskim.
      - Zasady dzielenia wyrazów dotyczą języka angielskiego.
+     - ***Strona tytułowa jest po polsku***, ale najpierw jest widoczny angielskojęzyczny tytuł, a potem polskojęzyczny.
 - **data-science** — praca dyplomowa na kierunku „Informatyka — Data Science”.
 - **print** — praca dyplomowa będzie drukowana i w związku z tym na każdej stronie powinien być dodany, dodatkowy (2 cm), margines na oprawę.
 

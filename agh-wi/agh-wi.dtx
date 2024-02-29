@@ -23,6 +23,7 @@ Szczegóły użycia klasy można znaleźć w pliku `agh-wi.pdf`.
 - **english** — praca dyplomowa jest po angielsku.
      - Teksty wstawiane automatycznie przez LaTeX (spis treści, spis rysunków itp.) są w języku angielskim.
      - Zasady dzielenia wyrazów dotyczą języka angielskiego.
+     - ***Strona tytułowa jest po polsku***, ale najpierw jest widoczny angielskojęzyczny tytuł, a potem polskojęzyczny.
 - **data-science** — praca dyplomowa na kierunku „Informatyka — Data Science”.
 - **print** — praca dyplomowa będzie drukowana i w związku z tym na każdej stronie powinien być dodany, dodatkowy (2 cm), margines na oprawę.
 
@@ -139,21 +140,24 @@ and the derived files
  % Do edycji (oraz komplilacji) dokumentów LaTeX polecam program 'TeXstudio' (https://www.texstudio.org/)
  %
  % Autor: Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
- \documentclass{agh-wi} % Praca po polsku,
- % Kierunek 'Informatyka'.
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{agh-wi} % Praca po polsku; na stronie tytułowej, najpierw jest widoczny polskojęzyczny tytuł, a potem angielskojęzyczny, 
+                       % Kierunek 'Informatyka',
+                       % Przeznaczona do oglądania przy użyciu przeglądarki PDF.
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Inne, przykładowe, użycia klasy
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- % \documentclass[english]{agh-wi}               % Praca po angielsku,
-                           % Kierunek 'Informatyka',
-                           % Przeznaczona do oglądania przy użyciu przeglądarki PDF.
- % \documentclass[english, data-science]{agh-wi} % Praca po angielsku,
-                           % Kierunek 'Informatyka - Data Science',
-                           % Przeznaczona do oglądania przy użyciu przeglądarki PDF.
- % \documentclass[print]{agh-wi}                 % Praca po polsku,
-                           % Kierunek 'Informatyka',
-                           % Przeznaczona do drukowania - każda strona posiada,
-                           %    dodatkowy (2cm), margines na oprawę.
+ % \documentclass[english]{agh-wi}               % Praca po angielsku; 
+                                                 %     strona tytułowa po polsku, ale najpierw jest widoczny angielskojęzyczny tytuł, a potem polskojęzyczny  
+                                                 % Kierunek 'Informatyka',
+                                                 % Przeznaczona do oglądania przy użyciu przeglądarki PDF.
+ % \documentclass[english, data-science]{agh-wi} % Praca po angielsku; ...
+                                                 % Kierunek 'Informatyka - Data Science',
+                                                 % Przeznaczona do oglądania przy użyciu przeglądarki PDF.
+ % \documentclass[print]{agh-wi}                 % Praca po polsku; ...
+                                                 % Kierunek 'Informatyka',
+                                                 % Przeznaczona do drukowania - każda strona posiada,
+                                                 %    dodatkowy (2cm), margines na oprawę.
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Parametry dla strony tytułowej
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1077,8 +1081,6 @@ example.tex.
             commentstyle=\color{brown},
 % Color and font for strings
             stringstyle=\ttfamily,
-% If you want to add LaTeX within your code                
-            escapeinside={\%*}{*)},
 %    
             inputencoding=utf8,
 % The listings package does not support Polish UTF-8 characters, but this can be "fixed" - Polish characters will be replaced with LaTeX commands - see below                        
