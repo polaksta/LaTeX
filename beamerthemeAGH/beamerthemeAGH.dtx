@@ -12,33 +12,48 @@ Pakiet `beamerthemeAGH` dostarcza szablonu prezentacji LaTeX Beamer opartego na 
 Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme{AGH}`. Szczegóły użycia pakietu można znaleźć w pliku `beamerthemeAGH.pdf`.
 ## Opcje
 ### Opcja `parttitle`
-Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji *parttitle* możesz spowodować, aby tytuł części był widoczny na slajdzie.
+Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji _parttitle_ możesz spowodować, aby tytuł części był widoczny na slajdzie.
 #### Przykłady
--  `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast nazw autora oraz instytutu).
-
--  `\usetheme[parttitle=rightfooter]{AGH}` — umieść tytuł części w prawej stopce (zamiast daty).
+- `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast nazw autora oraz instytutu).
+- `\usetheme[parttitle=rightfooter]{AGH}` — umieść tytuł części w prawej stopce (zamiast daty).
 ### Opcja `dark`
-Jeżeli prezentacja będzie się odbywać w zaciemnionej sali, to przydatne może być użycie ciemnego tła — w takim przypadku użyj opcji *dark*, tj. `\usetheme[dark]{AGH}`.
+Jeżeli prezentacja będzie się odbywać w zaciemnionej sali, to przydatne może być użycie ciemnego tła — w takim przypadku użyj opcji _dark_, tj.  `\usetheme[dark]{AGH}`.
 
 Możesz określić, jak bardzo ciemne ma być tło, przypisując (tej opcji) wartość całkowitą z przedziału od 50 do 90, np. `\usetheme[dark=75]{AGH}`. Domyślną wartością jest 50.
 ### Opcja `nosidebar`
-Jeżeli chcesz ukryć pasek boczny (zawierający logo AGH plus trójkolorowy pasek) dla slajdów nietytułowych, to użyj opcji *nosidebar*, tzn. `\usetheme[nosidebar]{AGH}`.
+Jeżeli chcesz ukryć pasek boczny (zawierający logo AGH plus trójkolorowy pasek) dla slajdów nietytułowych, to użyj opcji _nosidebar_, tzn.  `\usetheme[nosidebar]{AGH}`.
 ### Opcja `margins`
-Domyślny rozmiar lewego i prawego marginesu obszaru tekstu wynosi 4em. Jeżeli chcesz ustawić inną wartość, to użyj opcji *margins*, przypisując jej żądaną wartość marginesu, np. `\usetheme[margins=1em]{AGH}`.
+Domyślny rozmiar lewego i prawego marginesu obszaru tekstu wynosi 4em. Jeżeli chcesz ustawić inną wartość, to użyj opcji _margins_, przypisując jej żądaną wartość marginesu, np. `\usetheme[margins=1em]{AGH}`.
+### Opcja `outertheme`
+Domyślnie używanym motywem zewnętrznym jest **infolines**. Jeżeli chcesz użyć innego, to jego nazwę musisz wyspecyfikować jako wartość opcji _outertheme_, np.  `\usetheme[outertheme=tree]{AGH}`. 
+| Nazwa motywu | Opis | 
+| --------   | ------- |
+| default    | Stonowany i minimalistyczny motyw. Tytuł slajdu jest równany do lewej strony. Slajd nie posiada ani nagłówka, ani stopki. |
+| infolines  | Nagłówek zawiera tytuł bieżącej sekcji oraz podsekcji. Stopka zawiera: imię i nazwisko autora, instytucję, tytuł prezentacji, aktualną datę oraz numer slajdu. |
+| miniframes | Nagłówek zawiera poziomy pasek nawigacyjny, którego elementami są małe kółka — reprezentują poszczególne slajdy sekcji. | 
+| smoothbars | Motyw ten zachowuje się bardzo podobnie do motywu **miniframe**, przynajmniej w odniesieniu do nagłówka. Jedyną różnicą są płynne przejścia kolorystyczne pomiędzy kolorami tła pasków slajdu.  Domyślnie, slajdy nie posiadają stopki. | 
+| sidebar    | Z prawej strony slajdu znajduje się pasek ze spisem treści prezentacji. |
+| split      | Lewa część nagłówka zawiera tytuł sekcji, a w prawa, podrozdziały bieżącej sekcji.| 
+| shadow     | Rozszerzona wersja motywu **split** — poziome cieniowanie za tytułem slajdu oraz dodawany jest mały „cień” na dole nagłówka. | 
+| tree       | Nagłówek zawiera trzy linie, które pokazują tytuł prezentacji, tytuł bieżącej sekcji oraz podsekcji. | 
+| smoothtree | Motyw podobny do **tree**. Główną różnicą jest płynna zmiana kolorów tła. |
+### Opcja `outerthemeoptions`
+Niektóre z wyżej opisanych motywów mogą być konfigurowane za pomocą opcji. W celu wyspecyfikowania listy opcji należy użyć opcji _outerthemeoptions_, np.  `\usetheme[outerthemeoptions={footline=authortitle}]{AGH}`.
+
+Wykaz opcji dla poszczególnych motywów, jak i dokładniejszy opis motywów, znajdziesz w [Podręczniku klasy 'beamer'](http://mirror.ctan.org//macros/latex/contrib/beamer/doc/beameruserguide.pdf).
 ## Wersje kolorystyczne
-| Domyślna | Z ciemnym tłem |
-|--------------------|----------------------------------|
+| Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH.big.png "Slajd tytułowy") | ![Screenshot](http://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-dark.big.png "Slajd tytułowy — wersja ciemna") |
 
-*Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany przez osoby i instytucje niezwiązane z AGH.*
+_Symbol graficzny AGH jest zastrzeżony i bez zezwolenia, nie powinien być stosowany przez osoby i instytucje niezwiązane z AGH._
 ## Przykładowe prezentacje
-* [Prezentacja 1](http://www.icsr.agh.edu.pl/~polak/beamer.pdf)
-* [Prezentacja 2](http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf)
-* [Prezentacja 3 — wersja z ciemnym tłem](http://www.icsr.agh.edu.pl/~polak/wms/latex/beamer-mozliwosci.pdf)
+- [Prezentacja 1](http://www.icsr.agh.edu.pl/~polak/beamer.pdf)
+- [Prezentacja 2](http://www.icsr.agh.edu.pl/~polak/wms/beamer.pdf)
+- [Prezentacja 3 — wersja z ciemnym tłem](http://www.icsr.agh.edu.pl/~polak/wms/latex/beamer-mozliwosci.pdf)
 
-Jeżeli powyższe przykłady przekonały Cię, że warto tworzyć prezentacje w oparciu o LaTeX Beamer, a ... nie wiesz, jak się do tego zabrać, to polecam Ci [mój kanał na youtube](https://www.youtube.com/playlist?list=PLlOvf-mh5wJEzL2onjzBdenUpssbonmO5). :smile:
+Jeżeli powyższe przykłady przekonały Cię, że warto tworzyć prezentacje w oparciu o LaTeX Beamer, a ... nie wiesz, jak się do tego zabrać, to polecam Ci [mój kanał na youtube](https://www.youtube.com/playlist?list=PLlOvf-mh5wJEzL2onjzBdenUpssbonmO5).  :smile:
 ## Instalacja
-
 Uruchom komendę
 ```
 $ pdflatex beamerthemeAGH.dtx
@@ -52,14 +67,13 @@ $ makeindex -s gglo.ist -o beamerthemeAGH.gls beamerthemeAGH.glo
 $ pdflatex beamerthemeAGH.dtx
 $ pdflatex beamerthemeAGH.dtx
 ```
+
 (Twoje środowisko TeX może to wykonać za ciebie).
 
-  
 Na koniec, aby użyć wygenerowanych plików `.sty`, przenieś je do odpowiedniej lokalizacji dla swojej dystrybucji TeX-a. Być może najłatwiejszym sposobem, aby to osiągnąć, jest wykonanie komendy
 ```
 $ mv *.sty $(kpsewhich -var-value=TEXMFHOME)/tex/latex
 ```
-
 Jeżeli chcesz udostępnić plik wszystkim użytkownikom urządzenia z systemem Unix, prawdopodobnie lepiej będzie, jak skopiujesz go do katalogu `/usr/local/texlive/texmf-local/tex/latex`, a następnie uruchomisz
 ```
 # texhash
@@ -69,10 +83,7 @@ Aby mieć pewność, że instalacja się powiodła, wykonaj polecenie
 $ kpsewhich beamercolorthemeAGH.sty beamerthemeAGH.sty
 ```
 Jeśli wynikiem są ścieżki do plików, to znaczy, że poprawnie zainstalowałeś/aś pakiet.
-
- 
 ## Szablon przykładowej prezentacji
-
 Ze względu na trudności związane z dostarczaniem przykładów użycia komend oraz środowisk w dokumentacji pakietu, są one pokazane w oddzielnym pliku — `example.tex` — zawiera on jednocześnie przykładową prezentację. Możesz ją więc potraktować jako szablon do utworzenia własnej prezentacji.
 
 Aby otrzymać wynikowy dokument PDF, należy skompilować, **trzykrotnie**, dokument źródłowy za pomocą komendy `pdflatex`:
@@ -114,8 +125,8 @@ and the derived files
   % pdflatex -shell-escape przykład.tex
   % Dodatkowo musisz mieć zainstalowany program 'pygmentize', który jest częścią
   % pakietu „Pygments” (https://pygments.org/)
- \documentclass[
-    english,         % Jeżeli chcesz otrzymać prezentację w języku polskim, to wyraz 'english' zastąp wyrazem 'polish' 
+  \documentclass[
+    english,         % Jeżeli chcesz otrzymać prezentację w języku polskim, to wyraz 'english' zastąp wyrazem 'polish'
     aspectratio=169, % Proporcje ekranu to 16:9
     % handout,       % Odkomentuj, jeśli chcesz przełączyć z trybu 'beamer' na 'handout'
 ]
@@ -127,22 +138,23 @@ and the derived files
 }
 \makeatother
 \usepackage[utf8]{inputenc}
-\usepackage{listings} 
-\usepackage{minted}   
+\usepackage{listings}
+\usepackage{minted}
  %%%%%%%%% Ustawienia dla trybu 'beamer' %%%%%%%%%%%%%%
-\mode<beamer>{ 
+\mode<beamer>{
     \definecolor{links}{HTML}{2A1B81}
     \hypersetup{
-        pdfpagemode=FullScreen,                 % Włącz tryb pełnoekranowy
+        pdfpagemode=FullScreen, % Włącz tryb pełnoekranowy
         colorlinks,
         linkcolor=,
         urlcolor=links
     }
-    \usetheme[parttitle=rightfooter]{AGH}       % Tytuł części ma być widoczny w prawej stopce
-    %\usetheme[nosidebar]{AGH}                  % Nie pokazuj paska bocznego na nietytułowych slajdach
-    %\usetheme[nosidebar, margins=1em]{AGH}     % Nie pokazuj paska bocznego na nietytułowych slajdach, ustaw obydwa marginesy (lewy/prawy) na wartość 1em
-    %\usetheme[dark]{AGH}                       % Użyj ciemnego tła
-    %\usetheme[dark, parttitle=leftfooter]{AGH} % Użyj ciemnego tła, tytuł części ma być widoczny w lewej stopce
+    \usetheme[parttitle=rightfooter]{AGH}                                            % Tytuł części ma być widoczny w prawej stopce
+    %\usetheme[nosidebar]{AGH}                                                       % Nie pokazuj paska bocznego na nietytułowych slajdach
+    %\usetheme[nosidebar, margins=1em]{AGH}                                          % Nie pokazuj paska bocznego na nietytułowych slajdach, ustaw obydwa marginesy (lewy/prawy) na wartość 1em
+    %\usetheme[dark]{AGH}                                                            % Użyj ciemnego tła
+    %\usetheme[dark, parttitle=leftfooter]{AGH}                                      % Użyj ciemnego tła, tytuł części ma być widoczny w lewej stopce
+    %\usetheme[outertheme=miniframes, outerthemeoptions={footline=authortitle}]{AGH} % Użyj motywu zewnętrznego 'miniframes' z opcją 'footline=authortitle'
 }
  %%%%%%%%% Ustawienia dla trybu 'handout' %%%%%%%%%%%%%%
 \mode<handout>{
@@ -162,9 +174,9 @@ and the derived files
     \frame{\partpage} % Na początku każdej części będzie, automatycznie, wstawiany slajd z tytułem (części)
 }
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\date{} % Nie wyświetlaj (bieżącej) daty na slajdzie tytułowym                   
+\date{} % Nie wyświetlaj (bieżącej) daty na slajdzie tytułowym
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\author[Stanisław Polak]{Stanisław Polak 
+\author[Stanisław Polak]{Stanisław Polak
  % \texorpdfstring{\newline{\scriptsize \href{mailto:polak@agh.edu.pl}{polak@agh.edu.pl}}}{}    % Odkomentuj, jeżeli, poniżej imienia i nazwiska, ma być widoczny adres e-mail
 }
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,8 +207,8 @@ and the derived files
  %%%%%%%%%%% Konfiguracja pakietu 'listings' %%%%%%%%%%%%%%%%%%%%%%%%%%
  % Źródło: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings#Using_the_listings_package
 \lstset{
-    showstringspaces=false,                           % Czy podkreślać spacje wewnątrz napisów?   
-    numbers=left,                                     % Gdzie umieścić numery linii?   
+    showstringspaces=false,                           % Czy podkreślać spacje wewnątrz napisów?
+    numbers=left,                                     % Gdzie umieścić numery linii?
     stepnumber=1,                                     % Krok pomiędzy dwoma numerami linii. Jeśli 1, każda linia będzie numerowana
     numbersep=5pt,                                    % Jak daleko numery linii są odsunięte od kodu
     showspaces=false,                                 % Czy wyświetlać spacje w ciągu znaków przy użyciu podkreśleń?
@@ -211,7 +223,7 @@ and the derived files
     commentstyle=\color{brown},                       % Styl komentarzy
     stringstyle=\ttfamily,                            % Styl napisów
     escapeinside={\%*}{*)},                           % Tekst znajdujący się pomiędzy znacznikiem '%*' a znacznikiem '*)' to komendy LaTeX — kompilator będzie je wykonywał
-    % Pakiet listings nie obsługuje polskich znaków UTF-8, ale można to „naprawić” — polskie znaki zostaną zastąpione poleceniami LaTeX — patrz poniżej    
+    % Pakiet listings nie obsługuje polskich znaków UTF-8, ale można to „naprawić” — polskie znaki zostaną zastąpione poleceniami LaTeX — patrz poniżej
     inputencoding=utf8,
     literate={ą}{{\k{a}}}1
              {Ą}{{\k{A}}}1
@@ -236,7 +248,7 @@ and the derived files
 \setminted[C++]{
     frame=single, % Pojedyncze obramowanie wokół kodu
      linenos      % Numeruj linie kodu
-} 
+}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -246,7 +258,7 @@ and the derived files
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%% Slajd 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ifdefined\textleftmargin 
+\ifdefined\textleftmargin
   \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
     \begin{center}
       \iflanguage{polish}{
@@ -267,9 +279,9 @@ and the derived files
     \verb+\usetheme[margins=...]{AGH}+
   \end{frame}
 \fi
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%% Część „Przykłady” %%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \part{\iflanguage{polish}{Przykłady}{Examples}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%% Slajd 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -278,9 +290,9 @@ and the derived files
     % Plan prezentacji jest tworzony na podstawie treści komend '\section' oraz '\subsection' zawartych w bieżącej części
     \tableofcontents[pausesections] % Utwórz „przyrostowy” (elementy odkrywane po kolei) plan prezentacji
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%% Sekcja „Elementy podstawowe” %%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Elementy podstawowe}{Basic elements}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%% Slajd 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -326,9 +338,9 @@ and the derived files
     \onslide
   \end{columns}
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%% Sekcja „Matematyka” %%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Matematyka}{Mathematics}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%% Slajd 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -362,7 +374,7 @@ and the derived files
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Otoczenia matematyczne}{Math environments}}
   \begin{columns}
-    \column{0.45\textwidth} 
+    \column{0.45\textwidth}
     \structure{\iflanguage{polish}{Twierdzenia}{Theorems}}
     \begin{theorem}[\iflanguage{polish}{Pitagorasa}{Pythagorean}]
       $a^{2}+  b^{2}=  c^{2}$
@@ -388,13 +400,13 @@ and the derived files
     \binom{n}{k} = \pause \frac{n!}{k!(n-k)!}
   \]
 \end{frame}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%% Sekcja „Informatyka” %%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Informatyka}{Computer Science}}
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%% Podsekcja „Wstawianie kodów źródłowyc” %%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{\iflanguage{polish}{Wstawianie kodów źródłowych}{Inserting source codes}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%% Slajd 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -443,18 +455,18 @@ void main()
     %%%%%%%%%%%%%%%%%%%
     % Punktor 'online'
     %%%%%%%%%%%%%%%%%%%
-    \setbeamertemplate{bibliography item}[online]  
+    \setbeamertemplate{bibliography item}[online]
     \bibitem{wikibook}{Wikibooks \newblock \LaTeX/Source Code Listings \newblock \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}}
     \bibitem{beamer}{Till Tantau, Joseph Wright, Vedran Miletić \newblock The beamer class \newblock \url{http://mirror.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}}
     %%%%%%%%%%%%%%%%%%%
     % Punktor 'książka'
     %%%%%%%%%%%%%%%%%%%
-    \setbeamertemplate{bibliography item}[book]   
+    \setbeamertemplate{bibliography item}[book]
     \bibitem{lamport}{Leslie Lamport \newblock LATEX: a document preparation system : user's guide and reference manual \newblock Addison-Wesley Pub. Co., 1994 }
     %%%%%%%%%%%%%%%%%%%
     % Punktor 'artykuł'
     %%%%%%%%%%%%%%%%%%%
-    \setbeamertemplate{bibliography item}[article] 
+    \setbeamertemplate{bibliography item}[article]
     \iflanguage{polish}{
       \bibitem{article1}{Autor \newblock Tytuł artykułu \newblock Edytor, rok \newblock Uwagi}
       %%%%%%%%%%%%%%%%%%%
@@ -563,10 +575,10 @@ example.tex.
 \fi
 %</internal>
 %<*package>
-\def\fileversion{1.7.2}
-\def\filedate{2024/03/13}
-\def\filecolorversion{1.1}
-\def\filecolordate{2017/04/02}
+\def\fileversion{1.8}
+\def\filedate{2024/03/14}
+\def\filecolorversion{1.2}
+\def\filecolordate{2024/03/14}
 %    \begin{macrocode}
 %<package|color>\NeedsTeXFormat{LaTeX2e}
 %    \end{macrocode}
@@ -632,6 +644,7 @@ example.tex.
 %\maketitle
 %\changes{v1.0}{2017/03/30}{First public version}
 %\changes{v1.1}{2017/04/02}{Level of background darkness}
+%\changes{v1.2}{2024/03/14}{Sidebar colors have been specified}
 %\begin{abstract}
 % Color definition of presentation elements.
 %\end{abstract}
@@ -693,6 +706,10 @@ example.tex.
 % IDUB logo
     \definecolor{c77787b}{RGB}{119,120,123}
 \fi
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{section in sidebar shaded}{fg=AGH@white}
+\setbeamercolor{subsection in sidebar shaded}{fg=AGH@white}
+\setbeamercolor{subsection in sidebar}{fg=AGH@green}
 \setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
 \setbeamercolor{palette secondary}{fg=AGH@white,bg=AGH@black}
 \setbeamercolor{palette tertiary}{fg=AGH@white,bg=AGH@green}
@@ -750,6 +767,8 @@ example.tex.
 %\DoNotIndex{\author}
 %\DoNotIndex{\beamer@shortauthor}
 %\DoNotIndex{\beamer@shorttitle}
+%\DoNotIndex{\beamer@shortdate}
+%\DoNotIndex{\beamer@shortinstitute}
 %\DoNotIndex{\AND}
 %\DoNotIndex{\begin}
 %\DoNotIndex{\begingroup}
@@ -764,6 +783,7 @@ example.tex.
 %\DoNotIndex{\definecolor}
 %\DoNotIndex{\dimexpr}
 %\DoNotIndex{\draw}
+%\DoNotIndex{\def}
 %\DoNotIndex{\else}
 %\DoNotIndex{\@empty}
 %\DoNotIndex{\end}
@@ -812,6 +832,7 @@ example.tex.
 %\DoNotIndex{\textleftmargin}
 %\DoNotIndex{\textrightmargin}
 %\DoNotIndex{\textwidth}
+%\DoNotIndex{\textbackslash}
 %\DoNotIndex{\thepage}
 %\DoNotIndex{\tikz}
 %\DoNotIndex{\tikzset}
@@ -873,6 +894,7 @@ example.tex.
 %\changes{v1.7.0}{2024/02/11}{DTX version}
 %\changes{v1.7.1}{2024/02/27}{The aspect ratio of the colored sidebar has been changed}
 %\changes{v1.7.2}{2024/03/13}{Adaptation to cooperation with selected outer themes other than 'infolines'}
+%\changes{v1.8.0}{2024/03/14}{The 'outertheme', and the 'outerthemeoptions' options were added}
 %
 %\begin{abstract}
 %  A package containing the AGH template for \LaTeX{} Beamer presentations.
@@ -913,11 +935,20 @@ example.tex.
 %    \begin{macrocode}
 \newdimen\textrightmargin  
 %    \end{macrocode}
-% Size initialization.
+% Dimension initialization.
 %    \begin{macrocode}
 \coloredlinesskip=2mm
 \textleftmargin=4em
 \textrightmargin=4em
+%    \end{macrocode}
+%\section{Default values}
+% The default outer theme is 'infolines'.
+%    \begin{macrocode}
+\def\AGH@outertheme{infolines}
+%    \end{macrocode}
+% By default, the options list is empty.
+%    \begin{macrocode}
+\def\AGH@outerthemeoptions{}
 %    \end{macrocode}
 % \section{Conditional variables}
 % By default, do not use the dark version.
@@ -960,6 +991,14 @@ example.tex.
 %    \begin{macrocode}
 \DeclareOptionBeamer{parttitle}{\def\AGH@parttitle{#1}} 
 %    \end{macrocode}
+% The 'outertheme' option specifies which outer theme should be loaded. By default 'infolines' is loaded.
+%    \begin{macrocode}
+\DeclareOptionBeamer{outertheme}{\def\AGH@outertheme{#1}} 
+%    \end{macrocode}
+% The 'outerthemeoptions' option specifies options for the outer theme.
+%    \begin{macrocode}
+\DeclareOptionBeamer{outerthemeoptions}{\def\AGH@outerthemeoptions{#1}} 
+%    \end{macrocode}    
 % \section{Beamer options processing}
 %    \begin{macrocode}
 \ProcessOptionsBeamer
@@ -973,12 +1012,25 @@ example.tex.
 %    \begin{macrocode}
 \useinnertheme[shadow=\ifAGH@dark false\else true\fi]{rounded}
 %    \end{macrocode}
-%\subsection{Outer theme}
-% Use the 'infolines' theme.
+% \subsection{Outer theme}
+% Use the theme specified in the '\textbackslash{}AGH@outertheme' macro with  the '\textbackslash{}AGH@outerthemeoptions' options.
 %    \begin{macrocode}
-\useoutertheme{infolines}
+\useoutertheme[\AGH@outerthemeoptions]{\AGH@outertheme}
 %    \end{macrocode}
-%\subsection{Color theme}
+% In the case of the 'sidebar' theme, the selected parameters should have a different value.
+%    \begin{macrocode}
+\ifthenelse{
+    \not\equal{\AGH@outertheme}{sidebar}
+}
+{
+    \def\AGH@idubx{0.6}
+}
+{
+    \AGH@sidebarfalse 
+    \def\AGH@idubx{-4\textwidth}
+}
+%    \end{macrocode}
+% \subsection{Color theme}
 %    \begin{macrocode}
 \usecolortheme{AGH}
 %    \end{macrocode}
@@ -1084,7 +1136,7 @@ example.tex.
 % Polish IDUB  logo.
     idub-pl/.pic= {
         \begin{tikzpicture}[y=1cm, x=1cm, yscale=\globalscale,xscale=\globalscale, every node/.append style={scale=\globalscale}, inner sep=0pt, outer sep=0pt]
-            \begin{scope}[shift={(0.6,7\headheight)}]
+            \begin{scope}[shift={(\AGH@idubx,8\headheight)}]
                 \path[fill=ced1c24,cm={ 1.0,-0.0,-0.0,-1.0,(6.5482, 17.8108)}] (0.0, 11.6729) -- (-0.0021, 11.6732).. controls (-0.0021, 11.8843) and (-0.1732, 12.0554) .. (-0.3844, 12.0554) -- (-0.3824, 12.0575) -- (-1.2812, 12.0575) -- (-1.6653, 12.0575) -- (-1.6656, 12.0554).. controls (-1.8767, 12.0554) and (-2.0478, 11.8843) .. (-2.0478, 11.6732) -- (-2.0499, 11.6751) -- (-2.0499, 9.4951) -- (-2.05, 9.4951) -- (-2.05, 9.2389) -- (-2.05, 8.5981).. controls (-2.05, 8.2444) and (-2.3368, 7.9577) .. (-2.6906, 7.9577) -- (-3.3312, 7.9577) -- (-3.4594, 7.9577).. controls (-3.8131, 7.9577) and (-4.0999, 8.2445) .. (-4.0999, 8.5983) -- (-4.0999, 8.7132) -- (-4.0999, 9.1417) -- (-4.0999, 9.3671).. controls (-4.0998, 9.7208) and (-3.813, 10.0076) .. (-3.4593, 10.0076) -- (-2.8187, 10.0076) -- (-2.8187, 9.4951) -- (-3.4593, 9.4951).. controls (-3.53, 9.4951) and (-3.5874, 9.4378) .. (-3.5874, 9.3671) -- (-3.5874, 9.1417) -- (-3.5874, 8.7132) -- (-3.5874, 8.5983).. controls (-3.5874, 8.5276) and (-3.53, 8.4702) .. (-3.4593, 8.4702) -- (-3.3312, 8.4702) -- (-2.9704, 8.4702) -- (-2.6906, 8.4702).. controls (-2.6198, 8.4702) and (-2.5624, 8.5275) .. (-2.5624, 8.5982) -- (-2.5624, 9.2389) -- (-2.5624, 9.4951) -- (-2.5624, 11.0326) -- (-2.5624, 11.0326) -- (-2.5624, 11.6733).. controls (-2.5623, 12.1685) and (-2.1608, 12.57) .. (-1.6656, 12.57) -- (-0.5125, 12.57) -- (-0.3843, 12.57).. controls (0.111, 12.57) and (0.5125, 12.1684) .. (0.5125, 11.6732) -- (0.5124, 10.5201) -- (0.5124, 10.3918).. controls (0.5124, 9.8966) and (0.1109, 9.4951) .. (-0.3844, 9.4951) -- (-1.025, 9.4951) -- (-1.7937, 9.4951) -- (-1.7937, 10.0076) -- (-0.3846, 10.0076) -- (-0.3844, 10.0097).. controls (-0.1733, 10.0097) and (-0.0021, 10.1808) .. (-0.0021, 10.392) -- (-0.0, 10.39) -- cycle;
                 \path[fill=c77787b,cm={ 1.0,-0.0,-0.0,-1.0,(1.9877, 14.6208)}] (0.0, 11.6729).. controls (0.0, 11.5661) and (-0.0465, 11.5103) .. (-0.1395, 11.5057).. controls (-0.0919, 11.4972) and (-0.0578, 11.4815) .. (-0.0375, 11.4584).. controls (-0.0171, 11.4354) and (-0.0069, 11.4003) .. (-0.0069, 11.3535) -- (-0.0069, 11.2808).. controls (-0.0069, 11.2101) and (-0.0254, 11.1625) .. (-0.0622, 11.1379).. controls (-0.0945, 11.1163) and (-0.1557, 11.1056) .. (-0.2456, 11.1056) -- (-0.5062, 11.1056) -- (-0.5062, 11.9416) -- (-0.237, 11.9416).. controls (-0.1473, 11.9416) and (-0.0863, 11.9308) .. (-0.054, 11.9092).. controls (-0.018, 11.8854) and (0.0, 11.8382) .. (0.0, 11.7674) -- cycle(-0.2122, 11.4359).. controls (-0.2206, 11.444) and (-0.2364, 11.448) .. (-0.2594, 11.448) -- (-0.3137, 11.448) -- (-0.3137, 11.2532) -- (-0.2594, 11.2532).. controls (-0.2364, 11.2532) and (-0.2206, 11.2572) .. (-0.2122, 11.2653).. controls (-0.2037, 11.2733) and (-0.1995, 11.2893) .. (-0.1995, 11.3131) -- (-0.1995, 11.3881).. controls (-0.1995, 11.4119) and (-0.2037, 11.4278) .. (-0.2122, 11.4359)(-0.2075, 11.783).. controls (-0.216, 11.7911) and (-0.2318, 11.7951) .. (-0.2548, 11.7951) -- (-0.3137, 11.7951) -- (-0.3137, 11.5771) -- (-0.2548, 11.5771).. controls (-0.231, 11.5771) and (-0.215, 11.5814) .. (-0.207, 11.5898).. controls (-0.1989, 11.5983) and (-0.1948, 11.6145) .. (-0.1948, 11.6383) -- (-0.1948, 11.7352).. controls (-0.1948, 11.759) and (-0.1991, 11.7749) .. (-0.2075, 11.783)(0.5938, 11.1056) -- (0.2825, 11.1056) -- (0.158, 11.9416) -- (0.3528, 11.9416) -- (0.3759, 11.7363) -- (0.4993, 11.7363) -- (0.5224, 11.9416) -- (0.7219, 11.9416) -- cycle(0.3932, 11.5968) -- (0.4393, 11.2024) -- (0.482, 11.5968) -- cycle(1.3918, 11.365).. controls (1.3918, 11.2635) and (1.3746, 11.1949) .. (1.3405, 11.1592).. controls (1.3063, 11.1234) and (1.2392, 11.1056) .. (1.1393, 11.1056) -- (0.8925, 11.1056) -- (0.8925, 11.9416) -- (1.1393, 11.9416).. controls (1.2392, 11.9416) and (1.3063, 11.9237) .. (1.3405, 11.8879).. controls (1.3746, 11.8522) and (1.3918, 11.7836) .. (1.3918, 11.6821) -- cycle(1.1796, 11.783).. controls (1.1719, 11.7896) and (1.1585, 11.7928) .. (1.1393, 11.7928) -- (1.0874, 11.7928) -- (1.0874, 11.2555) -- (1.1393, 11.2555).. controls (1.1577, 11.2555) and (1.1704, 11.2582) .. (1.1773, 11.2635).. controls (1.1865, 11.2712) and (1.1912, 11.2873) .. (1.1912, 11.312) -- (1.1912, 11.7363).. controls (1.1912, 11.7609) and (1.1873, 11.7765) .. (1.1796, 11.783)(1.9879, 11.1056) -- (1.6766, 11.1056) -- (1.552, 11.9416) -- (1.747, 11.9416) -- (1.77, 11.7363) -- (1.8934, 11.7363) -- (1.9164, 11.9416) -- (2.1159, 11.9416) -- cycle(1.7873, 11.5968) -- (1.8334, 11.2024) -- (1.8761, 11.5968) -- cycle(2.9525, 11.1056) -- (2.9006, 11.8009) -- (2.8233, 11.1056) -- (2.5628, 11.1056) -- (2.4855, 11.8009) -- (2.4336, 11.1056) -- (2.2445, 11.1056) -- (2.3437, 11.9416) -- (2.6181, 11.9416) -- (2.6931, 11.237) -- (2.7692, 11.9416) -- (3.0436, 11.9416) -- (3.1416, 11.1056) -- cycle(3.7677, 11.6291) -- (3.5901, 11.6291) -- (3.5901, 11.7432).. controls (3.5901, 11.7655) and (3.5871, 11.7809) .. (3.5809, 11.7893).. controls (3.5747, 11.7978) and (3.5616, 11.802) .. (3.5417, 11.802).. controls (3.5209, 11.802) and (3.5078, 11.7978) .. (3.5025, 11.7894).. controls (3.4971, 11.7809) and (3.4944, 11.7656) .. (3.4944, 11.7433) -- (3.4944, 11.3036).. controls (3.4944, 11.2844) and (3.496, 11.2709) .. (3.499, 11.2633).. controls (3.5044, 11.251) and (3.5186, 11.2449) .. (3.5417, 11.2449).. controls (3.5609, 11.2449) and (3.5738, 11.2488) .. (3.5803, 11.257).. controls (3.5868, 11.265) and (3.5901, 11.2806) .. (3.5901, 11.3036) -- (3.5901, 11.3876) -- (3.7677, 11.3876) -- (3.7677, 11.33).. controls (3.7677, 11.2387) and (3.7546, 11.1769) .. (3.7285, 11.1447).. controls (3.7116, 11.1239) and (3.6882, 11.1102) .. (3.6581, 11.1033).. controls (3.6335, 11.0979) and (3.5963, 11.0952) .. (3.5463, 11.0952).. controls (3.4887, 11.0952) and (3.4467, 11.0979) .. (3.4206, 11.1033).. controls (3.3853, 11.1102) and (3.358, 11.124) .. (3.3388, 11.1447).. controls (3.3195, 11.1655) and (3.3068, 11.1917) .. (3.3007, 11.2232).. controls (3.2961, 11.2462) and (3.2938, 11.282) .. (3.2938, 11.3304) -- (3.2938, 11.7167).. controls (3.2938, 11.7651) and (3.2961, 11.8009) .. (3.3007, 11.8239).. controls (3.3068, 11.8562) and (3.3191, 11.8824) .. (3.3376, 11.9023).. controls (3.3583, 11.9247) and (3.3868, 11.9392) .. (3.4229, 11.9462).. controls (3.446, 11.95) and (3.4871, 11.9519) .. (3.5463, 11.9519).. controls (3.5986, 11.9519) and (3.6351, 11.9496) .. (3.6559, 11.945).. controls (3.6873, 11.9388) and (3.7116, 11.9249) .. (3.7285, 11.9032).. controls (3.7454, 11.8815) and (3.7566, 11.8547) .. (3.7619, 11.823).. controls (3.7658, 11.7998) and (3.7677, 11.764) .. (3.7677, 11.7155) -- cycle(4.3454, 11.7917) -- (4.1206, 11.7917) -- (4.3454, 11.2382) -- (4.3454, 11.1056) -- (3.943, 11.1056) -- (3.943, 11.2555) -- (4.1424, 11.2555) -- (3.9222, 11.7917) -- (3.9222, 11.9416) -- (4.3454, 11.9416) -- cycle(4.9207, 11.1056) -- (4.6094, 11.1056) -- (4.4849, 11.9416) -- (4.6797, 11.9416) -- (4.7028, 11.7363) -- (4.8262, 11.7363) -- (4.8492, 11.9416) -- (5.0487, 11.9416) -- cycle(4.7201, 11.5968) -- (4.7662, 11.2024) -- (4.8089, 11.5968) -- cycle;
                 \path[fill=c77787b,cm={ 1.0,-0.0,-0.0,-1.0,(2.7528, 16.4027)}] (0.0, 11.6729) -- (-0.1868, 11.6729) -- (-0.1868, 12.3094).. controls (-0.1868, 12.3317) and (-0.1899, 12.347) .. (-0.196, 12.3555).. controls (-0.2022, 12.364) and (-0.2164, 12.3682) .. (-0.2387, 12.3682).. controls (-0.2571, 12.3682) and (-0.2698, 12.3651) .. (-0.2768, 12.3589).. controls (-0.286, 12.3521) and (-0.2906, 12.3355) .. (-0.2906, 12.3094) -- (-0.2906, 11.6729) -- (-0.4854, 11.6729) -- (-0.4854, 12.2391).. controls (-0.4854, 12.2959) and (-0.4836, 12.3378) .. (-0.4797, 12.3647).. controls (-0.4735, 12.4039) and (-0.4613, 12.4355) .. (-0.4428, 12.4593).. controls (-0.4228, 12.4854) and (-0.3924, 12.5027) .. (-0.3517, 12.5112).. controls (-0.3278, 12.5166) and (-0.2917, 12.5192) .. (-0.2433, 12.5192).. controls (-0.1956, 12.5192) and (-0.1595, 12.5166) .. (-0.1349, 12.5112).. controls (-0.0942, 12.5027) and (-0.0642, 12.4858) .. (-0.0449, 12.4604).. controls (-0.0258, 12.4351) and (-0.0131, 12.4035) .. (-0.0069, 12.3659).. controls (-0.0023, 12.3382) and (0.0, 12.2959) .. (0.0, 12.2391) -- cycle(0.6745, 12.1964) -- (0.497, 12.1964) -- (0.497, 12.3105).. controls (0.497, 12.3328) and (0.4939, 12.3482) .. (0.4878, 12.3567).. controls (0.4816, 12.3651) and (0.4685, 12.3693) .. (0.4486, 12.3693).. controls (0.4278, 12.3693) and (0.4147, 12.3651) .. (0.4093, 12.3567).. controls (0.404, 12.3482) and (0.4012, 12.3329) .. (0.4012, 12.3106) -- (0.4012, 11.8709).. controls (0.4012, 11.8517) and (0.4028, 11.8382) .. (0.4059, 11.8306).. controls (0.4112, 11.8183) and (0.4255, 11.8121) .. (0.4486, 11.8121).. controls (0.4678, 11.8121) and (0.4807, 11.8162) .. (0.4872, 11.8243).. controls (0.4937, 11.8323) and (0.497, 11.8478) .. (0.497, 11.8709) -- (0.497, 11.9549) -- (0.6745, 11.9549) -- (0.6745, 11.8974).. controls (0.6745, 11.806) and (0.6615, 11.7443) .. (0.6353, 11.712).. controls (0.6185, 11.6913) and (0.595, 11.6775) .. (0.565, 11.6706).. controls (0.5404, 11.6652) and (0.5031, 11.6625) .. (0.4532, 11.6625).. controls (0.3955, 11.6625) and (0.3536, 11.6652) .. (0.3275, 11.6706).. controls (0.2921, 11.6775) and (0.2648, 11.6913) .. (0.2456, 11.7121).. controls (0.2264, 11.7328) and (0.2137, 11.759) .. (0.2076, 11.7905).. controls (0.2029, 11.8135) and (0.2006, 11.8493) .. (0.2006, 11.8977) -- (0.2006, 12.284).. controls (0.2006, 12.3324) and (0.2029, 12.3682) .. (0.2076, 12.3912).. controls (0.2137, 12.4235) and (0.226, 12.4497) .. (0.2444, 12.4697).. controls (0.2652, 12.492) and (0.2937, 12.5066) .. (0.3298, 12.5135).. controls (0.3528, 12.5173) and (0.3939, 12.5192) .. (0.4532, 12.5192).. controls (0.5055, 12.5192) and (0.5419, 12.5169) .. (0.5627, 12.5123).. controls (0.5942, 12.5061) and (0.6185, 12.4922) .. (0.6353, 12.4705).. controls (0.6523, 12.4488) and (0.6634, 12.422) .. (0.6688, 12.3902).. controls (0.6726, 12.3671) and (0.6745, 12.3313) .. (0.6745, 12.2828) -- cycle(1.2523, 12.3589) -- (1.0274, 12.3589) -- (1.2523, 11.8055) -- (1.2523, 11.6729) -- (0.8498, 11.6729) -- (0.8498, 11.8228) -- (1.0493, 11.8228) -- (0.8291, 12.3589) -- (0.8291, 12.5088) -- (1.2523, 12.5088) -- cycle(1.8196, 12.3589) -- (1.6304, 12.3589) -- (1.6304, 12.1514) -- (1.793, 12.1514) -- (1.793, 12.0073) -- (1.6304, 12.0073) -- (1.6304, 11.8228) -- (1.8034, 11.8228) -- (1.8034, 11.6729) -- (1.4356, 11.6729) -- (1.4356, 12.5088) -- (1.8196, 12.5088) -- cycle(2.3845, 12.3589) -- (2.2, 12.3589) -- (2.2, 11.6729) -- (2.0052, 11.6729) -- (2.0052, 12.5088) -- (2.3845, 12.5088) -- cycle(3.1306, 11.6729) -- (2.9542, 11.6729) -- (2.9657, 12.3336) -- (2.8146, 11.6729) -- (2.5402, 11.6729) -- (2.5402, 12.5088) -- (2.7166, 12.5088) -- (2.7039, 11.8297) -- (2.8573, 12.5088) -- (3.1306, 12.5088) -- cycle(3.5434, 11.6729) -- (3.3485, 11.6729) -- (3.3485, 12.5088) -- (3.5434, 12.5088) -- cycle(4.1557, 11.6729) -- (3.8443, 11.6729) -- (3.7198, 12.5088) -- (3.9146, 12.5088) -- (3.9377, 12.3036) -- (4.0611, 12.3036) -- (4.0841, 12.5088) -- (4.2836, 12.5088) -- cycle(3.955, 12.1641) -- (4.0011, 11.7697) -- (4.0438, 12.1641) -- cycle;
@@ -1097,7 +1149,7 @@ example.tex.
 % English IDUB logo.
     idub-en/.pic= {
         \begin{tikzpicture}[y=1cm, x=1cm, yscale=\globalscale,xscale=\globalscale, every node/.append style={scale=\globalscale}, inner sep=0pt, outer sep=0pt]
-            \begin{scope}[shift={(0.6,7\headheight)}]
+            \begin{scope}[shift={(\AGH@idubx,8\headheight)}]
                 \path[fill=ced1c24,cm={ 1.0,-0.0,-0.0,-1.0,(6.568, 17.7904)}] (0.0, 11.6729) -- (-0.0021, 11.6732).. controls (-0.0021, 11.8842) and (-0.1732, 12.0552) .. (-0.3842, 12.0552) -- (-0.3822, 12.0573) -- (-1.2806, 12.0573) -- (-1.6645, 12.0573) -- (-1.6647, 12.0552).. controls (-1.8758, 12.0552) and (-2.0468, 11.8842) .. (-2.0468, 11.6732) -- (-2.0489, 11.6751) -- (-2.0489, 9.4962) -- (-2.0489, 9.4962) -- (-2.0489, 9.2401) -- (-2.0489, 8.5997).. controls (-2.049, 8.2461) and (-2.3356, 7.9595) .. (-2.6892, 7.9595) -- (-3.3295, 7.9595) -- (-3.4577, 7.9595).. controls (-3.8113, 7.9595) and (-4.0979, 8.2462) .. (-4.0979, 8.5998) -- (-4.0979, 8.7146) -- (-4.0979, 9.143) -- (-4.0979, 9.3682).. controls (-4.0978, 9.7218) and (-3.8112, 10.0084) .. (-3.4576, 10.0084) -- (-2.8173, 10.0084) -- (-2.8173, 9.4962) -- (-3.4576, 9.4962).. controls (-3.5283, 9.4962) and (-3.5856, 9.4389) .. (-3.5856, 9.3682) -- (-3.5856, 9.143) -- (-3.5856, 8.7146) -- (-3.5856, 8.5998).. controls (-3.5856, 8.5291) and (-3.5283, 8.4717) .. (-3.4576, 8.4717) -- (-3.3295, 8.4717) -- (-2.9689, 8.4717) -- (-2.6892, 8.4717) -- (-2.6892, 8.4717).. controls (-2.6185, 8.4717) and (-2.5612, 8.529) .. (-2.5612, 8.5997) -- (-2.5612, 9.2401) -- (-2.5612, 9.4962) -- (-2.5612, 11.0329) -- (-2.5611, 11.0329) -- (-2.5611, 11.6733).. controls (-2.5611, 12.1683) and (-2.1598, 12.5696) .. (-1.6648, 12.5696) -- (-0.5122, 12.5696) -- (-0.384, 12.5696).. controls (0.111, 12.5695) and (0.5123, 12.1682) .. (0.5123, 11.6732) -- (0.5123, 10.5206) -- (0.5123, 10.3924).. controls (0.5122, 9.8975) and (0.1108, 9.4962) .. (-0.3842, 9.4962) -- (-1.0245, 9.4962) -- (-1.7928, 9.4962) -- (-1.7928, 10.0084) -- (-0.3845, 10.0084) -- (-0.3842, 10.0105).. controls (-0.1732, 10.0105) and (-0.0021, 10.1816) .. (-0.0021, 10.3926) -- (0.0, 10.3906) -- cycle;
                 \path[fill=c672a8d,cm={ 1.0,-0.0,-0.0,-1.0,(3.379, 19.9671)}] (0.0, 11.6729) -- (0.3717, 11.6729) -- (0.3717, 12.1851) -- cycle;
                 \path[fill=c672a8d,cm={ 1.0,-0.0,-0.0,-1.0,(5.1447, 19.4549)}] (0.0, 11.6729) -- (-0.3695, 11.6729) -- (-0.3695, 11.1607) -- cycle;
@@ -1133,7 +1185,7 @@ example.tex.
         \coordinate [above left =  0.25\textheight and \coloredlinesskip of black_x2] (green_x2);
         \draw[AGH@green,thick] (green_x1) -- (green_x2);
 % Red line
-        \coordinate [below right = 0.2\textheight and \coloredlinesskip of black_x1] (red_x1);
+        \coordinate [below right = 0.15\textheight and \coloredlinesskip of black_x1] (red_x1);
         \coordinate [above right = 0.25\textheight and \coloredlinesskip of black_x2] (red_x2);
             \draw[AGH@red,thick] (red_x1) -- (red_x2);
     }
@@ -1156,12 +1208,12 @@ example.tex.
     }
     {
 % Content of title page.
-        \leftedgeskip=4em
+\ifthenelse{\not\equal{\AGH@outertheme}{sidebar}}{\leftedgeskip=4em}{\leftedgeskip=5em}
 % Colorful lines.            
         \tikz[overlay]\pic {lines};
 % AGH logo
         \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt]
-            \path pic  [below right = -2ex and -1em of black_x1,scale=0.5] (logo-) {logo};
+            \path pic  [below right = -1ex and -1em of black_x1,scale=0.5] (logo-) {logo};
 % IDUB logo.
         \@ifclasswith{beamer}{polish}{
             \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000, xscale=1.000000,inner sep=0pt, outer sep=0pt]
@@ -1185,7 +1237,7 @@ example.tex.
     {
         \ifAGH@sidebar%
 % Content of non-title page when sidebar should be visible.
-            \leftedgeskip=4mm
+            \leftedgeskip=1em                
 % Colorful lines.            
             \tikz[overlay]\pic {lines};
 % AGH logo.
