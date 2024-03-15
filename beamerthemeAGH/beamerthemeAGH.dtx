@@ -577,8 +577,8 @@ example.tex.
 %<*package>
 \def\fileversion{1.8}
 \def\filedate{2024/03/14}
-\def\filecolorversion{1.2}
-\def\filecolordate{2024/03/14}
+\def\filecolorversion{1.2.1}
+\def\filecolordate{2024/03/15}
 %    \begin{macrocode}
 %<package|color>\NeedsTeXFormat{LaTeX2e}
 %    \end{macrocode}
@@ -645,6 +645,7 @@ example.tex.
 %\changes{v1.0}{2017/03/30}{First public version}
 %\changes{v1.1}{2017/04/02}{Level of background darkness}
 %\changes{v1.2}{2024/03/14}{Sidebar colors have been specified}
+%\changes{v1.2.1}{2024/03/15}{Conditional style added}
 %\begin{abstract}
 % Color definition of presentation elements.
 %\end{abstract}
@@ -710,7 +711,10 @@ example.tex.
 \setbeamercolor{section in sidebar shaded}{fg=AGH@white}
 \setbeamercolor{subsection in sidebar shaded}{fg=AGH@white}
 \setbeamercolor{subsection in sidebar}{fg=AGH@green}
-\setbeamercolor{section in head/foot}{fg=AGH@white}
+\ifthenelse{\not\equal{\AGH@outertheme}{split} \AND \not\equal{\AGH@outertheme}{shadow}}
+{
+    \setbeamercolor{section in head/foot}{fg=AGH@white}
+}{}
 \setbeamercolor{palette primary}{fg=AGH@white,bg=AGH@red}
 \setbeamercolor{palette secondary}{fg=AGH@white,bg=AGH@black}
 \setbeamercolor{palette tertiary}{fg=AGH@white,bg=AGH@green}
