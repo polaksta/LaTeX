@@ -741,7 +741,10 @@ example.tex.
     \ifthenelse{\not\equal{\AGH@outertheme}{sidebar}}
     {
         \setbeamercolor{frametitle}{parent=palette secondary}
-    }{}
+    }
+    {
+        \setbeamercolor{title}{fg=AGH@white,bg=AGH@black}
+    }
     \setbeamercolor{part title}{parent=palette secondary}
     \setbeamercolor{navigation symbols}{fg=AGH@black, bg=AGH@green}
     \setbeamercolor{bibliography entry author}{use=structure.fg=fg.stucture,bg=blue!50!AGH@white}
