@@ -738,8 +738,10 @@ example.tex.
     \setbeamercolor{block title example}{fg=example text.fg,bg=example text.fg!10}
     \setbeamercolor{block body example}{bg=AGH@green!\AGH@blockbodydarknesslevel}
 \else
-    \setbeamercolor{frametitle}{parent=palette secondary}
-    \setbeamercolor{title}{parent=palette secondary}
+    \ifthenelse{\not\equal{\AGH@outertheme}{sidebar}}
+    {
+        \setbeamercolor{frametitle}{parent=palette secondary}
+    }{}
     \setbeamercolor{part title}{parent=palette secondary}
     \setbeamercolor{navigation symbols}{fg=AGH@black, bg=AGH@green}
     \setbeamercolor{bibliography entry author}{use=structure.fg=fg.stucture,bg=blue!50!AGH@white}
