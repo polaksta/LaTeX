@@ -36,7 +36,7 @@ Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych pr
 - `\usetheme[parttitle=author]{AGH}` — zamiast imienia i nazwiska autora wyświetlaj tytuł części.
 - `\usetheme[parttitle=date]{AGH}` — zamiast daty wyświetlaj tytuł części.
 
-_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie daty lub imienia i nazwiska autora._
+_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie, w stopce slajdu, imienia i nazwiska autora lub daty._
 ## Wersje kolorystyczne
 | Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
