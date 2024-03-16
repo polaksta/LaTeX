@@ -33,10 +33,10 @@ Wykaz opcji dla poszczególnych motywów, jak i dokładniejszy opis motywów, zn
 ### Opcja `parttitle`
 Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji _parttitle_ możesz spowodować, aby tytuł części był widoczny na slajdzie.
 #### Przykłady
-- `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast nazwy autora oraz instytucji).
+- `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast imienia i nazwiska autora).
 - `\usetheme[parttitle=rightfooter]{AGH}` — umieść tytuł części w prawej stopce (zamiast daty).
 
-_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które pozwalają na wyświetlanie, w stopce,  daty lub nazwy autora oraz instytucji._
+_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które pozwalają na wyświetlanie, w stopce,  daty lub imienia i nazwiska autora._
 ## Wersje kolorystyczne
 | Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
