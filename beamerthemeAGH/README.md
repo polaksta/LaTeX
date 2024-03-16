@@ -5,11 +5,6 @@ Pakiet `beamerthemeAGH` dostarcza szablonu prezentacji LaTeX Beamer opartego na 
 
 Aby go użyć, umieść w preambule swojego dokumentu komendę `\usetheme{AGH}`. Szczegóły użycia pakietu można znaleźć w pliku `beamerthemeAGH.pdf`.
 ## Opcje
-### Opcja `parttitle`
-Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji _parttitle_ możesz spowodować, aby tytuł części był widoczny na slajdzie.
-#### Przykłady
-- `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast nazw autora oraz instytutu).
-- `\usetheme[parttitle=rightfooter]{AGH}` — umieść tytuł części w prawej stopce (zamiast daty).
 ### Opcja `dark`
 Jeżeli prezentacja będzie się odbywać w zaciemnionej sali, to przydatne może być użycie ciemnego tła — w takim przypadku użyj opcji _dark_, tj.  `\usetheme[dark]{AGH}`.
 
@@ -35,6 +30,13 @@ Domyślnie używanym motywem zewnętrznym jest **infolines**. Jeżeli chcesz uż
 Niektóre z wyżej opisanych motywów mogą być konfigurowane za pomocą opcji. W celu wyspecyfikowania listy opcji należy użyć opcji _outerthemeoptions_, np.  `\usetheme[outerthemeoptions={footline=authortitle}]{AGH}`.
 
 Wykaz opcji dla poszczególnych motywów, jak i dokładniejszy opis motywów, znajdziesz w [Podręczniku klasy 'beamer'](http://mirror.ctan.org//macros/latex/contrib/beamer/doc/beameruserguide.pdf).
+### Opcja `parttitle`
+Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji _parttitle_ możesz spowodować, aby tytuł części był widoczny na slajdzie.
+#### Przykłady
+- `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast nazwy autora oraz instytucji).
+- `\usetheme[parttitle=rightfooter]{AGH}` — umieść tytuł części w prawej stopce (zamiast daty).
+
+_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które pozwalają na wyświetlanie, w stopce,  daty lub nazwy autora oraz instytucji._
 ## Wersje kolorystyczne
 | Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -86,4 +88,3 @@ $ pdflatex -shell-escape example
 $ pdflatex -shell-escape example
 $ pdflatex -shell-escape example
 ```
-
