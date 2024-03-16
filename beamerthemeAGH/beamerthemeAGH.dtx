@@ -39,10 +39,10 @@ Wykaz opcji dla poszczególnych motywów, jak i dokładniejszy opis motywów, zn
 ### Opcja `parttitle`
 Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji _parttitle_ możesz spowodować, aby tytuł części był widoczny na slajdzie.
 #### Przykłady
-- `\usetheme[parttitle=leftfooter]{AGH}` — umieść tytuł części w lewej stopce (zamiast imienia i nazwiska autora).
-- `\usetheme[parttitle=rightfooter]{AGH}` — umieść tytuł części w prawej stopce (zamiast daty).
+- `\usetheme[parttitle=author]{AGH}` — zamiast imienia i nazwiska autora wyświetlaj tytuł części.
+- `\usetheme[parttitle=date]{AGH}` — zamiast daty wyświetlaj tytuł części.
 
-_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które pozwalają na wyświetlanie, w stopce,  daty lub imienia i nazwiska autora._
+_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie daty lub imienia i nazwiska autora._
 ## Wersje kolorystyczne
 | Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -151,11 +151,11 @@ and the derived files
         linkcolor=,
         urlcolor=links
     }
-    \usetheme[parttitle=rightfooter]{AGH}                                            % Tytuł części ma być widoczny w prawej stopce
+    \usetheme[parttitle=date]{AGH}                                            % Zamiast daty (w stopce slajdu) wyświetlaj tytuł bieżącej części 
     %\usetheme[nosidebar]{AGH}                                                       % Nie pokazuj paska bocznego na nietytułowych slajdach
     %\usetheme[nosidebar, margins=1em]{AGH}                                          % Nie pokazuj paska bocznego na nietytułowych slajdach, ustaw obydwa marginesy (lewy/prawy) na wartość 1em
     %\usetheme[dark]{AGH}                                                            % Użyj ciemnego tła
-    %\usetheme[dark, parttitle=leftfooter]{AGH}                                      % Użyj ciemnego tła, tytuł części ma być widoczny w lewej stopce
+    %\usetheme[dark, parttitle=author]{AGH}                                      % Użyj ciemnego tła, a w stopce, zamiast imienia i nazwiska autora, wyświetlaj tytuł części
     %\usetheme[outertheme=miniframes, outerthemeoptions={footline=authortitle}]{AGH} % Użyj motywu zewnętrznego 'miniframes' z opcją 'footline=authortitle'
 }
  %%%%%%%%% Ustawienia dla trybu 'handout' %%%%%%%%%%%%%%
@@ -577,8 +577,8 @@ example.tex.
 \fi
 %</internal>
 %<*package>
-\def\fileversion{1.8}
-\def\filedate{2024/03/14}
+\def\fileversion{1.8.1}
+\def\filedate{2024/03/16}
 \def\filecolorversion{1.2.1}
 \def\filecolordate{2024/03/15}
 %    \begin{macrocode}
@@ -998,8 +998,8 @@ example.tex.
 %    \end{macrocode}
 % Option 'parttitle' specifies where part title should be displayed, values:
 % \begin{description}
-% \item[leftfooter] --- in the left footer, instead of author's name.
-% \item[rightfooter] --- in the right footer, instead of date.
+% \item[author] --- instead of author's name.
+% \item[date] --- instead of date.
 % \end{description}
 %    \begin{macrocode}
 \DeclareOptionBeamer{parttitle}{\def\AGH@parttitle{#1}} 
@@ -1056,10 +1056,10 @@ example.tex.
     \typeout{..................................................................}
 % Display part title.
     \ifdefined\AGH@parttitle
-% In the left footer (instead of author's name and institute name).
-        \ifthenelse{\equal{\AGH@parttitle}{leftfooter}}{\def\beamer@shortauthor{\insertpart}\def\beamer@shortinstitute{}}{} 
-% In the right footer (instead of date).
-        \ifthenelse{\equal{\AGH@parttitle}{rightfooter}}{\def\beamer@shortdate{\insertpart}}{}
+% Instead of author's name.
+        \ifthenelse{\equal{\AGH@parttitle}{author}}{\def\beamer@shortauthor{\insertpart}\def\beamer@shortinstitute{}}{} 
+% Instead of date.
+        \ifthenelse{\equal{\AGH@parttitle}{date}}{\def\beamer@shortdate{\insertpart}}{}
     \fi
 }
 %    \end{macrocode}
