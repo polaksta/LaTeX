@@ -20,7 +20,7 @@ Jeżeli chcesz ukryć pasek boczny (zawierający logo AGH plus trójkolorowy pas
 Domyślny rozmiar lewego i prawego marginesu obszaru tekstu wynosi 4em. Jeżeli chcesz ustawić inną wartość, to użyj opcji _margins_, przypisując jej żądaną wartość marginesu, np. `\usetheme[margins=1em]{AGH}`.
 ### Opcja `outertheme`
 Domyślnie używanym motywem zewnętrznym jest **infolines**. Jeżeli chcesz użyć innego, to jego nazwę musisz wyspecyfikować jako wartość opcji _outertheme_, np.  `\usetheme[outertheme=sidebar]{AGH}`. 
-| Nazwa motywu | Opis | Zrzut ekranowy |
+| Nazwa motywu | Opis | Zrzut ekranu |
 | --------   | ------- |------- |
 | default    | Stonowany i minimalistyczny motyw. Tytuł slajdu jest równany do lewej strony. Slajd nie posiada ani nagłówka, ani stopki. | ![Screenshot](https://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-default.png "Slajd") |
 | infolines  | Nagłówek zawiera tytuł bieżącej sekcji oraz podsekcji. Stopka zawiera: imię i nazwisko autora, instytucję, tytuł prezentacji, aktualną datę oraz numer slajdu. | ![Screenshot](https://www.icsr.agh.edu.pl/~polak/wms/beamer-AGH-infolines.png "Slajd") |
