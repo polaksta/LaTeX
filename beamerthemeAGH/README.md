@@ -35,7 +35,7 @@ Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych pr
 #### Przykłady
 - `\usetheme[parttitle=author]{AGH}` — zamiast imienia i nazwiska autora wyświetlaj tytuł części.
 - `\usetheme[parttitle=date]{AGH}` — zamiast daty wyświetlaj tytuł części.
-- `\usetheme[parttitle=institute]{AGH}` — zamiast nazwy instytuacji wyświetlaj tytuł części.
+- `\usetheme[parttitle=institute]{AGH}` — zamiast nazwy instytucji wyświetlaj tytuł części.
 - `\usetheme[parttitle=title]{AGH}` — zamiast tytułu wyświetlaj tytuł części.
 
 _Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie, w stopce slajdu, powyższych elementów, tj. imienia i nazwiska autora, daty, nazwy intytucji lub tytułu._
