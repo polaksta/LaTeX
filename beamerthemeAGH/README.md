@@ -34,11 +34,11 @@ Wykaz opcji dla poszczególnych motywów, jak i dokładniejszy opis motywów, zn
 Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych prezentacji (np. wykłady) na części, jest bardzo wskazany. Jeżeli za pomocą komendy `\part`, podzieliłeś/aś swoją prezentację na części, to za pomocą opcji _parttitle_ możesz spowodować, aby tytuł części był widoczny na slajdzie.
 #### Przykłady
 - `\usetheme[parttitle=author]{AGH}` — zamiast imienia i nazwiska autora wyświetlaj tytuł części.
-- `\usetheme[parttitle=date]{AGH}` — zamiast daty wyświetlaj tytuł części.
-- `\usetheme[parttitle=institute]{AGH}` — zamiast nazwy instytucji wyświetlaj tytuł części.
 - `\usetheme[parttitle=title]{AGH}` — zamiast tytułu wyświetlaj tytuł części.
+- `\usetheme[parttitle=date]{AGH}` — zamiast daty wyświetlaj tytuł części.
+- `\usetheme[parttitle=institute]{AGH}` — zamiast nazwy instytutu/uczelni wyświetlaj tytuł części.
 
-_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie, w stopce slajdu, powyższych elementów, tj. imienia i nazwiska autora, daty, nazwy intytucji lub tytułu._
+_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie, w stopce slajdu, powyższych elementów, tj. imienia i nazwiska autora, tytułu, daty, lub nazwy instytutu/uczelni._
 ## Wersje kolorystyczne
 | Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
