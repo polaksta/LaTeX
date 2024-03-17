@@ -153,12 +153,12 @@ and the derived files
         linkcolor=,
         urlcolor=links
     }
-    \usetheme[parttitle=date]{AGH}                                                   % Zamiast daty (w stopce slajdu) wyświetlaj tytuł bieżącej części 
-    %\usetheme[nosidebar]{AGH}                                                       % Nie pokazuj paska bocznego na nietytułowych slajdach
-    %\usetheme[nosidebar, margins=1em]{AGH}                                          % Nie pokazuj paska bocznego na nietytułowych slajdach, ustaw obydwa marginesy (lewy/prawy) na wartość 1em
-    %\usetheme[dark]{AGH}                                                            % Użyj ciemnego tła
-    %\usetheme[dark, parttitle=author]{AGH}                                          % Użyj ciemnego tła, a w stopce, zamiast imienia i nazwiska autora, wyświetlaj tytuł części
-    %\usetheme[outertheme=miniframes, outerthemeoptions={footline=authortitle}]{AGH} % Użyj motywu zewnętrznego 'miniframes' z opcją 'footline=authortitle'
+    \usetheme[parttitle=date]{AGH}                                                            % Zamiast daty (w stopce slajdu) wyświetlaj tytuł bieżącej części 
+    %\usetheme[nosidebar]{AGH}                                                                % Nie pokazuj paska bocznego na nietytułowych slajdach
+    %\usetheme[nosidebar, margins=1em]{AGH}                                                   % Nie pokazuj paska bocznego na nietytułowych slajdach, ustaw obydwa marginesy (lewy/prawy) na wartość 1em
+    %\usetheme[dark]{AGH}                                                                     % Użyj ciemnego tła
+    %\usetheme[dark, parttitle=author]{AGH}                                                   % Użyj ciemnego tła, a w stopce, zamiast imienia i nazwiska autora, wyświetlaj tytuł części
+    %\usetheme[outertheme=miniframes, outerthemeoptions={footline=authorinstitutetitle}]{AGH} % Użyj motywu zewnętrznego 'miniframes' z opcją 'footline=authortitle'
 }
  %%%%%%%%% Ustawienia dla trybu 'handout' %%%%%%%%%%%%%%
 \mode<handout>{
@@ -633,6 +633,8 @@ example.tex.
 %\DoNotIndex{\ProvidesPackage}
 %\DoNotIndex{\section}
 %\DoNotIndex{\space}
+%\DoNotIndex{\AND}
+%\DoNotIndex{\not}
 %\DoNotIndex{\setbeamercolor}
 %\DoNotIndex{\ifthenelse}
 %\DoNotIndex{\fi}
@@ -1061,7 +1063,10 @@ example.tex.
 % Display part title.
     \ifdefined\AGH@parttitle
 % Instead of author's name.
-        \ifthenelse{\equal{\AGH@parttitle}{author}}{\def\beamer@shortauthor{\insertpart}}{}
+    \ifthenelse{\equal{\AGH@parttitle}{author}}{
+        \def\beamer@shortauthor{\insertpart}
+        \ifthenelse{\equal{\AGH@outertheme}{infolines}}{\def\beamer@shortinstitute{}}{}
+    }{}
 % Instead of date.
         \ifthenelse{\equal{\AGH@parttitle}{date}}{\def\beamer@shortdate{\insertpart}}{}
 % Instead of institute.
