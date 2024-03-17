@@ -41,8 +41,10 @@ Na podstawie własnego doświadczenia mogę stwierdzić, że podział dużych pr
 #### Przykłady
 - `\usetheme[parttitle=author]{AGH}` — zamiast imienia i nazwiska autora wyświetlaj tytuł części.
 - `\usetheme[parttitle=date]{AGH}` — zamiast daty wyświetlaj tytuł części.
+- `\usetheme[parttitle=institute]{AGH}` — zamiast nazwy instytuacji wyświetlaj tytuł części.
+- `\usetheme[parttitle=title]{AGH}` — zamiast tytułu wyświetlaj tytuł części.
 
-_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie, w stopce slajdu, imienia i nazwiska autora lub daty._
+_Opcja 'parttitle' działa tylko z tymi motywami zewnętrznymi, które umożliwiają  wyświetlanie, w stopce slajdu, powyższych elementów, tj. imienia i nazwiska autora, daty, nazwy intytucji lub tytułu._
 ## Wersje kolorystyczne
 | Domyślna                                                                                 | Z ciemnym tłem                                                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -577,8 +579,8 @@ example.tex.
 \fi
 %</internal>
 %<*package>
-\def\fileversion{1.8.1}
-\def\filedate{2024/03/16}
+\def\fileversion{1.8.2}
+\def\filedate{2024/03/17}
 \def\filecolorversion{1.2.1}
 \def\filecolordate{2024/03/15}
 %    \begin{macrocode}
@@ -909,6 +911,7 @@ example.tex.
 %\changes{v1.7.2}{2024/03/13}{Adaptation to cooperation with selected outer themes other than 'infolines'}
 %\changes{v1.8.0}{2024/03/14}{The 'outertheme', and the 'outerthemeoptions' options were added}
 %\changes{v1.8.1}{2024/03/16}{Renaming the 'parttitle' arguments}
+%\changes{v1.8.2}{2024/03/17}{Added new items to the list of possible 'parttitle' arguments}
 %
 %\begin{abstract}
 %  A package containing the AGH template for \LaTeX{} Beamer presentations.
@@ -1061,6 +1064,10 @@ example.tex.
         \ifthenelse{\equal{\AGH@parttitle}{author}}{\def\beamer@shortauthor{\insertpart}\def\beamer@shortinstitute{}}{} 
 % Instead of date.
         \ifthenelse{\equal{\AGH@parttitle}{date}}{\def\beamer@shortdate{\insertpart}}{}
+% Instead of institute.
+        \ifthenelse{\equal{\AGH@parttitle}{institute}}{\def\beamer@shortinstitute{\insertpart}}{}
+% Instead of title.
+        \ifthenelse{\equal{\AGH@parttitle}{title}}{\def\beamer@shorttitle{\insertpart}}{}
     \fi
 }
 %    \end{macrocode}
