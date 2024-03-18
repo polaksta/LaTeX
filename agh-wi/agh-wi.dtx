@@ -419,44 +419,16 @@ Tabele, w których występuje długi tekst, a co za tym idzie może się on nie 
 \end{table}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Rysunki}
-\begin{comment}
-\begin{itemize}
-    \item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
+\begin{comment}  
+    \begin{itemize}
+        \item Rysunki powinny być przerysowane samodzielnie albo używane tylko te,
           których twórcy zezwolili na ich rozpowszechnianie oraz kopiowanie, czyli
           np. rysunki objęte licencją Creative Commons.
-    \item Każdy rysunek powinien być opisany w treści pracy.
-\end{itemize}
+        \item Każdy rysunek powinien być opisany w treści pracy.
+    \end{itemize}
 \end{comment}
 \subsection{Wewnętrzne}
-
-Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pauza dostarcza on komend pozwalających na tworzenie grafik. Przykładowe grafiki pokazano na rysunku \ref{fig:tikz1} oraz \ref{fig:tikz2} (patrz strona \pageref{fig:tikz2}).
-
-Oprócz rysunków eksponowanych możliwe jest tworzenie grafik będących  \tikz{\fill[orange] (0ex,0ex) circle (1ex);  \fill[red] (1ex,1ex) circle (1ex);} częścią \tikz{\draw (0pt,0pt) -- (20pt,6pt);} zdania. \emph{TikZ} pozwala również rysować po powierzchni strony \pauza przykład poniżej.
-
-% Zmodyfikowana wersja przykładu ze strony  https://texample.net/tikz/examples/global-nodes/
-Ułamek \pauza patrz wzór \ref{eqn:tikz} \pauza składa się z: 
-\begin{itemize}
-    \item licznika \tikz[na] \node (n1) {};
-\end{itemize}
- %%%%%%%%%%%%%%%%%
-\begin{equation}
-    a =  \frac{
-        \tikz[baseline] \node[fill=blue!20,rectangle] (t1){$x+y$};
-    }
-    {
-        \tikz[baseline] \node[fill=red!20, ellipse] (t2){$y-z$};
-    }
-    \label{eqn:tikz}
-\end{equation}
- %%%%%%%%%%%%%%%%%
-\begin{itemize}
-    \item mianownika \tikz\node[na] (n2) {};
-\end{itemize}
- %%%%%%%%%%%%%%%%%
-\begin{tikzpicture}[overlay]
-    \path  (n1) edge [->,bend left] (t1);
-    \path  (n2) edge [->,bend right] (t2);
-\end{tikzpicture}
+Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pauza dostarcza on komend pozwalających na tworzenie grafik. Przykładowe grafiki pokazano na rysunku \ref{fig:tikz1} oraz \ref{fig:tikz2}.
  %%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \begin{center}
@@ -477,7 +449,34 @@ Ułamek \pauza patrz wzór \ref{eqn:tikz} \pauza składa się z:
     \end{center}
     \caption{Bardziej złożony rysunek \emph{TikZ}\label{fig:tikz2}.}
 \end{figure}
+ %%%%%%%%%%%%%%%%%
 
+Oprócz rysunków eksponowanych możliwe jest tworzenie grafik będących  \tikz{\fill[orange] (0ex,0ex) circle (1ex);  \fill[red] (1ex,1ex) circle (1ex);} częścią \tikz{\draw (0pt,0pt) -- (20pt,6pt);} zdania. 
+
+\emph{TikZ} pozwala również na kreślenie po powierzchni strony, np. możemy narysować strzałki pomiędzy elementami strony.
+\begin{shaded}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Zmodyfikowana wersja przykładu ze strony  https://texample.net/tikz/examples/global-nodes/
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Ułamek \pauza patrz wzór \ref{eqn:tikz} \pauza składa się z: 
+\begin{itemize}
+    \item licznika \tikz[na] \node (n1) {};
+\end{itemize}
+ %%%%%%%%%%%%%%%%%
+\begin{equation}
+    a =  \frac{\tikz[baseline] \node[fill=blue!20,rectangle] (t1){$x+y$};}{\tikz[baseline] \node[fill=red!20, ellipse] (t2){$y-z$}; }
+    \label{eqn:tikz}
+\end{equation}
+ %%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item mianownika \tikz\node[na] (n2) {};
+\end{itemize}
+ %%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[overlay]
+    \path  (n1) edge [->,bend left] (t1);
+    \path  (n2) edge [->,bend right] (t2);
+\end{tikzpicture}
+\end{shaded}
 \subsection{Zewnętrzne}
 Oczywiście możliwe jest również dołączanie rysunków zewnętrznych \pauza
 pakiet \emph{graphicx} \cite{graphicx} pozwala na wstawianie grafik zapisanych w  plikach: '.png', '.jpg' oraz '.pdf'. Rysunek \ref{fig:logo} wstawiono przy użyciu tego pakietu.
