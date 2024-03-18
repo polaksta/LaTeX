@@ -433,11 +433,12 @@ Klasa \emph{agh-wi}, automatycznie, dołącza pakiet \emph{TikZ} \cite{tikz} \pa
 
 Oprócz rysunków eksponowanych możliwe jest tworzenie grafik będących  \tikz{\fill[orange] (0ex,0ex) circle (1ex);  \fill[red] (1ex,1ex) circle (1ex);} częścią \tikz{\draw (0pt,0pt) -- (20pt,6pt);} zdania. \emph{TikZ} pozwala również rysować po powierzchni strony \pauza przykład poniżej.
 
+% Przykład ze strony https://texample.net/tikz/examples/
 Ułamek składa się z: 
 \begin{itemize}
     \item licznika \tikz[na] \node (n1) {};
 \end{itemize}
-
+ %%%%%%%%%%%%%%%%%
 \begin{displaymath}
     a =  \frac{
         \tikz[baseline] \node[fill=blue!20,rectangle] (t1){$x+y$};
@@ -446,7 +447,7 @@ Ułamek składa się z:
         \tikz[baseline] \node[fill=red!20, ellipse] (t2){$y-z$};
     }
 \end{displaymath}
-
+ %%%%%%%%%%%%%%%%%
 \begin{itemize}
     \item mianownika \tikz\node[na] (n2) {};
 \end{itemize}
@@ -454,7 +455,7 @@ Ułamek składa się z:
     \path  (n1) edge [->,bend left] (t1);
     \path  (n2) edge [->,bend right] (t2);
 \end{tikzpicture}
-
+ %%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \begin{center}
         \tikz \draw[thick,rounded corners=8pt]
@@ -462,7 +463,7 @@ Ułamek składa się z:
     \end{center}
     \caption{Prosty rysunek \emph{TikZ}\label{fig:tikz1}.}
 \end{figure}
-
+ %%%%%%%%%%%%%%%%%
 \begin{figure}[!ht]
     \begin{center}
         \begin{tikzpicture}
