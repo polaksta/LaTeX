@@ -253,6 +253,12 @@ and the derived files
     frame=single, % Pojedyncze obramowanie wokół kodu
      linenos      % Numeruj linie kodu
 }
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %  % Konfiguracja rysunków TikZ
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \usetikzlibrary{shapes.geometric,arrows.meta} 
+ \tikzstyle{every picture}+=[remember picture]
+ \tikzstyle{na} = [baseline=-.5ex]
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,15 +411,45 @@ and the derived files
   \]
 \end{frame}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%% Slajd 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{\iflanguage{polish}{Rysowanie po slajdzie}{Drawing on the slide}}
+  \iflanguage{polish}{Ułamek składa się z:}{A fraction consists of:}
+  \begin{itemize}
+  \item<2-> \iflanguage{polish}{licznika}{a numerator} \tikz[na] \node[coordinate] (n1) {};
+  \end{itemize}
+  
+  \begin{displaymath}
+  a =  \frac{
+    \tikz[baseline]{
+        \node[fill=blue!20,anchor=base] (t1){$x+y$};
+          }
+        }
+        {
+          \tikz[baseline]{
+              \node[fill=red!20, ellipse,anchor=base] (t2){$y-z$};
+          }
+        }
+  \end{displaymath}
+  
+  \begin{itemize}
+  \item<3> \iflanguage{polish}{mianownika}{a denominator} \tikz[na]\node [coordinate] (n2) {};
+  \end{itemize}
+  \begin{tikzpicture}[overlay]
+          \path[->]<2-> (n1) edge [bend left] (t1);
+          \path[->]<3-> (n2) edge [bend right] (t2);
+  \end{tikzpicture}
+  \end{frame}
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%% Sekcja „Informatyka” %%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\iflanguage{polish}{Informatyka}{Computer Science}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%% Podsekcja „Wstawianie kodów źródłowyc” %%%%%%%
+ %%%%%%% Podsekcja „Wstawianie kodów źródłowych” %%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{\iflanguage{polish}{Wstawianie kodów źródłowych}{Inserting source codes}}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%% Slajd 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%% Slajd 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'listings'}{Using the 'listings' environment}}
   \begin{lstlisting}[language=C++]
@@ -427,7 +463,7 @@ void main()
 \end{lstlisting}
 \end{frame}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%% Slajd 9 %%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%% Slajd 10 %%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Użycie otoczenia 'minted'}{Using the 'minted' environment}}
   \begin{minted}[beameroverlays, escapeinside=||]{C++}
@@ -445,13 +481,13 @@ void main()
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%% Slajd 10 %%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%% Slajd 11 %%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\iflanguage{polish}{Informacje}{Information}}
   \iflanguage{polish}{Aktualna wersja szablonu jest dostępna pod adresem \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}\footnote{W przypadku Overleaf-a jest on pod adresem \url{https://www.overleaf.com/read/fkjdthnbrfhj\#9c6184}}}{The current version of the template is available at \url{https://github.com/polaksta/LaTeX/tree/master/beamerthemeAGH}\footnote{In the case of Overleaf, it is at \url{https://www.overleaf.com/read/fkjdthnbrfhj\#9c6184}}}
 \end{frame}
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%% Slajd 11 %%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%% Slajd 12 %%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % 'allowframebreaks' — jeżeli zawartość nie mieści się na jednym slajdzie, to automatycznie utwórz kolejne
 \begin{frame}[allowframebreaks]{\iflanguage{polish}{Bibliografia}{Bibliography}}
