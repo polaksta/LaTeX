@@ -414,9 +414,9 @@ and the derived files
  %%%%%%%%%%%%%%%%%% Slajd 8 %%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{\iflanguage{polish}{Rysowanie po slajdzie}{Drawing on the slide}}
-  \iflanguage{polish}{Ułamek składa się z:}{A fraction consists of:}
+  \iflanguage{polish}{Ułamek składa się z:}{Every fraction consists of:}
   \begin{itemize}
-  \item<2-> \iflanguage{polish}{licznika}{a numerator} \tikz[na] \node[coordinate] (n1) {};
+  \item<2-> \iflanguage{polish}{licznika}{numerator} \tikz[na] \node[coordinate] (n1) {};
   \end{itemize}
   
   \begin{displaymath}
@@ -433,7 +433,7 @@ and the derived files
   \end{displaymath}
   
   \begin{itemize}
-  \item<3> \iflanguage{polish}{mianownika}{a denominator} \tikz[na]\node [coordinate] (n2) {};
+  \item<3> \iflanguage{polish}{mianownika}{denominator} \tikz[na]\node [coordinate] (n2) {};
   \end{itemize}
   \begin{tikzpicture}[overlay]
           \path[->]<2-> (n1) edge [bend left] (t1);
