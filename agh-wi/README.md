@@ -22,7 +22,8 @@ Szczegóły użycia klasy można znaleźć w pliku `agh-wi.pdf`.
   - Teksty wstawiane automatycznie przez LaTeX (spis treści, spis rysunków itp.) są w języku angielskim.
   - Zasady dzielenia wyrazów dotyczą języka angielskiego.
   - _**Strona tytułowa jest po polsku**_, ale najpierw jest widoczny angielskojęzyczny tytuł, a potem polskojęzyczny.
-- **data-science** — praca dyplomowa na kierunku „Informatyka — Data Science”.
+- **ds** — praca dyplomowa na kierunku „Informatyka — Data Science”.
+- **umisi** — praca dyplomowa na kierunku „Informatyka — Uczenie Maszynowe i Sztuczna Inteligencja”.
 - **print** — praca dyplomowa będzie drukowana i w związku z tym na każdej stronie powinien być dodany, dodatkowy (2 cm), margines na oprawę.
 
 ### Przykłady
@@ -30,7 +31,7 @@ Szczegóły użycia klasy można znaleźć w pliku `agh-wi.pdf`.
 1. `\documentclass{agh-wi}` — Treść pracy jest w języku polskim, a na stronie tytułowej jako kierunek studiów należy umieścić napis _Informatyka_. Praca jest przeznaczona do wyświetlania (za pomocą przeglądarki PDF).
 2. `\documentclass[english]{agh-wi}` — Treść pracy jest w języku angielskim, a na stronie tytułowej jako kierunek studiów należy umieścić napis _Informatyka_. Praca jest przeznaczona do wyświetlania.
 3. `\documentclass[print]{agh-wi}` — Treść pracy jest w języku polskim, na stronie tytułowej jako kierunek studiów należy umieścić napis _Informatyka_.  Praca będzie drukowana, a następnie oprawiana.
-4. `\documentclass[english, data-science, print]{agh-wi}` — Treść pracy jest w języku angielskim, na stronie tytułowej jako kierunek studiów należy umieścić napis _Informatyka — Data Science_. Praca będzie drukowana, a następnie oprawiana.
+4. `\documentclass[english, ds, print]{agh-wi}` — Treść pracy jest w języku angielskim, na stronie tytułowej jako kierunek studiów należy umieścić napis _Informatyka — Data Science_. Praca będzie drukowana, a następnie oprawiana.
 
 Możesz także używać opcji opisanych w [Podręczniku KOMA-Script](http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide-en.pdf).
 
