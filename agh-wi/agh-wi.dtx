@@ -1041,10 +1041,12 @@ example.tex.
 %  The \emph{scrlayer-scrpage} package allows the user to define and manage page styles by controlling page headers and footers.
 %    \begin{macrocode}
 \RequirePackage{scrlayer-scrpage}
+\KOMAoptions{fontsize=12pt, DIV=14, automark, headsepline, footsepline, plainfootsepline,toc=listof, toc=bib}
 \ifprint
-    \KOMAoptions{fontsize=12pt, DIV=14, BCOR=2cm, automark, headsepline, footsepline, plainfootsepline,toc=listof, toc=bib}
+    \KOMAoptions{twoside=true}
+    \RequirePackage[inner=3cm,outer=1.5cm]{geometry}
 \else
-    \KOMAoptions{fontsize=12pt, DIV=14, automark, headsepline, footsepline, plainfootsepline, toc=listof, toc=bib}
+    \KOMAoptions{twoside=false, open=any}
 \fi
 %    \end{macrocode}
 %
@@ -1241,7 +1243,6 @@ example.tex.
 %\changes{v1.2}{2024/02/24}{Added '\textbackslash{}selectlanguage' command call}
 %    \begin{macrocode}
 \renewcommand\maketitle{
-    \KOMAoptions{twoside = false}
     \begin{titlepage}
         \centering
         \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000]
@@ -1288,7 +1289,6 @@ example.tex.
         \vspace*{3\baselineskip}%
         \centering Kraków, \the\year
     \end{titlepage}%
-    \KOMAoptions{twoside = true}
 }
 %    \end{macrocode}
 %\end{macro}
