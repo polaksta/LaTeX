@@ -152,9 +152,9 @@ and the derived files
  %
  % Autor: Stanisław Polak <polak[aT]agh[DoT]edu[DoT]pl>
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass{agh-wi} % Praca po polsku; na stronie tytułowej, najpierw jest widoczny polskojęzyczny tytuł, a potem angielskojęzyczny.
-                       % Kierunek 'Informatyka'.
-                       % Przeznaczona do oglądania przy użyciu przeglądarki PDF.
+\documentclass[print]{agh-wi} % Praca po polsku; na stronie tytułowej, najpierw jest widoczny polskojęzyczny tytuł, a potem angielskojęzyczny.
+                              % Kierunek 'Informatyka'.
+                              % Przeznaczona do drukowania
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Inne, przykładowe, użycia klasy
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,10 +168,6 @@ and the derived files
  % \documentclass[umisi]{agh-wi}       % Praca po polsku; ...
                                        % Kierunek 'Informatyka - Uczenie Maszynowe i Sztuczna Inteligencja'.
                                        % Przeznaczona do oglądania przy użyciu przeglądarki PDF.                                      
- % \documentclass[print]{agh-wi}       % Praca po polsku; ...
-                                       % Kierunek 'Informatyka'.
-                                       % Przeznaczona do drukowania - każda strona posiada,
-                                       %    dodatkowy (2cm), margines na oprawę.
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  % Parametry dla strony tytułowej
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -797,8 +793,8 @@ example.tex.
 \fi
 %</internal>
 %<*class>
-\def\fileversion{1.3.2}
-\def\filedate{2024/06/13}
+\def\fileversion{1.3.3}
+\def\filedate{2026/06/25}
 %<class>\NeedsTeXFormat{LaTeX2e}
 %<class>\ProvidesClass{agh-wi}[\filedate\space v\fileversion\space Diploma thesis at WI AGH Kraków, Poland]
 %</class>
@@ -941,6 +937,7 @@ example.tex.
 %\changes{v1.3}{2024/02/25}{If the 'minted' package does not use 'newfloat', an error is generated}
 %\changes{v1.3.1}{2024/03/04}{There is always a dot after the chapter number}
 %\changes{v1.3.2}{2024/03/04}{The 'umisi' option was added}
+%\changes{v1.3.3}{2026/06/25}{Fixed page settings (pull request by MrJake222)}
 
 
 %
@@ -1041,10 +1038,12 @@ example.tex.
 %  The \emph{scrlayer-scrpage} package allows the user to define and manage page styles by controlling page headers and footers.
 %    \begin{macrocode}
 \RequirePackage{scrlayer-scrpage}
+\KOMAoptions{fontsize=12pt, DIV=14, automark, headsepline, footsepline, plainfootsepline,toc=listof, toc=bib}
 \ifprint
-    \KOMAoptions{fontsize=12pt, DIV=14, BCOR=2cm, automark, headsepline, footsepline, plainfootsepline,toc=listof, toc=bib}
+    \KOMAoptions{twoside=true}
+    \RequirePackage[inner=3cm,outer=1.5cm]{geometry}
 \else
-    \KOMAoptions{fontsize=12pt, DIV=14, automark, headsepline, footsepline, plainfootsepline, toc=listof, toc=bib}
+    \KOMAoptions{twoside=false, open=any}
 \fi
 %    \end{macrocode}
 %
@@ -1241,7 +1240,6 @@ example.tex.
 %\changes{v1.2}{2024/02/24}{Added '\textbackslash{}selectlanguage' command call}
 %    \begin{macrocode}
 \renewcommand\maketitle{
-    \KOMAoptions{twoside = false}
     \begin{titlepage}
         \centering
         \tikz[overlay,transform shape,transform canvas,x=0.80pt,y=0.80pt,yscale=-1.000000]
@@ -1288,7 +1286,6 @@ example.tex.
         \vspace*{3\baselineskip}%
         \centering Kraków, \the\year
     \end{titlepage}%
-    \KOMAoptions{twoside = true}
 }
 %    \end{macrocode}
 %\end{macro}
